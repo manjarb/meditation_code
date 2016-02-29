@@ -10,7 +10,7 @@ set :use_sudo, false
 
 set :scm, "git"
 #set :repository, "git@github.com:ryanb/#{application}.git"
-set :repository, "git@bitbucket.org:varisdaOfficial/thai_meditation.git"
+set :repository, "git@github.com:manjarb/#{application}.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
