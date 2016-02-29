@@ -1,0 +1,65 @@
+<section id="hero" class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+        <div id="login">
+          <% flash.each do |message_type,message|%>
+              <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+          <div class="text-center">
+            <%= image_tag("logo.png", alt: "Thai meditation sign up", "data-retina": "true") %>
+          </div>
+          <hr>
+
+          <%= form_for(@user) do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 login_social">
+                  <%= link_to "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-block" do %>
+                      <i class="icon-facebook"></i>
+                      Sign up with Facebook
+                  <% end %>
+                </div>
+                <!--<div class="col-md-6 col-sm-6 login_social">-->
+                  <!--<a href="#" class="btn btn-info btn-block "><i class="icon-twitter"></i>Twitter</a>-->
+                <!--</div>-->
+              </div> <!-- end row -->
+              <div class="login-or"><hr class="hr-or"><span class="span-or">or</span></div>
+
+              <div class="form-group">
+                <%= f.label :Username %>
+                <%= f.text_field :username, class: 'form-control', :placeholder => "Username" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :"Full name" %>
+                <%= f.text_field :name, class: 'form-control', :placeholder => "Full name" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :Email %>
+                <%= f.email_field :email, class: 'form-control', :placeholder => "Email" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :"New Password" %>
+                <%= f.password_field :password, class: 'form-control', :placeholder => "New Password" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :"Confirm Password" %>
+                <%= f.password_field :password_confirmation, class: 'form-control', :placeholder => "Confirm Password" %>
+              </div>
+              <div id="pass-info" class="clearfix"></div>
+              <button class="btn_full">Create an account</button>
+              <%= link_to "Log in", login_path ,class: "btn_full_outline" %>
+
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

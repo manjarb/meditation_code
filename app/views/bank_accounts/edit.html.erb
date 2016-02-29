@@ -1,0 +1,32 @@
+<h1>edt bank</h1>
+
+<br>
+<%= form_for(@bank_account) do |f|%>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+          <%= f.label :"Name" %>
+          <%= f.text_field :name , class: 'form-control', :placeholder => "Name of this account" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"Owner Bank account name" %>
+          <%= f.text_field :owner_account_name , class: 'form-control', :placeholder => "Accaul name of this bank account" %>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+          <%= f.label :"Account Number" %>
+          <%= f.text_field :number , class: 'form-control', :placeholder => "Account Number" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"Bank Name" %>
+          <%= f.text_field :bank_name , class: 'form-control', :placeholder => "Bank name" %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <%= f.submit :"Add Bank account", class: 'btn btn-primary' %>
+<% end %>
+
+<br><br><br>

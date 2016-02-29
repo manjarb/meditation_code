@@ -1,0 +1,48 @@
+<h1>List Temple</h1>
+<br>
+<%= link_to "Add new temple", new_temple_path %>
+<br>
+
+<div class="row">
+  <% @temples.each do |temple| %>
+
+      <div class="col-md-6">
+        <div class="temple-list-box">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="temple-list-logo-box">
+                <img src="<%= temple.logo_url %>" alt="<%= temple.name %>">
+              </div>
+            </div>
+            <div class="col-md-9">
+              <h3><%= temple.name %></h3>
+              <p><%= temple.slogan %></p>
+            </div>
+          </div>
+          <br>
+          <p>
+            <strong>Email: </strong>
+            <%= temple.email %>
+            <br>
+            <strong>Websites: </strong>
+            <%= temple.website %>
+            <br>
+            <strong>City: </strong>
+            <%= return_city_by_key(temple.city).pluralize %>
+
+          </p>
+          <br>
+          <% if admin_current_user_check?(temple.admin_user) %>
+              <%= link_to "Edit", edit_temple_path(temple.id),
+                          class: "btn btn-info" %>
+          <% end %>
+          <% if admin_current_user_check?(temple.admin_user) %>
+            <%= link_to "Delete", temple, method: :delete,
+                                          data: { confirm: "Are you sure?" },
+                                          class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+
+  <% end %>
+</div>

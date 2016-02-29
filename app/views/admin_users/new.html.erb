@@ -1,0 +1,55 @@
+<h1 style="text-align: center;">Add New User</h1>
+<br>
+
+<%= form_for(@admin_user, html: { class: "form-horizontal" }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="image-profile-box">
+      <img src="" class="edit-profile-image" alt="">
+      <br>
+      <br>
+      <%= f.file_field :profile_image,accept: 'image/jpeg,image/gif,image/png', style: "margin: 0 auto;" %>
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+      <%= f.label :Username, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :username, class: 'form-control', :placeholder => "Username" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Name, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :name, class: 'form-control' , :placeholder => "Name" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Email, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.email_field :email, class: 'form-control' , :placeholder => "Email" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">New Password</label>
+      <div class="col-sm-10">
+        <%= f.password_field :password, class: 'form-control' , :placeholder => "New Password" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Confirm Password</label>
+      <div class="col-sm-10">
+        <%= f.password_field :password_confirmation, class: 'form-control' , :placeholder => "Confirm Password" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit "Create New User", class: "btn btn-primary" %>
+      </div>
+    </div>
+
+<% end %>

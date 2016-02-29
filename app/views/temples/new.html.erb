@@ -1,0 +1,99 @@
+<h1>New temple</h1>
+<br>
+<br>
+<%= form_for(@temple, html: { multipart: true }) do |f|%>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <div class="form-group">
+        <%= f.label :"Temple Name" %>
+        <%= f.text_field :name , class: 'form-control', :placeholder => "Temple name" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :Logo %>
+        <%= f.file_field :logo_url ,accept: 'image/jpeg,image/gif,image/png'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :Slogan %>
+        <%= f.text_field :slogan , class: 'form-control', :placeholder => "Slogan" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :Address %>
+        <%= f.text_area :address , class: 'form-control', :placeholder => "Address",rows: 5 %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"City" %>
+        <%= f.select :city, thai_city_list,{},{ :class => 'form-control' } %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Country" %>
+        <%= f.select :country, countries_array_list,{},{ :class => 'form-control' } %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Map Image" %>
+        <%= f.file_field :map_image_url ,accept: 'image/jpeg,image/gif,image/png'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Latitude" %>
+        <%= f.text_field :latitude , class: 'form-control', :placeholder => "latitude" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Longitude" %>
+        <%= f.text_field :longitude , class: 'form-control', :placeholder => "longitude" %>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <div class="form-group">
+        <%= f.label :"Phone_number" %>
+
+        <div class="input-group">
+          <div class="input-group-addon">
+            <%= f.select :country_code, countries_phone_code, :selected => countries_phone_code[0]  %>
+          </div>
+          <%= f.text_field :phone_number , class: 'form-control', :placeholder => "Phone number" %>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Email %>
+        <%= f.text_field :email , class: 'form-control', :placeholder => "email" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Web site" %>
+        <%= f.text_field :website , class: 'form-control', :placeholder => "Web site" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Temple Image 01" %>
+        <%= f.file_field :temple_image01 ,accept: 'image/jpeg,image/gif,image/png'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Temple Image 02" %>
+        <%= f.file_field :temple_image02 ,accept: 'image/jpeg,image/gif,image/png'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Temple Image 03" %>
+        <%= f.file_field :temple_image03 ,accept: 'image/jpeg,image/gif,image/png'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Temple Image 04" %>
+        <%= f.file_field :temple_image04 ,accept: 'image/jpeg,image/gif,image/png'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Temple Image 05" %>
+        <%= f.file_field :temple_image05 ,accept: 'image/jpeg,image/gif,image/png'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Temple Image 06" %>
+        <%= f.file_field :temple_image06 ,accept: 'image/jpeg,image/gif,image/png'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :"Facebook" %>
+        <%= f.text_field :facebook_url , class: 'form-control', :placeholder => "Facebook" %>
+      </div>
+    </div>
+  </div>
+    <%= f.submit :"Add Temple", class: 'btn btn-primary' %>
+<% end %>
+
+<br><br><br>

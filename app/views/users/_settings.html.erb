@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 add_bottom_30">
+    <h4>Change your password</h4>
+    <br>
+    <%= form_for(@user, url: update_password_path(@user.id)) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <div class="form-group">
+          <%= f.label :"Old Password" %>
+          <%= f.password_field :old_password, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+
+        <%= f.submit "Update password", class: "btn_1 green" %>
+    <% end %>
+  </div>
+</div>

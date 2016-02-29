@@ -1,0 +1,33 @@
+<section id="hero" class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+        <div id="login">
+          <div class="text-center">
+            <%= image_tag("logo.png", alt: "Thai meditation sign up", "data-retina": "true") %>
+          </div>
+
+          <hr>
+          <h3 style="text-align: center;">Forgot password</h3>
+          <br>
+          <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+              <% flash.each do |message_type,message|%>
+                  <div class="alert alert-<%= message_type %>"><%= message %></div>
+              <% end %>
+
+              <div class="form-group">
+                <%= f.label :email %>
+                <%= f.text_field :email, class: 'form-control', :placeholder => "Email" %>
+              </div>
+
+              <br>
+              <%= f.submit "Submit", class: "btn_full" %>
+
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+h1,h2,h3,h4,p {
+  margin: 0;
+}
+
+body {
+  background-color: #fff;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+    li {
+      color: red;
+    }
+  }
+}
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+.image-profile-box {
+  display: none;
+}
+.activity-status-show-box {
+  .alert {
+    display: inline-block;
+  }
+}
+.inline-block-display {
+  display: inline-block;
+}
+.modal-backdrop {
+  z-index: -1;
+}
+#sign-up-nav-box-header .show-next-element {
+  display: block;
+}
+.break-max-width {
+  max-width: none;
+}
+.activities-list-banner-container.profile-banner {
+  min-height: initial;
+  padding-top: 100px;
+}

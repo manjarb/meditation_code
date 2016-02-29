@@ -1,0 +1,65 @@
+<% content_for :header_import do %>
+    <%= stylesheet_link_tag 'admin.min', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<div class="activities-list-banner-container profile-banner">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Profile</h1>
+    </div>
+  </div>
+</div>
+<div id="position">
+  <div class="container">
+    <ul>
+      <li><a href="#">Profile</a></li>
+      <li>Edit Profile</li>
+    </ul>
+  </div>
+</div><!-- Position -->
+
+<div class="light-grey-bg">
+  <div class="margin_60 container">
+    <div id="tabs" class="tabs">
+      <nav>
+        <ul>
+          <li class="<% if current_page?("/user/profile") %> tab-current <% end %>">
+            <%= link_to 'Profile', user_profile_path , class: "icon-booking" %>
+          </li>
+          <% unless @user.login_type == "facebook" %>
+            <li class="<% if current_page?("/user/settings") %> tab-current <% end %>">
+              <%= link_to 'Settings', user_settings_path , class: "icon-booking" %>
+            </li>
+          <% end %>
+          <li class="<% if current_page?("/user/bookings") %> tab-current <% end %>">
+            <%= link_to 'Bookings', user_bookings_path , class: "icon-booking" %>
+          </li>
+          <li class="<% if current_page?("/user/payments") %> tab-current <% end %>">
+            <%= link_to 'Payments', user_payments_path , class: "icon-booking" %>
+          </li>
+          <li class="<% if current_page?("/user/wishlist") %> tab-current <% end %>">
+            <%= link_to 'Wishlist', user_wishlist_path , class: "icon-booking" %>
+          </li>
+        </ul>
+      </nav>
+      <div class="content">
+        <section id="profile" class="content-current">
+          <% flash.each do |message_type,message|%>
+              <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+          <% if current_page?("/user/profile") %>
+            <%= render ('profile') %>
+          <% elsif current_page?("/user/settings") %>
+            <%= render ('settings') %>
+          <% elsif current_page?("/user/bookings") %>
+            <%= render ('bookings') %>
+          <% elsif current_page?("/user/wishlist") %>
+            <%= render ('wishlist') %>
+          <% elsif current_page?("/user/payments") %>
+            <%= render ('payments') %>
+          <% end %>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

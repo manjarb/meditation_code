@@ -1,0 +1,15 @@
+<div class="login-box">
+  <h1>Forgot Password</h1>
+  <br>
+  <br>
+  <%= form_for(:admin_password_resets, url: admin_password_resets_path) do |f| %>
+      <div class="form-group">
+        <%= f.label :email%>
+        <br>
+        <br>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>

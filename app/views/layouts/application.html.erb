@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Thailand, temple, meditation" />
+  <meta name="description" content="finding meditation places in Thailand">
+  <meta name="author" content="Varis Darasirikul">
+
+  <title>Thai Meditation</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <%= yield :header_import %>
+
+  <!-- Google web fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+  <!--[if lt IE 9]>
+      <%= javascript_include_tag "html5shiv.min.js", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "respond.min.js", "data-turbolinks-track" => true %>
+  <![endif]-->
+
+</head>
+<body>
+
+  <!--[if lte IE 8]>
+  <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+  <![endif]-->
+
+
+  <div class="layer"></div>
+  <!-- Mobile menu overlay mask -->
+
+  <%= render 'shared/header' %>
+
+  <%= yield %>
+
+  <%= render 'shared/footer' %>
+
+  <%= javascript_include_tag "common_scripts_min.js" %>
+  <%= javascript_include_tag "functions.js" %>
+
+  <%= yield :footer_script %>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<% content_for :header_import do %>
+  <%= stylesheet_link_tag 'slider-pro.min','data-turbolinks-track' => true %>
+<% end %>
+
+<section class="activity_banner_section">
+  <div class="parallax-content-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-8">
+          <% unless @activity.rating.nil? %>
+              <% rating_rounds = returnRatingCounter(@activity.rating) %>
+              <div class="rating">
+                <% rating_rounds.times do |n| %>
+                    <i class="icon-star voted"></i>
+                <% end %>
+                <% (5 - rating_rounds).times do |n| %>
+                    <i class="icon-star-empty"></i>
+                <% end %>
+              </div>
+          <% end %>
+
+          <h1><%= @activity.name %></h1>
+          <span><%= @temple.address %>, <%= return_city_by_key(@temple.city) %>, <%= @temple.country %></span>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div id="price_single_main" class="hotel">
+            <% unless @activity.payment_price.nil? %>
+              <% if @activity.payment_price > 0 %>
+                <span><%= @activity.payment_price %></span> Baht
+              <% else %>
+                  <span>Free</span>
+              <% end %>
+            <% else %>
+                <span>Free</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End section -->
+
+<div id="position">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="#">Acitivity</a>
+      </li>
+      <li>
+        <%= link_to return_city_by_key(@temple.city), activities_path %>
+      </li>
+      <li><%= @activity.name %></li>
+    </ul>
+  </div>
+</div><!-- Position -->
+
+<div class="collapse" id="collapseMap">
+  <div id="map">
+  </div>
+</div><!-- End Map -->
+
+<div class="light-grey-bg">
+  <div class="container margin_60">
+  <div class="row">
+    <div class="col-md-8">
+      <p class="visible-sm visible-xs">
+        <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
+          View on map
+        </a>
+      </p><!-- Map button for tablets/mobiles -->
+
+      <div id="Img_carousel" class="slider-pro">
+        <div class="sp-slides">
+          <div class="sp-slide">
+            <img alt="" class="sp-image" src="../img/blank.gif"
+                 data-src="<%= @activity.activity_image01_url %>"
+                 data-small="<%= @activity.activity_image01_url %>"
+                 data-medium="<%= @activity.activity_image01_url %>"
+                 data-large="<%= @activity.activity_image01_url %>"
+                 data-retina="<%= @activity.activity_image01_url %>">
+          </div>
+          <div class="sp-slide">
+            <img alt="" class="sp-image" src="../img/blank.gif"
+                 data-src="<%= @activity.activity_image02_url %>"
+                 data-small="<%= @activity.activity_image02_url %>"
+                 data-medium="<%= @activity.activity_image02_url %>"
+                 data-large="<%= @activity.activity_image02_url %>"
+                 data-retina="<%= @activity.activity_image02_url %>">
+          </div>
+          <div class="sp-slide">
+            <img alt="" class="sp-image" src="../img/blank.gif"
+                 data-src="<%= @activity.activity_image03_url %>"
+                 data-small="<%= @activity.activity_image03_url %>"
+                 data-medium="<%= @activity.activity_image03_url %>"
+                 data-large="<%= @activity.activity_image03_url %>"
+                 data-retina="<%= @activity.activity_image03_url %>">
+          </div>
+        </div>
+        <div class="sp-thumbnails">
+          <img alt="<%= @activity.name %>" class="sp-thumbnail" src="<%= @activity.activity_image01_url %>">
+          <img alt="<%= @activity.name %>" class="sp-thumbnail" src="<%= @activity.activity_image02_url %>">
+          <img alt="<%= @activity.name %>" class="sp-thumbnail" src="<%= @activity.activity_image03_url %>">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-md-3">
+          <h3>Details</h3>
+        </div>
+        <div class="col-md-9">
+          <p>
+            <%= @activity.details %>
+            <br>
+            <strong>Belong to Temple: </strong> <%= @temple.name %>
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-md-3">
+          <h3>Capacity</h3>
+        </div>
+        <div class="col-md-9">
+          <p>
+            <%= @activity.capacity %> Persons
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-md-3">
+          <h3>Booking</h3>
+        </div>
+        <div class="col-md-9">
+          <p>
+            <% if @activity.booking_status == true %>
+                You have to book this event.
+            <% else %>
+                No Booking need.
+            <% end %>
+          </p>
+        </div>
+      </div>
+
+      <% if @activity.rules != "" %>
+          <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Rules</h3>
+          </div>
+          <div class="col-md-9">
+            <p>
+              <%= @activity.rules  %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @activity.apply_details != "" %>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <h3>How to Apply</h3>
+            </div>
+            <div class="col-md-9">
+              <p>
+                <%= @activity.apply_details  %>
+              </p>
+            </div>
+          </div>
+      <% end %>
+
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <h3>Reviews</h3>
+          <br>
+          <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a review</a>
+        </div>
+        <div class="col-md-9">
+
+
+          <% if @reviews_count > 0 %>
+              <div id="score_detail">
+                <span><%= @reviews_level %></span><%= return_review_level_text(@reviews_level) %> <small>(Based on <%= @reviews_count %> reviews)</small>
+              </div><!-- End general_rating -->
+              <hr>
+            <% @reviews.each do |review| %>
+                <div class="review_strip_single">
+                  <!--<img src="img/avatar1.jpg" alt="" class="img-circle">-->
+                  <small> - <%= return_month_readble_format(review.created_at) %> -</small>
+                  <h4><%= return_username_by_id(review.user_id) %></h4>
+                  <p>
+                    <%= review.comment %>
+                  </p>
+
+                  <% unless review.score.nil? %>
+
+                      <% rating_rounds = returnRatingCounter(review.score) %>
+                      <div class="rating">
+                        <% rating_rounds.times do |n| %>
+                            <i class="icon-star voted"></i>
+                        <% end %>
+                        <% (5 - rating_rounds).times do |n| %>
+                            <i class="icon-star-empty"></i>
+                        <% end %>
+                      </div>
+                  <% end %>
+
+                </div><!-- End review strip -->
+            <% end %>
+          <% else %>
+            <p>No reviews</p>
+          <% end %>
+
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="col-md-4">
+      <p class="hidden-sm hidden-xs">
+        <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">View on map</a>
+      </p>
+      <br>
+      <div class="box_style_1 expose">
+        <h3 class="inner">Availability</h3>
+        <div class="row">
+          <% if @activity.permanent == true %>
+              <div class="col-md-12">
+                <p><strong>Date: </strong> Always open</p>
+              </div>
+              <br>
+              <br>
+          <% else %>
+            <div class="col-md-6 col-sm-6">
+              <div class="form-group">
+                <label><i class="icon-calendar-7"></i> Start Date</label>
+                <br>
+                <!--<input class="date-pick form-control" data-date-format="M d, D" type="text">-->
+                <%= return_month_readble_format(@activity.start_at) %>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="form-group">
+                <label><i class="icon-calendar-7"></i> End Date</label>
+                <br>
+                <!--<input class="date-pick form-control" data-date-format="M d, D" type="text">-->
+                <%= return_month_readble_format(@activity.end_at) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group">
+              <label>Adults</label>
+              <div class="numbers-row">
+                <input type="text" value="1" id="adults" class="qty2 form-control" name="quantity">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group">
+              <label>Status</label>
+              <br>
+              <% if @activity.avaliable == true %>
+
+                  <div class="alert alert-success inline-block-display" role="alert">
+                    <strong>Open</strong>
+                  </div>
+              <% else %>
+                  <div class="alert alert-danger inline-block-display" role="alert">
+                    <strong>Close</strong>
+                  </div>
+
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <% if @activity.avaliable == true && @activity.booking_status  %>
+          <a class="btn_full" href="cart_hotel.html">Book now</a>
+        <% end %>
+        <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a>
+      </div>
+
+      <div class="box_style_4">
+        <i class="icon_set_1_icon-90"></i>
+        <br>
+        <br>
+        <h4><span>Information</span> by phone</h4>
+        <br>
+        <a href="tel://<%= @temple.country_code %><%= @temple.phone_number %>" class="phone"><%= @temple.country_code %> <%= @temple.phone_number %></a>
+        <!--<small>Monday to Friday 9.00am - 7.30pm</small>-->
+      </div>
+    </aside>
+  </div>
+</div>
+</div>
+
+<!-- Modal Review -->
+<div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="myReviewLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myReviewLabel">Write your review</h4>
+      </div>
+      <div class="modal-body">
+        <div id="message-review">
+        </div>
+        <form action="">
+          <h1>Sumbit review form</h1>
+        </form>
+      </div>
+    </div>
+  </div>
+</div><!-- End modal review -->
+
+<% content_for :footer_script do %>
+    <%= javascript_include_tag "jquery.sliderPro.min" %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ0E4xcWSFFzGeB91ynRbpLdt_QTAZfbU&signed_in=true"></script>
+    <script>
+      var map;
+
+      $(document).ready(function(){
+        $('#collapseMap').on('shown.bs.collapse',function(e){
+          var myLatLng = {lat: <%= @temple.latitude.to_f %>, lng: <%= @temple.longitude.to_f %>};
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: myLatLng
+          });
+
+          var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: '<%= @activity.name %>'
+          });
+        });
+      });
+
+    </script>
+
+    <script>
+      $('input').iCheck({
+        checkboxClass: 'icheckbox_square-grey',
+        radioClass: 'iradio_square-grey'
+      });
+    </script>
+
+    <script type="text/javascript">
+      $( document ).ready(function( $ ) {
+        $( '#Img_carousel' ).sliderPro({
+          width: 960,
+          height: 500,
+          fade: true,
+          arrows: true,
+          buttons: false,
+          fullScreen: false,
+          smallSize: 500,
+          startSlide: 0,
+          mediumSize: 1000,
+          largeSize: 3000,
+          thumbnailArrows: true,
+          autoplay: false
+        });
+      });
+    </script>
+
+<% end %>

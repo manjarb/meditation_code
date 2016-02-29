@@ -1,0 +1,169 @@
+<div class="banner-container index-banner-container" id="home">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Hello, world!</h1>
+      <p>...</p>
+      <p>
+        <%= link_to "More Activities", activities_path ,class: "btn btn-outline-inverse btn-lg"%>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="search-box-container">
+  <div id="searchbar-container">
+    <div class="searchbar">
+      <form action="#">
+        <div class="search-label-box">
+          <input type="text" placeholder="City?" class="search-place-box-input">
+          <!--<input type="text" placeholder="Check in Date" -->
+                 <!--class="calender-input" name="date_checkin">-->
+
+        </div>
+        <div class="search-submit-box">
+          <input type="submit" value="Search" class="btn btn-success">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="landing-details-container" id="aboutus">
+  <div class="container margin_60">
+    <div class="main_title">
+      <h2>Paris <span>Top</span> Tours</h2>
+      <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+    </div>
+
+    <div class="main-how-to-container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 hidden-xs">
+          <!--<img src="img/laptop.png" alt="Laptop" class="img-responsive laptop">-->
+          <div class="main-how-to-image-box">
+            <%= image_tag("details_howto_image.jpg", alt: "Thai meditation details") %>
+          </div>
+
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <h3><span>Get started</span> with CityTours</h3>
+          <p>
+            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+          </p>
+          <ul class="list_order">
+            <li><span>1</span>Select your preferred tours</li>
+            <li><span>2</span>Purchase tickets and options</li>
+            <li><span>3</span>Pick them directly from your office</li>
+          </ul>
+          <%= link_to "See Activities", activities_path ,class: "btn_1"%>
+        </div>
+      </div><!-- End row -->
+    </div>
+
+  </div>
+</div>
+
+<div class="index-activity-list-container light-grey-bg">
+  <div class="container margin_60">
+    <div class="main_title">
+      <h2>Paris <span>Top</span> Tours</h2>
+      <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+    </div>
+    <div class="row">
+
+      <% @activities.each do |activity| %>
+        <div class="col-md-4 col-sm-6">
+          <div class="tour_container">
+            <div class="img_container">
+              <a href="single_tour.html">
+                <%= image_tag(activity.activity_image01_url, alt: activity.name,class: "img-responsive") %>
+                <!--<div class="ribbon top_rated"></div>-->
+                <div class="short_info">
+                  <!--<i class="icon_set_1_icon-44"></i>-->
+                  <!--Historic Buildings-->
+                  <span class="price"><sup>$</sup>39</span>
+                </div>
+              </a>
+            </div>
+            <div class="tour_title">
+              <h3><strong>Arc Triomphe</strong> tour</h3>
+              <div class="rating">
+                <% if activity.rating.nil? %>
+                  <p>No rating</p>
+                <% else %>
+                    <i class="icon-smile voted"></i>
+                    <i class="icon-smile voted"></i>
+                    <i class="icon-smile voted"></i>
+                    <i class="icon-smile voted"></i>
+                    <i class="icon-smile"></i>
+                    <small>(75)</small>
+                <% end %>
+              </div><!-- end rating -->
+              <div class="wishlist">
+                <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+              </div><!-- End wish list-->
+            </div>
+          </div><!-- End box tour -->
+        </div><!-- End col-md-4 -->
+      <% end %>
+
+    </div>
+
+    <p class="text-center add_bottom_30">
+      <!--<a href="all_tours_list.html" class="btn_1 medium">-->
+        <!--<i class="icon-eye-7"></i>View all Activities-->
+      <!--</a>-->
+      <%= link_to activities_path ,class: "btn_1 medium" do %>
+          <i class="icon-eye-7"></i>View all Activities
+      <% end %>
+    </p>
+  </div>
+</div>
+
+<div class="cities_list_container">
+  <div class="container margin_60">
+    <div class="main_title">
+      <h2>Other <span>Popular</span> tours</h2>
+      <p>
+        Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+      </p>
+    </div>
+    <div class="row">
+      <% activities_counter = 1 %>
+      <div class="col-md-4 other_tours">
+        <ul>
+          <% @temple_counter_hash.each do |key,value| %>
+            <% if activities_counter % @activities_per_row != 0 %>
+
+                  <li>
+                    <a href="#">
+                      <!--<i class="icon_set_1_icon-3"></i>-->
+                      <%= return_city_by_key(key) %>
+                      <span class="other_tours_price"><%= value %> Activities</span></a>
+                  </li>
+            <% else %>
+                    <li>
+                      <a href="#">
+                        <!--<i class="icon_set_1_icon-3"></i>-->
+                        <%= return_city_by_key(key) %>
+                        <span class="other_tours_price"><%= value %> Activities</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4 other_tours">
+                    <ul>
+                      <% activities_counter += 1 %>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :footer_script do %>
+  <script type="text/javascript">
+    $( document ).ready(function() {
+      $('.calender-input').datepicker();
+
+    });
+
+  </script>
+<% end %>

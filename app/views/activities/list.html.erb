@@ -1,0 +1,73 @@
+<h1>Activities List</h1>
+<br>
+<%= link_to "Add new Activity", new_activity_path %>
+<br>
+<div class="row">
+  <% @activities.each do |activity| %>
+    <div class="col-md-6">
+      <div class="temple-list-box">
+        <h3>
+          <%= activity.name %>
+          <% if activity.avaliable %>
+            <div class="btn btn-success pull-right">
+              Open
+            </div>
+          <% else %>
+            <div class="btn btn-danger pull-right">
+              Close
+            </div>
+          <% end %>
+        </h3>
+        <br>
+        <p>
+          <strong>Booking:
+            <% if activity.booking_status %>
+                <span class="label label-success" role="alert">
+                  Need
+                </span>
+            <% else %>
+                <span class="label label-danger" role="alert">
+                  No Need
+                </span>
+            <% end %>
+          </strong>
+        </p>
+        <br>
+        <div class="permanet-event-status-box">
+          <% if activity.permanent %>
+            <div class="alert alert-success" role="alert">
+              <strong>Permanent Event</strong>
+            </div>
+          <% else %>
+            <p>
+              <strong>Start date:</strong> <%= return_month_readble_format(activity.start_at) %>
+              <br>
+              <strong>End date:</strong> <%= return_month_readble_format(activity.end_at) %>
+            </p>
+          <% end %>
+        </div>
+
+        <% if activity.rating.nil? %>
+          <p><strong>No rating</strong></p>
+        <% else %>
+          <p>activity.rating</p>
+        <% end %>
+
+        <p>
+          Belong to Temple : <%= temple_belong_search(activity.temple_id) %>
+        </p>
+        <br>
+        <% if admin_current_user_check?(activity.admin_user) %>
+            <%= link_to "Edit", edit_activity_path(activity.id),
+                        class: "btn btn-info" %>
+        <% end %>
+        <% if admin_current_user_check?(activity.admin_user) %>
+            <%= link_to "Delete", activity, method: :delete,
+                        data: { confirm: "Are you sure?" },
+                        class: "btn btn-danger" %>
+        <% end %>
+
+      </div>
+    </div>
+  <% end %>
+</div>

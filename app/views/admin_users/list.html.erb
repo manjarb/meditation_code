@@ -1,0 +1,34 @@
+<h1>All Users</h1>
+<br>
+
+<%= will_paginate %>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Balance</th>
+      <th>Delete User</th>
+    </tr>
+    <% @admin_users.each do |admin_user| %>
+      <tr>
+        <td><%= admin_user.id %></td>
+        <td><%= admin_user.username %></td>
+        <td><%= admin_user.name %></td>
+        <td><%= admin_user.email %></td>
+        <td><%= admin_user.balance %></td>
+        <td>
+          <% if admin_current_user.admin? && !admin_current_user_check?(admin_user) %>
+            <%= link_to "Delete User", admin_user , method: :delete,
+                                                    data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </thead>
+</table>
+
+<%= will_paginate %>

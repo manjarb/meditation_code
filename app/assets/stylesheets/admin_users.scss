@@ -1,0 +1,44 @@
+// Place all the styles related to the admin_users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$border-grey: #A9A9A9;
+
+.login-box {
+  max-width: 640px;
+  margin: 0 auto;
+  border: 1px solid $border-grey;
+  padding: 30px;
+  margin-top: 30px;
+  h1 {
+    text-align: center;
+  }
+}
+.edit-profile-image {
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+  img {
+    max-width: 100%;
+  }
+}
+
+.image-profile-box {
+    text-align: center;
+}
+.bank-account-box {
+  padding: 15px;
+  border: 1px solid #A9A9A9;
+  margin-bottom: 30px;
+  h4 {
+    margin-bottom: 10px;
+  }
+}
+.bank-account-header {
+  a {
+    float: right;
+    font-size: 14px;
+  }
+}

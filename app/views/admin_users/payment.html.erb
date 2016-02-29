@@ -1,0 +1,67 @@
+<h1>Payment</h1>
+<br>
+<br>
+<h3>Balance</h3>
+<br>
+<div class="alert alert-success" role="alert">
+  <strong>+ <%= @admin_user.balance %></strong>
+</div>
+<br>
+<h3 class="bank-account-header">
+  Bank Account
+  <%= link_to "new bank account", new_bank_account_path %>
+</h3>
+<br>
+<div class="bank-account-container">
+  <div class="row">
+    <% @bank_accounts.each do |bank_account| %>
+      <div class="col-md-6">
+        <div class="bank-account-box">
+
+          <h4><%= bank_account.name %></h4>
+          <p>
+            <strong>Owner name:</strong> <%= bank_account.owner_account_name %>
+            <br>
+            <%= bank_account.number %>
+            <br>
+            <strong>From bank:</strong> <%= bank_account.bank_name %>
+          </p>
+          <br>
+          <%= link_to "Edit", edit_bank_account_path(bank_account.id),
+                      class: "btn btn-info" %>
+          <%= link_to "Delete", bank_account, method: :delete,
+                      class: "btn btn-danger",
+                      data: { confirm: "Are you sure?" }%>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br>
+<h3>
+  Payment History
+</h3>
+<br>
+<div class="bank-account-container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="bank-account-box">
+        <h4>Activity Name</h4>
+        <p>
+          <strong>Activity id: </strong>
+          <br>
+          <strong>From user: </strong>
+          <br>
+          <strong>Amount: </strong>
+          <br>
+          <strong>Method: </strong>
+          <br>
+          <strong>Time: </strong>
+          <br>
+          <strong>Status: </strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

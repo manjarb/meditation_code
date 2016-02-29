@@ -1,0 +1,22 @@
+// Place all the styles related to the Temples controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$border-grey: #A9A9A9;
+
+.temple-list-box {
+  border: 1px solid $border-grey;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.temple-list-logo-box {
+  width: 110px;
+  height: 80px;
+  overflow: hidden;
+}
+.temple-edit-logo-box {
+  max-width: 200px;
+}
+#map {
+  height: 300px;
+}
