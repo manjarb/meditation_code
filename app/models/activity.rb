@@ -4,7 +4,7 @@ class Activity < ActiveRecord::Base
 
   has_many :reviews, dependent: :destroy
 
-  default_scope -> { order(created_at: :desc) }
+  #default_scope -> { order(created_at: :desc) }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

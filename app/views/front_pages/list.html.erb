@@ -40,10 +40,20 @@
             <div class="filter_type">
               <h6>District</h6>
               <ul>
-                <li><label><input type="checkbox">Paris Centre</label></li>
-                <li><label><input type="checkbox">La Defance</label></li>
-                <li><label><input type="checkbox">La Marais</label></li>
-                <li><label><input type="checkbox">Latin Quarter</label></li>
+
+                <!--<li><label><input type="checkbox">Paris Centre</label></li>-->
+                <!--<li><label><input type="checkbox">La Defance</label></li>-->
+                <!--<li><label><input type="checkbox">La Marais</label></li>-->
+                <!--<li><label><input type="checkbox">Latin Quarter</label></li>-->
+
+                <% @temple_counter_hash.each do |key,value| %>
+                    <li>
+                      <label>
+                        <input type="checkbox" value="<%= key %>">
+                        <%= return_city_by_key(key) %>
+                      </label>
+                    </li>
+                <% end %>
               </ul>
             </div>
 
@@ -72,9 +82,9 @@
             <div class="col-md-3 col-sm-3 col-xs-6">
               <div class="styled-select-filters">
                 <select  name="sort_rating" id="sort_rating">
-                  <option value="" selected>Sort by ranking</option>
-                  <option value="lower">Lowest ranking</option>
-                  <option value="higher">Highest ranking</option>
+                  <option value="" selected>No sorting</option>
+                  <option value="rankhigh">Highest ranking</option>
+                  <option value="ranklow">Lowest ranking</option>
                 </select>
               </div>
             </div>
@@ -148,9 +158,7 @@
                   </p>
                   <br>
                   <strong>City:</strong>
-                  <% @city_key = @temples.find_by(id: activity.temple_id) %>
-                  <% #return_city_by_key(@city_key.city) %>
-                  <%= return_city_by_key("bkk") %>
+                  <%= return_city_by_key(@city_key) %>
 
                   <!--<ul class="add_info">-->
                     <!--<li>-->
@@ -174,19 +182,8 @@
               <div class="col-lg-2 col-md-2 col-sm-2">
                 <div class="price_list">
                   <div>
-                    <% if activity.payment_need == true %>
-                        <% unless activity.payment_price.nil? %>
-                          <% if activity.payment_price > 0 || activity.payment_price != "" %>
-                            <%= number_with_delimiter(activity.payment_price) %> &#3647;
-                          <% else %>
-                            Free
-                          <% end %>
-                        <% else %>
-                          Free
-                        <% end %>
-                    <% else %>
-                      Free
-                    <% end %>
+
+                    <%= price_show_func(activity) %>
                     <!--<span class="normal_price_list">-->
                       <!--$99-->
                     <!--</span>-->
@@ -216,6 +213,39 @@
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-grey',
       radioClass: 'iradio_square-grey'
+    });
+
+    $('input').on('ifChecked', function(event){
+
+
+    });
+
+    $('#sort_rating').change(function(){
+      alert($(this).val());
+
+      var url = window.location.href;
+
+      if ($(this).val() === "rankhigh"){
+        if (window.location.href.indexOf("?") > -1) {
+          window.location = url + "&orderby=rankhigh";
+        } else {
+          window.location = url + "?orderby=rankhigh";
+        }
+
+      } else
+      if ($(this).val() === "ranklow"){
+        if (window.location.href.indexOf("?") > -1) {
+          window.location = url + "&orderby=rankhigh";
+        } else {
+          window.location = url + "?orderby=rankhigh";
+        }
+      } else {
+        if (window.location.href.indexOf("?") > -1) {
+          window.location = url + "&orderby=''";
+        } else {
+          window.location = url + "?orderby=''";
+        }
+      }
     });
   </script>
 <% end %>

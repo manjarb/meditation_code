@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301075635) do
+ActiveRecord::Schema.define(version: 20160301162537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160301075635) do
     t.integer  "payment_price"
     t.boolean  "payment_need",         default: false
     t.boolean  "avaliable",            default: true
-    t.float    "rating"
+    t.float    "rating",               default: 0.0
     t.integer  "admin_user_id"
     t.integer  "temple_id"
     t.datetime "created_at",                           null: false

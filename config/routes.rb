@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   ##### Front Pages Route
   get '/activities/:cityname' => 'front_pages#cities_search', :as => 'activities_like_search'
   get '/activities' => 'front_pages#activities_list'
-  get '/activities/:id' => 'front_pages#activities_details', :as => 'activity_show'
+  get '/activity/:id' => 'front_pages#activities_details', :as => 'activity_show'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

@@ -81,7 +81,10 @@
                 <div class="short_info">
                   <!--<i class="icon_set_1_icon-44"></i>-->
                   <!--Historic Buildings-->
-                  <span class="price"><sup>$</sup>39</span>
+                  <span class="price">
+                    <!--<sup>$</sup>-->
+                    <%= price_show_func(activity) %>
+                  </span>
                 </div>
 
               </div>
@@ -92,12 +95,22 @@
                 <% if activity.rating.nil? %>
                   <p>No rating</p>
                 <% else %>
-                    <i class="icon-smile voted"></i>
-                    <i class="icon-smile voted"></i>
-                    <i class="icon-smile voted"></i>
-                    <i class="icon-smile voted"></i>
-                    <i class="icon-smile"></i>
-                    <small>(75)</small>
+                    <!--<i class="icon-smile voted"></i>-->
+                    <!--<i class="icon-smile voted"></i>-->
+                    <!--<i class="icon-smile voted"></i>-->
+                    <!--<i class="icon-smile voted"></i>-->
+                    <!--<i class="icon-smile"></i>-->
+                    <!--<small>(75)</small>-->
+                    <% rating_rounds = returnRatingCounter(activity.rating) %>
+                    <div class="rating">
+                      <% rating_rounds.times do |n| %>
+                          <i class="icon-star voted"></i>
+                      <% end %>
+                      <% (5 - rating_rounds).times do |n| %>
+                          <i class="icon-star-empty"></i>
+                      <% end %>
+                    </div>
+
                 <% end %>
               </div><!-- end rating -->
               <div class="wishlist">

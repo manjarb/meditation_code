@@ -407,5 +407,41 @@ module ApplicationHelper
     end
   end
 
+  def price_show_func(activity)
+    if activity.payment_need == true
+      unless activity.payment_price.nil?
+        if activity.payment_price > 0 || activity.payment_price != ""
+          return number_with_delimiter(activity.payment_price)+ " " + CGI.unescapeHTML("&#3647;")
+        else
+          "Free"
+        end
+      else
+        "Free"
+      end
+    else
+      "Free"
+    end
+  end
+
+  def return_all_activities_by_order
+    if params.has_key?(:orderby)
+      order_met = params[:orderby]
+
+      if order_met == "rankhigh"
+        puts "RANK HIGhhhhhh"
+        Activity.all.order(rating: :desc)
+      elsif order_met == "ranklow"
+        puts "RANK HIGlllllllll"
+        Activity.all.order(rating: :asc)
+      else
+        puts "NOOOOO RANK"
+        Activity.all.order(created_at: :desc)
+      end
+
+    else
+      puts "NOOOOO RANK"
+      Activity.all.order(created_at: :desc)
+    end
+  end
 
 end
