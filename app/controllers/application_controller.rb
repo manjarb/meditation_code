@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   include AdminSessionsHelper
   include SessionsHelper
+  include ApplicationHelper
 
   private
 

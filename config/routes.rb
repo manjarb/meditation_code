@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get '/user/wishlist' => 'users#user_tabs'
   get '/user/payments' => 'users#user_tabs'
   patch '/user/:id/update_password' => 'users#update_password' , :as => 'update_password'
+  get 'activities_city/' => 'front_pages#cities_search', :as => 'activities_search'
   ##### Front Pages Route
 
 

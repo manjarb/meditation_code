@@ -361,6 +361,31 @@ module ApplicationHelper
     end
   end
 
+  def return_city_key_by_name(city_name)
+    city_name = city_name.capitalize
+    puts "city_namecity_namecity_namecity_name"
+    puts city_name
+    puts "city_namecity_namecity_namecity_name"
+
+    # @@all_thai_cities.each do |city|
+    #   if city[0] == city_name
+    #     puts "MatchMatchMatchMatchMatchMatchMatch"
+    #     return city[1]
+    #   else
+    #     puts "No match"
+    #   end
+    # end
+
+    for i in 0..@@all_thai_cities.count() - 1
+      if @@all_thai_cities[i][0] == city_name
+        return @@all_thai_cities[i][1]
+      end
+    end
+
+    return nil
+
+  end
+
   def returnRatingCounter(rating)
     (rating / 2).ceil
   end

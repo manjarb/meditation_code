@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224104131) do
+ActiveRecord::Schema.define(version: 20160301075635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20160224104131) do
 
   add_index "temples", ["admin_user_id", "created_at"], name: "index_temples_on_admin_user_id_and_created_at", using: :btree
   add_index "temples", ["admin_user_id"], name: "index_temples_on_admin_user_id", using: :btree
+  add_index "temples", ["city"], name: "index_temples_on_city", using: :btree
   add_index "temples", ["id"], name: "index_temples_on_id", unique: true, using: :btree
   add_index "temples", ["name"], name: "index_temples_on_name", unique: true, using: :btree
 
