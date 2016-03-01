@@ -73,8 +73,9 @@
       <% @activities.each do |activity| %>
         <div class="col-md-4 col-sm-6">
           <div class="tour_container">
-            <div class="img_container">
-              <a href="single_tour.html">
+            <%= link_to activity_show_path(activity.id) do %>
+              <div class="img_container">
+
                 <%= image_tag(activity.activity_image01_url, alt: activity.name,class: "img-responsive") %>
                 <!--<div class="ribbon top_rated"></div>-->
                 <div class="short_info">
@@ -82,8 +83,9 @@
                   <!--Historic Buildings-->
                   <span class="price"><sup>$</sup>39</span>
                 </div>
-              </a>
-            </div>
+
+              </div>
+            <% end %>
             <div class="tour_title">
               <h3><strong>Arc Triomphe</strong> tour</h3>
               <div class="rating">
@@ -135,10 +137,11 @@
             <% if activities_counter % @activities_per_row != 0 %>
 
                   <li>
-                    <a href="#">
+                    <%= link_to activities_like_search_path(return_city_by_key(key)) do %>
                       <!--<i class="icon_set_1_icon-3"></i>-->
                       <%= return_city_by_key(key) %>
-                      <span class="other_tours_price"><%= value %> Activities</span></a>
+                      <span class="other_tours_price"><%= value %> Activities</span>
+                    <% end %>
                   </li>
             <% else %>
                     <li>

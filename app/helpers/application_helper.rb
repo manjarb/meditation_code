@@ -363,9 +363,6 @@ module ApplicationHelper
 
   def return_city_key_by_name(city_name)
     city_name = city_name.capitalize
-    puts "city_namecity_namecity_namecity_name"
-    puts city_name
-    puts "city_namecity_namecity_namecity_name"
 
     # @@all_thai_cities.each do |city|
     #   if city[0] == city_name

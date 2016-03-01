@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'admin/temples' => 'temples#list'
 
   ##### Front Pages Route
+  get '/activities/:cityname' => 'front_pages#cities_search', :as => 'activities_like_search'
   get '/activities' => 'front_pages#activities_list'
   get '/activities/:id' => 'front_pages#activities_details', :as => 'activity_show'
   get '/signup' => 'users#new'
@@ -42,7 +43,8 @@ Rails.application.routes.draw do
   get '/user/wishlist' => 'users#user_tabs'
   get '/user/payments' => 'users#user_tabs'
   patch '/user/:id/update_password' => 'users#update_password' , :as => 'update_password'
-  get 'activities_city/' => 'front_pages#cities_search', :as => 'activities_search'
+  get '/activities_city' => 'front_pages#cities_search', :as => 'activities_search'
+
   ##### Front Pages Route
 
 
