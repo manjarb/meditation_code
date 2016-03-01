@@ -54,18 +54,15 @@ class FrontPagesController < ApplicationController
   end
 
   def cities_search
-    city_key = return_city_key_by_name(params[:front_pages][:cityname])
+    @city_name = params[:front_pages][:cityname]
+    @city_key = return_city_key_by_name(params[:front_pages][:cityname])
 
-    puts "city_keyputs city_keyputs city_keyputs city_key"
-    puts city_key
-    puts "city_keyputs city_keyputs city_keyputs city_key"
-
-    if city_key.nil?
+    if @city_key.nil?
       @temples = Temple
       @activities = Activity.all.paginate(:page => params[:page], :per_page => 10)
       flash[:info] = "No Search result for " + params[:front_pages][:cityname]
     else
-      @temples_search = Temple.find_by(city: city_key)
+      @temples_search = Temple.find_by(city: @city_key)
       @activities = Activity.where(temple_id: @temples_search.id).paginate(:page => params[:page], :per_page => 10)
       @temples = Temple
     end
