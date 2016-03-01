@@ -85,5 +85,5 @@ test:
 production:
   <<: *default
   database: meditation_code_production
-  username: meditation_code_admin
+  username: deploy
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
