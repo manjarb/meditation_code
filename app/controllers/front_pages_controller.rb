@@ -121,7 +121,9 @@ class FrontPagesController < ApplicationController
       actvities_where = @activities_all
       @activities = @activities_all.paginate(:page => params[:page], :per_page => 10)
 
-      flash.now[:info] = "No Search result for " + @city_name
+      if @city_name != ""
+        flash.now[:info] = "No Search result for " + @city_name
+      end
 
     else
 

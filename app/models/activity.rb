@@ -28,10 +28,6 @@ class Activity < ActiveRecord::Base
 
   def permanent_event_check
 
-    puts "self.inspectself.inspectself.inspectself.inspect"
-    puts self.inspect
-    puts "jonesjtneosu"
-
     if self.permanent == false
       if self.start_at.nil? || self.end_at.nil?
         self.errors[:base] << "You can't leave start and end date blank with Permanent Event"

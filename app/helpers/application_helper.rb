@@ -362,7 +362,13 @@ module ApplicationHelper
   end
 
   def return_city_key_by_name(city_name)
-    city_name = city_name.capitalize
+    city_name = city_name.downcase
+
+
+    puts "city_name testtt"
+    puts city_name
+
+    #byebug
 
     # @@all_thai_cities.each do |city|
     #   if city[0] == city_name
@@ -374,7 +380,7 @@ module ApplicationHelper
     # end
 
     for i in 0..@@all_thai_cities.count() - 1
-      if @@all_thai_cities[i][0] == city_name
+      if @@all_thai_cities[i][0].downcase == city_name
         return @@all_thai_cities[i][1]
       end
     end

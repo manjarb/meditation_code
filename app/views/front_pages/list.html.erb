@@ -1,7 +1,7 @@
 <div class="activities-list-banner-container">
   <div class="jumbotron">
     <div class="container">
-      <h1><%= @city_name.capitalize unless @city_name.nil?  %> Activities List!</h1>
+      <h1><%= @city_name unless @city_name.nil?  %> Activities List!</h1>
       <!--<p>...</p>-->
     </div>
   </div>
@@ -9,9 +9,13 @@
 <div id="position">
   <div class="container">
     <ul>
-      <li><a href="#">Acitivites</a></li>
-      <li><a href="#">City name</a></li>
-      <li>Page active</li>
+      <li>
+        <%= link_to "Activities", activities_path %>
+      </li>
+      <% unless @city_name.nil? %>
+        <li><%= @city_name %></li>
+      <% end %>
+
     </ul>
   </div>
 </div><!-- Position -->
@@ -30,11 +34,49 @@
             <div class="filter_type">
               <h6>Review Score</h6>
               <ul>
-                <li><label><input id="superb_checkbox" type="checkbox" class="rank-list-checkbox" value="9">Superb: 9+ (<%= @superb_count.to_s %>)</label></li>
-                <li><label><input id="very_good_checkbox" type="checkbox" class="rank-list-checkbox" value="8">Very good: 8+ (<%= @very_good_count %>)</label></li>
-                <li><label><input id="good_checkbox" type="checkbox" class="rank-list-checkbox" value="7">Good: 7+ (<%= @good_count %>)</label></li>
-                <li><label><input id="pleasant_checkbox" type="checkbox" class="rank-list-checkbox" value="6">Pleasant: 6+ (<%= @pleasant %>)</label></li>
-                <li><label><input id="norate_checkbox" type="checkbox" class="rank-list-checkbox" value="0">No rating (<%= @no_rating %>)</label></li>
+                <% if @superb_count > 0 %>
+                  <li>
+                    <label>
+                      <input id="superb_checkbox" type="checkbox"
+                             class="rank-list-checkbox" value="9">
+                      Superb: 9+ (<%= @superb_count.to_s %>)
+                    </label>
+                  </li>
+                <% end %>
+                <% if @very_good_count > 0 %>
+                  <li>
+                    <label>
+                      <input id="very_good_checkbox" type="checkbox"
+                             class="rank-list-checkbox" value="8">
+                      Very good: 8+ (<%= @very_good_count %>)
+                    </label>
+                  </li>
+                <% end %>
+                <% if @good_count > 0 %>
+                  <li>
+                    <label>
+                      <input id="good_checkbox" type="checkbox"
+                             class="rank-list-checkbox" value="7">
+                      Good: 7+ (<%= @good_count %>)
+                    </label>
+                  </li>
+                <% end %>
+                <% if @pleasant > 0 %>
+                  <li>
+                    <label>
+                      <input id="pleasant_checkbox" type="checkbox"
+                             class="rank-list-checkbox" value="6">
+                      Pleasant: 6+ (<%= @pleasant %>)
+                    </label>
+                  </li>
+                <% end %>
+                <li>
+                  <label>
+                    <input id="norate_checkbox" type="checkbox"
+                           class="rank-list-checkbox" value="0">
+                    No rating (<%= @no_rating %>)
+                  </label>
+                </li>
               </ul>
             </div>
             <div class="filter_type">
@@ -49,7 +91,7 @@
                 <% @temple_counter_hash.each do |key,value| %>
                     <li>
                       <label>
-                        <input type="checkbox" class="city-list-input-checkbox" value="<%= key %>">
+                        <input type="checkbox" id="<%= return_city_by_key(key).gsub(" ","") %>" class="city-list-input-checkbox" value="<%= return_city_by_key(key) %>">
                         <%= return_city_by_key(key) %>
                       </label>
                     </li>
@@ -62,7 +104,8 @@
         <div class="box_style_2">
           <i class="icon_set_1_icon-57"></i>
           <h4>Need <span>Help?</span></h4>
-          <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+          <br>
+          <a href="tel://+66874931044" class="phone">+66 87-493-1044</a>
           <small>Monday to Friday 9.00am - 7.30pm</small>
         </div>
       </div>
@@ -104,7 +147,7 @@
                   </a>
                 </div>
                 <div class="img_list">
-                  <a href="single_hotel.html">
+                  <%= link_to activity_show_path(activity.id) do %>
                     <% unless activity.rating.nil? %>
                         <% if activity.rating > 7 %>
                           <div class="ribbon top_rated"></div>
@@ -113,7 +156,7 @@
                     <!--<img src="img/hotel_1.jpg" alt="">-->
                     <%= image_tag(activity.activity_image01_url, alt: activity.name) %>
                     <div class="short_info"></div>
-                  </a>
+                  <% end %>
                 </div>
               </div>
               <div class="clearfix visible-xs-block"></div>
@@ -250,12 +293,24 @@
     }
 
     function openRankWindow(cityname,rank_var){
+
+      var page_num_var = getUrlParameter("page");
+
       if (window.location.href.indexOf("rank=") > -1) {
         //window.location = url + "&orderby=" + rank_var + "&" + cityname;
-        window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname + "&rank=" +getUrlParameter("rank");
+        if (window.location.href.indexOf("page=") > -1) {
+          window.location = url + "?orderby=" + rank_var + "page="+ page_num_var + "&cityname=" + cityname + "&rank=" + getUrlParameter("rank");
+        } else {
+          window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname + "&rank=" + getUrlParameter("rank");
+        }
       } else {
         //window.location = url + "?orderby=" + rank_var + "&" + cityname;
-        window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname
+
+        if (window.location.href.indexOf("page=") > -1) {
+          window.location = url + "?orderby=" + rank_var + "page="+ page_num_var + "&cityname=" + cityname
+        } else {
+          window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname
+        }
       }
     }
 
@@ -267,8 +322,20 @@
 //      radioClass: 'iradio_square-grey'
 //    });
 
+    if (window.location.href.indexOf("cityname") > -1) {
+      cityname_url =getUrlParameter("cityname");
+    }
+
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-grey'
+    });
+
+    $('.city-list-input-checkbox').on('ifChecked', function(event){
+      window.location = location.protocol + '//' + location.host  + "/activities_city?cityname=" + $(this).val();
+    });
+
+    $('.rank-list-checkbox').on('ifUnchecked', function(event){
+      window.location = url + "?cityname=" + cityname_url;
     });
 
     $('.rank-list-checkbox').on('ifChecked', function(event){
@@ -281,10 +348,6 @@
       }
 
     });
-
-    if (window.location.href.indexOf("cityname") > -1) {
-      cityname_url = getUrlParameter('cityname');
-    }
 
     $('#sort_rating').change(function(){
 

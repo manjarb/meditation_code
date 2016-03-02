@@ -1,38 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# 30.times { |n|
-#     name = Faker::Name.name
-#     username = Faker::Internet.user_name
-#     email = "example#{n}@jarbstudio.com"
-#     password = "123456"
-#     AdminUser.create!(name: name,
-#                       username: username,
-#                       email: email,
-#                       password: password,
-#                       password_confirmation: password)
-# }
-
-# 3.times { |n|
-#     admin_user_id = 42
-#     account_number = Faker::Business.credit_card_number
-#     name = Faker::Company.name
-#     owner_name = Faker::Name.name
-#     bank_name = Faker::Company.name
-#     BankAccount.create!(name: name,
-#                         number: account_number,
-#                         admin_user_id: admin_user_id,
-#                         owner_account_name: owner_name,
-#                         bank_name: bank_name
-#     )
-# }
-
-100.times { |n|
+50.times { |n|
     name = Faker::Name.name
     details = Faker::Lorem.paragraph
     start_at = Faker::Date.backward(1 + Random.rand(20))
@@ -51,7 +17,7 @@
     admin_user_id = Random.rand(20)
     temple_id = Random.rand(20)
     permanent = [true, false].sample
-    youtube_url = "https://www.youtube.com/watch?v=Iv9VPXuQsjI&list=PLtWlvHthTN92DaHKeV7LRO8sie61eOVy3&index=9"
+    youtube_url = "https://www.youtube.com/watch?v=Iv9VPXuQsjI&list=PLtWlvHthTN92DaHKeV7LRO8sie61eOVy3&index=8"
 
     Activity.create!(name: name,
                      details: details,
@@ -74,13 +40,3 @@
                      activity_image03_url: activity_image01_url)
 
 }
-
-# 50.times { |n|
-#     comment = Faker::Lorem.paragraph
-#     score = 1 + Random.rand(9)
-#     user_id = 0 + Random.rand(10)
-#     activity_id = 0 + Random.rand(20)
-#
-#     Review.create!(comment: comment, score: score, user_id: user_id, activity_id: activity_id)
-# }
-
