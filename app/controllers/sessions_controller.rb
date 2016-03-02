@@ -20,8 +20,12 @@ class SessionsController < ApplicationController
           redirect_to request.referrer
         end
       else
-        message = "Account not activated"
+        message = "Account not activated <br>"
         message += "Check your email for the activation link"
+
+        flash.now[:info] = message.html_safe
+
+        render 'new'
       end
 
     else

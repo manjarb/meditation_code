@@ -289,6 +289,12 @@
           </div>
         </div>
 
+        <% unless @activity.price.nil? %>
+          <div class="total-price-detail-row">
+            <p>Total Cost <span class="pull-right"><%= @activity.price %> &#3647;</span></p>
+          </div>
+        <% end %>
+
         <br>
 
         <% if @activity.avaliable == true && @activity.booking_status  %>
