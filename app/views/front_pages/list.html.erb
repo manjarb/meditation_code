@@ -210,6 +210,35 @@
 
 <% content_for :footer_script do %>
   <script>
+    var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+      }
+    };
+
+    function openRankWindow(cityname,rank_var){
+//      if (window.location.href.indexOf("?") > -1) {
+//        window.location = url + "&orderby=" + rank_var + "&" + cityname;
+//      } else {
+//        window.location = url + "?orderby=" + rank_var + "&" + cityname;
+//      }
+
+      window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname;
+    }
+
+    var cityname_url = "";
+    var url = location.protocol + '//' + location.host + location.pathname;
+
+
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-grey',
       radioClass: 'iradio_square-grey'
@@ -220,32 +249,31 @@
 
     });
 
+    if (window.location.href.indexOf("cityname") > -1) {
+      cityname_url = getUrlParameter('cityname');
+    }
+
     $('#sort_rating').change(function(){
       alert($(this).val());
 
-      var url = window.location.href;
-
       if ($(this).val() === "rankhigh"){
-        if (window.location.href.indexOf("?") > -1) {
-          window.location = url + "&orderby=rankhigh";
+
+        if(cityname_url != ""){
+          openRankWindow(cityname_url,"rankhigh");
         } else {
-          window.location = url + "?orderby=rankhigh";
+          openRankWindow("","rankhigh");
         }
+
 
       } else
       if ($(this).val() === "ranklow"){
-        if (window.location.href.indexOf("?") > -1) {
-          window.location = url + "&orderby=rankhigh";
+        if(cityname_url != ""){
+          openRankWindow(cityname_url,"ranklow");
         } else {
-          window.location = url + "?orderby=rankhigh";
-        }
-      } else {
-        if (window.location.href.indexOf("?") > -1) {
-          window.location = url + "&orderby=''";
-        } else {
-          window.location = url + "?orderby=''";
+          openRankWindow("","ranklow");
         }
       }
+
     });
   </script>
 <% end %>

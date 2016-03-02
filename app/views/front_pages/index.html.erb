@@ -12,19 +12,14 @@
 <div class="search-box-container">
   <div id="searchbar-container">
     <div class="searchbar">
-
-      <%= form_for(:front_pages, url:activities_search_path, method: :get ) do |f| %>
-          <div class="search-label-box">
-            <!--<input type="text" placeholder="City?" class="search-place-box-input">-->
-            <%= f.text_field :"cityname", class: 'search-place-box-input', :placeholder => "City Name?" %>
-            <!--<input type="text" placeholder="Check in Date" -->
-                   <!--class="calender-input" name="date_checkin">-->
-
-          </div>
-          <div class="search-submit-box">
-            <%= f.submit "Search", class: "btn btn-success" %>
-          </div>
-      <% end %>
+      <form action="/activities_city">
+        <div class="search-label-box">
+          <input type="text" class="search-place-box-input" placeholder="City Name?" name="cityname">
+        </div>
+        <div class="search-submit-box">
+          <input type="submit" class="btn btn-success" value="search">
+        </div>
+      </form>
     </div>
   </div>
 </div>
