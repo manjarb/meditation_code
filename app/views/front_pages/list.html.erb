@@ -49,7 +49,7 @@
                 <% @temple_counter_hash.each do |key,value| %>
                     <li>
                       <label>
-                        <input type="checkbox" value="<%= key %>">
+                        <input type="checkbox" class="city-list-input-checkbox" value="<%= key %>">
                         <%= return_city_by_key(key) %>
                       </label>
                     </li>
@@ -226,7 +226,7 @@
     };
 
     if (window.location.href.indexOf("orderby") > -1) {
-      var order_val_url = parseInt(getUrlParameter("orderby"));
+      var order_val_url =getUrlParameter("orderby");
       $("#sort_rating").val(order_val_url);
     }
 
