@@ -26,8 +26,14 @@ class FrontPagesController < ApplicationController
 
   def activities_list
 
+    @all_activities_pure = return_all_activities_by_order
 
-    @all_activities = return_all_activities_by_order
+    if params.has_key?(:rank)
+      rank_search = params[:rank]
+      @all_activities = @all_activities_pure.where("rating >= ?",rank_search)
+    else
+      @all_activities = @all_activities_pure
+    end
 
     @activities = @all_activities.paginate(:page => params[:page], :per_page => 10)
     @temples = Temple
@@ -38,7 +44,7 @@ class FrontPagesController < ApplicationController
     @pleasant = 0
     @no_rating = 0
 
-    activities_rating_return(@all_activities)
+    activities_rating_return(@all_activities_pure)
 
     @temple_counter_hash = {}
     @activities_count = @all_activities.count
@@ -89,17 +95,15 @@ class FrontPagesController < ApplicationController
 
   def cities_search
 
-    if params.has_key?(:front_pages)
+    rank_search = ""
 
+    if params.has_key?(:front_pages)
       @city_name = params[:front_pages][:cityname]
     elsif params.has_key?(:cityname)
       @city_name = params[:cityname]
     else
       @city_name = ""
     end
-
-    puts "@uow-esunoe-ueo-sunoesut@city_name@city_name@city_name"
-    puts @city_name
 
     @city_key = return_city_key_by_name(@city_name)
 
@@ -114,6 +118,7 @@ class FrontPagesController < ApplicationController
     if @city_key.nil?
       @temples = Temple
       #@activities_for_count = Activity.all
+      actvities_where = @activities_all
       @activities = @activities_all.paginate(:page => params[:page], :per_page => 10)
 
       flash.now[:info] = "No Search result for " + @city_name
@@ -122,36 +127,36 @@ class FrontPagesController < ApplicationController
 
       @temples_search = Temple.find_by(city: @city_key)
 
+      actvities_where = Activity.where(temple_id: @temples_search.id)
+
+      if params.has_key?(:rank)
+        rank_search = params[:rank]
+        activities_connect = actvities_where.where("rating >= ?",rank_search)
+      else
+        activities_connect = actvities_where
+      end
+
       if params.has_key?(:orderby)
         order_met = params[:orderby]
 
         if order_met == "rankhigh"
-          puts "RANK HIGhhhhhh"
-
-          @activities_for_count = Activity.where(temple_id: @temples_search.id).order(rating: :desc)
+          @activities_for_count = activities_connect.order(rating: :desc)
         elsif order_met == "ranklow"
-          puts "RANK HIGlllllllll"
-
-          @activities_for_count = Activity.where(temple_id: @temples_search.id).order(rating: :asc)
+          @activities_for_count = activities_connect.order(rating: :asc)
         else
-          puts "NOOOOO RANK"
-
-          @activities_for_count = Activity.where(temple_id: @temples_search.id).order(created_at: :desc)
+          @activities_for_count = activities_connect.order(created_at: :desc)
         end
 
       else
-        puts "NOOOOO RANK"
-        @activities_for_count = Activity.all.order(created_at: :desc)
+        @activities_for_count = activities_connect.order(created_at: :desc)
       end
-
-
 
       @activities = @activities_for_count.paginate(:page => params[:page], :per_page => 10)
 
       @temples = Temple
     end
 
-    activities_rating_return(@activities)
+    activities_rating_return(actvities_where)
 
     @temple_counter_hash = {}
     @activities_count = @activities_all.count
@@ -179,18 +184,24 @@ class FrontPagesController < ApplicationController
   def activities_rating_return(activities)
     activities.each { |activity|
 
+      @no_rating += 1
+
       if activity.rating.nil?
-        @no_rating += 1
+
       elsif activity.rating >= 9
         @superb_count += 1
+        @very_good_count += 1
+        @good_count += 1
+        @pleasant += 1
       elsif activity.rating >= 8
         @very_good_count += 1
-      elsif activity.rating >= 8
         @good_count += 1
+        @pleasant += 1
+      elsif activity.rating >= 7
+        @good_count += 1
+        @pleasant += 1
       elsif activity.rating >= 6
         @pleasant += 1
-      else
-        @no_rating += 1
       end
     }
   end

@@ -30,11 +30,11 @@
             <div class="filter_type">
               <h6>Review Score</h6>
               <ul>
-                <li><label><input type="checkbox" id="">Superb: 9+ (<%= @superb_count.to_s %>)</label></li>
-                <li><label><input type="checkbox">Very good: 8+ (<%= @very_good_count %>)</label></li>
-                <li><label><input type="checkbox">Good: 7+ (<%= @good_count %>)</label></li>
-                <li><label><input type="checkbox">Pleasant: 6+ (<%= @pleasant %>)</label></li>
-                <li><label><input type="checkbox">No rating (<%= @no_rating %>)</label></li>
+                <li><label><input id="superb_checkbox" type="checkbox" class="rank-list-checkbox" value="9">Superb: 9+ (<%= @superb_count.to_s %>)</label></li>
+                <li><label><input id="very_good_checkbox" type="checkbox" class="rank-list-checkbox" value="8">Very good: 8+ (<%= @very_good_count %>)</label></li>
+                <li><label><input id="good_checkbox" type="checkbox" class="rank-list-checkbox" value="7">Good: 7+ (<%= @good_count %>)</label></li>
+                <li><label><input id="pleasant_checkbox" type="checkbox" class="rank-list-checkbox" value="6">Pleasant: 6+ (<%= @pleasant %>)</label></li>
+                <li><label><input id="norate_checkbox" type="checkbox" class="rank-list-checkbox" value="0">No rating (<%= @no_rating %>)</label></li>
               </ul>
             </div>
             <div class="filter_type">
@@ -225,27 +225,60 @@
       }
     };
 
-    function openRankWindow(cityname,rank_var){
-//      if (window.location.href.indexOf("?") > -1) {
-//        window.location = url + "&orderby=" + rank_var + "&" + cityname;
-//      } else {
-//        window.location = url + "?orderby=" + rank_var + "&" + cityname;
-//      }
+    if (window.location.href.indexOf("orderby") > -1) {
+      var order_val_url = parseInt(getUrlParameter("orderby"));
+      $("#sort_rating").val(order_val_url);
+    }
 
-      window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname;
+    if (window.location.href.indexOf("rank=") > -1) {
+      var rank_val_url_re = getUrlParameter("rank");
+      $("#sort_rating").val(order_val_url);
+
+      if(rank_val_url_re >= 9){
+        $("#superb_checkbox").prop( "checked", true );
+      } else
+      if(rank_val_url_re >= 8){
+        $("#very_good_checkbox").prop( "checked", true );
+      } else
+      if(rank_val_url_re >= 7){
+        $("#good_checkbox").prop( "checked", true );
+      } else
+      if(rank_val_url_re >= 6){
+        $("#pleasant_checkbox").prop( "checked", true );
+      }
+
+    }
+
+    function openRankWindow(cityname,rank_var){
+      if (window.location.href.indexOf("rank=") > -1) {
+        //window.location = url + "&orderby=" + rank_var + "&" + cityname;
+        window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname + "&rank=" +getUrlParameter("rank");
+      } else {
+        //window.location = url + "?orderby=" + rank_var + "&" + cityname;
+        window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname
+      }
     }
 
     var cityname_url = "";
     var url = location.protocol + '//' + location.host + location.pathname;
 
 
+//    $('input').iCheck({
+//      radioClass: 'iradio_square-grey'
+//    });
+
     $('input').iCheck({
-      checkboxClass: 'icheckbox_square-grey',
-      radioClass: 'iradio_square-grey'
+      checkboxClass: 'icheckbox_square-grey'
     });
 
-    $('input').on('ifChecked', function(event){
+    $('.rank-list-checkbox').on('ifChecked', function(event){
+      var rank_filter_val = $(this).val();
 
+      if(rank_filter_val != "0"){
+        window.location = url + "?rank=" + rank_filter_val + "&cityname=" + cityname_url;
+      } else {
+        window.location = url + "?cityname=" + cityname_url;
+      }
 
     });
 
@@ -254,7 +287,6 @@
     }
 
     $('#sort_rating').change(function(){
-      alert($(this).val());
 
       if ($(this).val() === "rankhigh"){
 
@@ -271,6 +303,12 @@
           openRankWindow(cityname_url,"ranklow");
         } else {
           openRankWindow("","ranklow");
+        }
+      } else {
+        if(cityname_url != ""){
+          openRankWindow(cityname_url,"");
+        } else {
+          openRankWindow("","");
         }
       }
 
