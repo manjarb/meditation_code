@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-
   class << self
     #Return hash digest of the given string
     def digest(string)

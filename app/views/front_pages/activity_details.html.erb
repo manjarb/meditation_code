@@ -294,7 +294,7 @@
             </div>
           </div>
   
-          <% unless @activity.payment_price.nil? %>
+          <% if @activity.payment_need %>
             <div class="total-price-detail-row">
               <p>Total Cost <span class="pull-right"><span id="price_total_span_box"></span> &#3647;</span></p>
             </div>
@@ -302,7 +302,7 @@
   
           <br>
   
-          <% if @activity.avaliable == true && @activity.booking_status  %>
+          <% if @activity.avaliable == true && @activity.booking_status == true %>
             <!--<a class="btn_full" href="cart_hotel.html">Book now</a>-->
               <%= f.submit :"Book now", class: 'btn_full' %>
           <% end %>

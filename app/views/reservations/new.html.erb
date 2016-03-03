@@ -40,188 +40,207 @@
 </div><!-- Position -->
 
 <section class="confirmation-details-container light-grey-bg">
-  <div class="container margin_60">
+  <%= form_for(@reservation, url: activity_reservations_path(@activity.id)) do |f| %>
+    <div class="container margin_60">
+      <div class="col-md-8 add_bottom_15">
 
-    <div class="col-md-8 add_bottom_15">
-      <%= form_for(@reservation, url: activity_reservations_path(@activity.id)) do |f| %>
-        <div class="form_title">
-          <h3><strong>1</strong>Your Details</h3>
-        </div>
-        <div class="step">
-          <%= render 'shared/error_messages' , object:f.object %>
-          <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>First name</label>
-                <%= f.text_field :firstname, class: "form-control" %>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>Last name</label>
-                <%= f.text_field :lastname, class: "form-control" %>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>Email</label>
-                <%= f.email_field :email, class: "form-control" %>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>Confirm email</label>
-                <%= f.email_field :confirm_email, class: "form-control" %>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>Telephone</label>
-                <input type="text" id="telephone_booking" name="telephone_booking" class="form-control">
-              </div>
-            </div>
-          </div>
-        </div><!--End step -->
+        <%= f.hidden_field :quantity, :value => @quantity %>
 
-        <div class="form_title">
-          <h3><strong>2</strong>Payment Information</h3>
-        </div>
+          <div class="form_title">
+            <h3><strong>1</strong>Your Details</h3>
+          </div>
           <div class="step">
-            <div class="form-group">
-              <label>Name on card</label>
-              <input type="text" class="form-control" id="name_card_bookign" name="name_card_bookign">
+            <%= render 'shared/error_messages' , object:f.object %>
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label>First name</label>
+                  <%= f.text_field :firstname, class: "form-control" %>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label>Last name</label>
+                  <%= f.text_field :lastname, class: "form-control" %>
+                </div>
+              </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-sm-6">
                 <div class="form-group">
-                  <label>Card number</label>
-                  <input type="text" id="card_number" name="card_number" class="form-control">
+                  <label>Email</label>
+                  <%= f.email_field :email, class: "form-control", :value => @user.email %>
                 </div>
               </div>
               <div class="col-md-6 col-sm-6">
-                <%= image_tag("cards.png", alt: "cards",class: "cards",width:"207", height:"43") %>
+                <div class="form-group">
+                  <label>Confirm email</label>
+                  <%= f.email_field :confirm_email, class: "form-control" %>
+                </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
-                <label>Expiration date</label>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" id="expire_month" name="expire_month" class="form-control" placeholder="MM">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" id="expire_year" name="expire_year" class="form-control" placeholder="Year">
-                    </div>
-                  </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label>Telephone</label>
+                  <%= f.text_field :phone_number, class: "form-control", :value => @user.phone_number %>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Security code</label>
+            </div>
+          </div><!--End step -->
+
+          <% if false %>
+            <div class="form_title">
+              <h3><strong>2</strong>Payment Information</h3>
+            </div>
+            <div class="step">
+              <div class="form-group">
+                <label>Name on card</label>
+                <input type="text" class="form-control" id="name_card_bookign" name="name_card_bookign">
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group">
+                    <label>Card number</label>
+                    <input type="text" id="card_number" name="card_number" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <%= image_tag("cards.png", alt: "cards",class: "cards",width:"207", height:"43") %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Expiration date</label>
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <div class="form-group">
-                        <input type="text" id="ccv" name="ccv" class="form-control" placeholder="CCV">
+                        <input type="text" id="expire_month" name="expire_month" class="form-control" placeholder="MM">
                       </div>
                     </div>
-                    <div class="col-md-8">
-                      <%= image_tag("icon_ccv.gif", alt: "ccv",width:"50", height:"29") %>
-                      <small>Last 3 digits</small>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" id="expire_year" name="expire_year" class="form-control" placeholder="Year">
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Security code</label>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <input type="text" id="ccv" name="ccv" class="form-control" placeholder="CCV">
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <%= image_tag("icon_ccv.gif", alt: "ccv",width:"50", height:"29") %>
+                        <small>Last 3 digits</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!--End row -->
+            </div><!--End step -->
+            <div id="policy">
+              <h4>Cancellation policy</h4>
+              <br>
+              <div class="form-group">
+                <label><input type="checkbox" name="policy_terms" id="policy_terms">I accept terms and conditions and general policy.</label>
               </div>
-            </div><!--End row -->
-          </div><!--End step -->
-          <div id="policy">
-            <h4>Cancellation policy</h4>
-            <br>
-            <div class="form-group">
-              <label><input type="checkbox" name="policy_terms" id="policy_terms">I accept terms and conditions and general policy.</label>
+
+              <%= f.submit "Book now", class: "btn_1 green medium" %>
             </div>
+          <% end %>
 
-            <%= f.submit "Book now", class: "btn_1 green medium" %>
-          </div>
 
-      <% end %>
 
+      </div>
+      <aside class="col-md-4">
+        <div class="box_style_1">
+          <h3 class="inner">- Summary -</h3>
+          <table class="table table_summary">
+            <tbody>
+            <tr>
+              <td colspan="2">
+                <h3><%= @activity.name %></h3>
+              </td>
+
+            </tr>
+            <tr>
+              <td colspan="2">
+                <strong class="display-block margin-bottom-10">Address</strong>
+                <%= @temple.address %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Location
+              </td>
+              <td class="text-right">
+                <%= return_city_by_key(@temple.city) %>, <%= @temple.country %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Start Date
+              </td>
+              <td class="text-right">
+                <%= @activity.start_at.strftime("%d %B %Y")  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                End Date
+              </td>
+              <td class="text-right">
+                <%= @activity.end_at.strftime("%d %B %Y")  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Persons
+              </td>
+              <td class="text-right">
+                2
+              </td>
+            </tr>
+            <% if @activity.payment_need %>
+              <tr class="total">
+                <td>
+                  Total
+                </td>
+                <td class="text-right">
+                  $154
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+          <% if @activity.avaliable == true && @activity.booking_status == true  %>
+              <!--<a class="btn_full" href="cart_hotel.html">Book now</a>-->
+              <%= f.submit "Book now", class: "btn_full" %>
+          <% end %>
+          <!--<a class="btn_full" href="confirmation_hotel.html">Book now</a>-->
+          <!--<a class="btn_full_outline" href="single_hotel.html"></a>-->
+
+          <%= link_to activity_show_path(@activity.id) , class: "btn_full_outline" do %>
+              <i class="icon-right"></i> Modify your search
+          <% end %>
+
+
+        </div>
+        <div class="box_style_4">
+          <i class="icon_set_1_icon-57"></i>
+          <h4>Need <span>Help?</span></h4>
+          <br>
+          <a href="tel://+<%= @temple.phone_number %>" class="phone">+<%= @temple.phone_number %></a>
+          <small>Monday to Friday 9.00am - 7.30pm</small>
+        </div>
+      </aside>
     </div>
-    <aside class="col-md-4">
-      <div class="box_style_1">
-        <h3 class="inner">- Summary -</h3>
-        <table class="table table_summary">
-          <tbody>
-          <tr>
-            <td colspan="2">
-              <h3><%= @activity.name %></h3>
-            </td>
-
-          </tr>
-          <tr>
-            <td colspan="2">
-              <strong class="display-block margin-bottom-10">Address</strong>
-              <%= @temple.address %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Location
-            </td>
-            <td class="text-right">
-              City,Country
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Start Date
-            </td>
-            <td class="text-right">
-              xxxx
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Persons
-            </td>
-            <td class="text-right">
-              2
-            </td>
-          </tr>
-          <tr class="total">
-            <td>
-              Total
-            </td>
-            <td class="text-right">
-              $154
-            </td>
-          </tr>
-          </tbody>
-        </table>
-        <a class="btn_full" href="confirmation_hotel.html">Book now</a>
-        <!--<a class="btn_full_outline" href="single_hotel.html"></a>-->
-
-        <%= link_to activity_show_path(@activity.id) , class: "btn_full_outline" do %>
-            <i class="icon-right"></i> Modify your search
-        <% end %>
-
-
-      </div>
-      <div class="box_style_4">
-        <i class="icon_set_1_icon-57"></i>
-        <h4>Need <span>Help?</span></h4>
-        <a href="tel://004542344599" class="phone">+45 423 445 99</a>
-        <small>Monday to Friday 9.00am - 7.30pm</small>
-      </div>
-    </aside>
-  </div>
-
+  <% end %>
 </section>
 
 <% content_for :footer_script do %>
