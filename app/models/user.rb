@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :reviews, dependent: :destroy
+  has_many :reservations, dependent: :destroy
   attr_accessor :remember_token, :reset_token,:activation_token
 
   validates :name, presence: true ,length: {maximum: 50}

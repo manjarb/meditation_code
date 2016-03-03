@@ -78,6 +78,8 @@ class FrontPagesController < ApplicationController
 
     @reviews_count = @reviews_data.count
 
+    @reservation = Reservation.new
+
     sum_review_score = 0
 
     if @reviews_count > 0

@@ -1,0 +1,33 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.reservation_banner_section {
+  min-height: 380px;
+  background: url("shutterstock_96393731.jpg") no-repeat center 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+
+  .intro_title {
+    display: block;
+    padding-top: 140px;
+    h1 {
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .bs-wizard {
+      padding-top: 15px;
+    }
+    .bs-wizard-stepnum {
+      color: #fff;
+    }
+  }
+
+}
+.confirmation-details-container {
+  .form_title {
+
+  }
+}

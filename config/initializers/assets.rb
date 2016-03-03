@@ -22,3 +22,10 @@ Rails.application.config.assets.precompile += %w( slider-pro.min.css )
 Rails.application.config.assets.precompile += %w( map.js )
 Rails.application.config.assets.precompile += %w( infobox.js )
 Rails.application.config.assets.precompile += %w( admin.min.css )
+
+Rails.application.config.assets.precompile += %w( openhand.cur )
+Rails.application.config.assets.precompile += %w( closedhand.cur )
+Rails.application.config.assets.precompile += %w( blank.gif )
+
+Rails.application.config.assets.precompile += %w( blank.gif )
+Rails.application.config.assets.precompile += %w( blank.gif )

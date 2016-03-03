@@ -224,95 +224,103 @@
 
     </div>
 
-    <aside class="col-md-4">
-      <p class="hidden-sm hidden-xs">
-        <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">View on map</a>
-      </p>
-      <br>
-      <div class="box_style_1 expose">
-        <h3 class="inner">Availability</h3>
-        <div class="row">
-          <% if @activity.permanent == true %>
-              <div class="col-md-12">
-                <p><strong>Date: </strong> Always open</p>
+    <%= form_for(@reservation , url: new_activity_reservation_path(@activity.id),method: :get) do |f|%>
+      <aside class="col-md-4">
+        <p class="hidden-sm hidden-xs">
+          <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">View on map</a>
+        </p>
+        <br>
+        <div class="box_style_1 expose">
+          <h3 class="inner">Availability</h3>
+          <div class="row">
+            <% if @activity.permanent == true %>
+                <div class="col-md-12">
+                  <p><strong>Date: </strong> Always open</p>
+                </div>
+                <br>
+                <br>
+            <% else %>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label><i class="icon-calendar-7"></i> Start Date</label>
+                  <br>
+                  <!--<input class="date-pick form-control" data-date-format="M d, D" type="text">-->
+                  <%= return_month_readble_format(@activity.start_at) %>
+                </div>
               </div>
-              <br>
-              <br>
-          <% else %>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label><i class="icon-calendar-7"></i> End Date</label>
+                  <br>
+                  <!--<input class="date-pick form-control" data-date-format="M d, D" type="text">-->
+                  <%= return_month_readble_format(@activity.end_at) %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="row">
             <div class="col-md-6 col-sm-6">
               <div class="form-group">
-                <label><i class="icon-calendar-7"></i> Start Date</label>
-                <br>
-                <!--<input class="date-pick form-control" data-date-format="M d, D" type="text">-->
-                <%= return_month_readble_format(@activity.start_at) %>
+                <label>Adults</label>
+                <div class="numbers-row">
+                  <!--<input type="text" value="1" id="capacity-booking"-->
+                         <!--class="qty2 form-control" name="quantity">-->
+                  <%= f.text_field :quantity , class: 'qty2 form-control',
+                                   id: 'capacity-booking',
+                                   value: 1 %>
+                  </div>
               </div>
             </div>
+  
+          </div>
+  
+          <div class="row">
             <div class="col-md-6 col-sm-6">
               <div class="form-group">
-                <label><i class="icon-calendar-7"></i> End Date</label>
+                <label>Status</label>
                 <br>
-                <!--<input class="date-pick form-control" data-date-format="M d, D" type="text">-->
-                <%= return_month_readble_format(@activity.end_at) %>
+                <% if @activity.avaliable == true %>
+  
+                    <div class="alert alert-success inline-block-display" role="alert">
+                      <strong>Open</strong>
+                    </div>
+                <% else %>
+                    <div class="alert alert-danger inline-block-display" role="alert">
+                      <strong>Close</strong>
+                    </div>
+  
+                <% end %>
               </div>
+            </div>
+          </div>
+  
+          <% unless @activity.payment_price.nil? %>
+            <div class="total-price-detail-row">
+              <p>Total Cost <span class="pull-right"><span id="price_total_span_box"></span> &#3647;</span></p>
             </div>
           <% end %>
+  
+          <br>
+  
+          <% if @activity.avaliable == true && @activity.booking_status  %>
+            <!--<a class="btn_full" href="cart_hotel.html">Book now</a>-->
+              <%= f.submit :"Book now", class: 'btn_full' %>
+          <% end %>
+          <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a>
         </div>
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <div class="form-group">
-              <label>Adults</label>
-              <div class="numbers-row">
-                <input type="text" value="1" id="adults" class="qty2 form-control" name="quantity">
-              </div>
-            </div>
-          </div>
-
+  
+        <div class="box_style_4">
+          <i class="icon_set_1_icon-90"></i>
+          <br>
+          <br>
+          <h4><span>Information</span> by phone</h4>
+          <br>
+          <a href="tel://<%= @temple.country_code %><%= @temple.phone_number %>" class="phone"><%= @temple.country_code %> <%= @temple.phone_number %></a>
+          <!--<small>Monday to Friday 9.00am - 7.30pm</small>-->
         </div>
+      </aside>
+    <% end %>
 
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <div class="form-group">
-              <label>Status</label>
-              <br>
-              <% if @activity.avaliable == true %>
-
-                  <div class="alert alert-success inline-block-display" role="alert">
-                    <strong>Open</strong>
-                  </div>
-              <% else %>
-                  <div class="alert alert-danger inline-block-display" role="alert">
-                    <strong>Close</strong>
-                  </div>
-
-              <% end %>
-            </div>
-          </div>
-        </div>
-
-        <% unless @activity.price.nil? %>
-          <div class="total-price-detail-row">
-            <p>Total Cost <span class="pull-right"><%= @activity.price %> &#3647;</span></p>
-          </div>
-        <% end %>
-
-        <br>
-
-        <% if @activity.avaliable == true && @activity.booking_status  %>
-          <a class="btn_full" href="cart_hotel.html">Book now</a>
-        <% end %>
-        <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a>
-      </div>
-
-      <div class="box_style_4">
-        <i class="icon_set_1_icon-90"></i>
-        <br>
-        <br>
-        <h4><span>Information</span> by phone</h4>
-        <br>
-        <a href="tel://<%= @temple.country_code %><%= @temple.phone_number %>" class="phone"><%= @temple.country_code %> <%= @temple.phone_number %></a>
-        <!--<small>Monday to Friday 9.00am - 7.30pm</small>-->
-      </div>
-    </aside>
   </div>
 </div>
 </div>
@@ -383,7 +391,45 @@
           largeSize: 3000,
           thumbnailArrows: true,
           autoplay: false
+
         });
+
+
+        var activity_price = <%= @activity.payment_price %>;
+
+        var people_count = $("#capacity-booking").val();
+
+        $("#price_total_span_box").text(activity_price * people_count);
+
+        $(".button_inc").click(function() {
+
+          var person_quantity = $("#capacity-booking").val();
+
+          if(person_quantity < 1){
+            $("#capacity-booking").val(1);
+          }
+
+          people_count = $("#capacity-booking").val();
+
+          $("#price_total_span_box").text(activity_price * people_count);
+        });
+
+        $("#capacity-booking").keydown(function (e) {
+          // Allow: backspace, delete, tab, escape, enter and .
+          if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                // Allow: Ctrl+A, Command+A
+              (e.keyCode == 65 && ( e.ctrlKey === true || e.metaKey === true ) ) ||
+                // Allow: home, end, left, right, down, up
+              (e.keyCode >= 35 && e.keyCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+          }
+          // Ensure that it is a number and stop the keypress
+          if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+          }
+        });
+
       });
     </script>
 

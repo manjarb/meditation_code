@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get '/activities/:cityname' => 'front_pages#cities_search', :as => 'activities_like_search'
   get '/activities' => 'front_pages#activities_list'
   get '/activity/:id' => 'front_pages#activities_details', :as => 'activity_show'
+
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -51,7 +52,7 @@ Rails.application.routes.draw do
   resources :admin_users, :only => [:edit,:update,:new,:create,:list,:destroy]
   resources :admin_password_resets, only: [:new, :create, :edit, :update]
   resources :temples, only: [:new, :create, :edit, :update,:list,:destroy]
-  resources :activities, only: [:new, :create, :edit, :update,:list,:destroy]
+
   resources :bank_accounts, only: [:edit,:new,:create,:update,:destroy]
   resources :users,only: [:create,:edit,:new,:update]
   resources :account_activations, only: [:edit]
@@ -62,6 +63,10 @@ Rails.application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#facebook_create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   #get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :activities, only: [:new, :create, :edit, :update,:list,:destroy] do
+    resources :reservations, only: [:new,:create]
+  end
 
 
 
