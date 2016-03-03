@@ -132,7 +132,7 @@
                       </div>
                     </div>
                     <div class="col-md-8">
-                      <%= image_tag("icon_ccv.gif", alt: "cards",class: "cards",width:"50", height:"29") %>
+                      <%= image_tag("icon_ccv.gif", alt: "ccv",width:"50", height:"29") %>
                       <small>Last 3 digits</small>
                     </div>
                   </div>
@@ -154,11 +154,71 @@
 
     </div>
     <aside class="col-md-4">
-      <h3><%= @activity.name %></h3>
-      <br>
-      <p>
-        <%= @temple.address %>
-      </p>
+      <div class="box_style_1">
+        <h3 class="inner">- Summary -</h3>
+        <table class="table table_summary">
+          <tbody>
+          <tr>
+            <td colspan="2">
+              <h3><%= @activity.name %></h3>
+            </td>
+
+          </tr>
+          <tr>
+            <td colspan="2">
+              <strong class="display-block margin-bottom-10">Address</strong>
+              <%= @temple.address %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Location
+            </td>
+            <td class="text-right">
+              City,Country
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Start Date
+            </td>
+            <td class="text-right">
+              xxxx
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Persons
+            </td>
+            <td class="text-right">
+              2
+            </td>
+          </tr>
+          <tr class="total">
+            <td>
+              Total
+            </td>
+            <td class="text-right">
+              $154
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <a class="btn_full" href="confirmation_hotel.html">Book now</a>
+        <!--<a class="btn_full_outline" href="single_hotel.html"></a>-->
+
+        <%= link_to activity_show_path(@activity.id) , class: "btn_full_outline" do %>
+            <i class="icon-right"></i> Modify your search
+        <% end %>
+
+
+      </div>
+      <div class="box_style_4">
+        <i class="icon_set_1_icon-57"></i>
+        <h4>Need <span>Help?</span></h4>
+        <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+        <small>Monday to Friday 9.00am - 7.30pm</small>
+      </div>
     </aside>
   </div>
 

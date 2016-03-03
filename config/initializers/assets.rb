@@ -27,5 +27,5 @@ Rails.application.config.assets.precompile += %w( openhand.cur )
 Rails.application.config.assets.precompile += %w( closedhand.cur )
 Rails.application.config.assets.precompile += %w( blank.gif )
 
-Rails.application.config.assets.precompile += %w( blank.gif )
-Rails.application.config.assets.precompile += %w( blank.gif )
+Rails.application.config.assets.precompile += %w( icon_ccv.gif )
+Rails.application.config.assets.precompile += %w( cards.png )
