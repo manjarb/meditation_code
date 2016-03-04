@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
   before_action :logged_in_user, only:[:create]
   before_action :check_robot_cut, only:[:create]
+  before_action :check_redundent_comment, only:[:create]
 
   def create
     user_id = current_user.id
@@ -30,6 +31,13 @@ class ReviewsController < ApplicationController
   def check_robot_cut
     if params[:review][:robot_cut].to_i != 21
       flash[:danger] = "Please provide correct number for the review question"
+      redirect_to activity_show_path(params[:activity_id])
+    end
+  end
+
+  def check_redundent_comment
+    if review_find = Review.find_by(user_id: current_user.id,activity_id: params[:activity_id])
+      flash[:danger] = "You are already reviewed this activity"
       redirect_to activity_show_path(params[:activity_id])
     end
   end
