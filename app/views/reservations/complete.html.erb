@@ -1,1 +1,127 @@
-<h1>Complete</h1>
+<section class="reservation_banner_section">
+  <div class="intro_title">
+    <h1>Congratulations !</h1>
+    <div class="bs-wizard">
+
+      <div class="col-xs-4 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">Reservation</div>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <div class="bs-wizard-dot"></div>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">Confirmation</div>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <div href="#" class="bs-wizard-dot"></div>
+      </div>
+
+      <div class="col-xs-4 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">Finish!</div>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <div href="confirmation_hotel.html" class="bs-wizard-dot"></div>
+      </div>
+
+    </div>  <!-- End bs-wizard -->
+  </div>
+</section>
+
+<div id="position">
+  <div class="container">
+    <ul>
+      <li>
+        <%= link_to "Activities", activities_path %>
+      </li>
+      <li>
+        <%= link_to @activity.name, activity_show_path(@activity.id) %>
+      </li>
+      <li>Success Booking</li>
+    </ul>
+  </div>
+</div><!-- Position -->
+
+<div class="container margin_60">
+  <div class="row">
+    <div class="col-md-8 add_bottom_15">
+      <div class="form_title">
+        <h3><strong><i class="icon-tag-1"></i></strong>Booking summary</h3>
+        <p>
+          Mussum ipsum cacilds, vidis litro abertis.
+        </p>
+      </div>
+      <div class="step">
+        <table class="table confirm">
+          <tbody>
+            <tr>
+              <td>
+                <strong>Name</strong>
+              </td>
+              <td>
+                <%= @reservation.firstname %> <%= @reservation.lastname %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>email</strong>
+              </td>
+              <td>
+                <%= @reservation.phone_number %>
+              </td>
+            </tr>
+            <% if !@reservation.activity_start_date.nil? && @reservation.activity_start_date != "" %>
+                <tr>
+                  <td>
+                    <strong>Start Date</strong>
+                  </td>
+                  <td>
+                    <%= @reservation.activity_start_date.strftime("%d %B %Y") %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>End Date</strong>
+                  </td>
+                  <td>
+                    <%= @reservation.activity_end_date.strftime("%d %B %Y") %>
+                  </td>
+                </tr>
+            <% end %>
+            <tr>
+              <td>
+                <strong>Phone number</strong>
+              </td>
+              <td>
+                <%= @reservation.phone_number %>
+              </td>
+            </tr>
+            <% unless @reservation.payment_amount.nil? %>
+              <tr>
+                <td>
+                  <strong>TOTAL COST</strong>
+                </td>
+                <td>
+                  <%= @reservation.payment_amount %> Baht
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <aside class="col-md-4">
+      <div class="box_style_1">
+        <h3 class="inner">Thank you!</h3>
+        <p>
+          Nihil inimicus ex nam, in ipsum dignissim duo. Tale principes interpretaris vim ei, has posidonium definitiones ut. Duis harum fuisset ut his, duo an dolor epicuri appareat.
+        </p>
+        <hr>
+        <a class="btn_full_outline" href="invoice.html" target="_blank">View your invoice</a>
+      </div>
+      <div class="box_style_4">
+        <i class="icon_set_1_icon-89"></i>
+        <h4>Have <span>questions?</span></h4>
+        <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+        <small>Monday to Friday 9.00am - 7.30pm</small>
+      </div>
+    </aside>
+  </div>
+</div>

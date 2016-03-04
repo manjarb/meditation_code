@@ -26,6 +26,8 @@ class ReservationsController < ApplicationController
     @reservation.activity_id = @activity.id
     @reservation.user_id = @user.id
     @reservation.confirm_email = params[:reservation][:confirm_email]
+    @reservation.activity_start_date = @activity.start_at
+    @reservation.activity_end_date = @activity.end_at
 
     if @reservation.save
       redirect_to activity_reservation_complete_path(@activity.id,@reservation.id)
@@ -36,6 +38,8 @@ class ReservationsController < ApplicationController
   end
 
   def complete
+    @activity = Activity.find_by(id: params[:activity_id])
+    @reservation = Reservation.find_by(id: params[:reservation_id])
 
   end
 

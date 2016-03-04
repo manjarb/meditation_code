@@ -37,9 +37,12 @@ class Reservation < ActiveRecord::Base
 
   def check_redundent_reservation
 
-    activity_find = Reservation.find_by(user_id: self.user_id,payment_made: self.payment_made)
+    activity_find = Reservation.find_by(activity_start_date: self.activity_start_date,
+                                        payment_made: self.payment_made)
+    activity_find_end = Reservation.find_by(activity_end_date: self.activity_start_date,
+                                            payment_made: self.payment_made)
 
-    if activity_find
+    if activity_find || activity_find_end
       self.errors[:base] << "You already made the reservation on this day"
     else
 

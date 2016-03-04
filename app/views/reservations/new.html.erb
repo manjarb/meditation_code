@@ -29,7 +29,7 @@
   <div class="container">
     <ul>
       <li>
-        <a href="#">Acitivity</a>
+        <%= link_to "Activities", activities_path %>
       </li>
       <li>
         <%= link_to @activity.name, activity_show_path(@activity.id) %>
@@ -182,22 +182,34 @@
                 <%= return_city_by_key(@temple.city) %>, <%= @temple.country %>
               </td>
             </tr>
-            <tr>
-              <td>
-                Start Date
-              </td>
-              <td class="text-right">
-                <%= @activity.start_at.strftime("%d %B %Y")  %>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                End Date
-              </td>
-              <td class="text-right">
-                <%= @activity.end_at.strftime("%d %B %Y")  %>
-              </td>
-            </tr>
+            <% if @activity.permanent == true %>
+                <tr>
+                  <td>
+                    Date:
+                  </td>
+                  <td class="text-right">
+                    Always open
+                  </td>
+                </tr>
+
+            <% else %>
+              <tr>
+                <td>
+                  Start Date
+                </td>
+                <td class="text-right">
+                  <%= @activity.start_at.strftime("%d %B %Y")  %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  End Date
+                </td>
+                <td class="text-right">
+                  <%= @activity.end_at.strftime("%d %B %Y")  %>
+                </td>
+              </tr>
+            <% end %>
             <tr>
               <td>
                 Persons
