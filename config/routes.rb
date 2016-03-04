@@ -65,7 +65,9 @@ Rails.application.routes.draw do
   #get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :activities, only: [:new, :create, :edit, :update,:list,:destroy] do
-    resources :reservations, only: [:new,:create]
+    resources :reservations, only: [:new,:create] do
+      get '/complete' => 'reservations#complete'
+    end
   end
 
 

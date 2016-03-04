@@ -14,23 +14,37 @@ class Reservation < ActiveRecord::Base
   validates :lastname, presence: true ,length: {maximum: 50}
   validates :email, presence: true, length: { maximum: 255 },
             format: { with: VALID_EMAIL_REGEX },
-            uniqueness: true,
             case_sensitive: false
   validates :phone_number, presence: true
 
   before_save { self.email = self.email.downcase }
+  before_save { self.confirm_email = self.confirm_email.downcase }
 
   validate :check_email_confirmation
+  validate :check_redundent_reservation
 
   private
 
   def check_email_confirmation
+
     if self.email == self.confirm_email
 
     else
-      self.errors[:base] << "You can't leave start and end date blank with Permanent Event"
+      self.errors[:base] << "Your email confirmation didn't match"
       return false
     end
+  end
+
+  def check_redundent_reservation
+
+    activity_find = Reservation.find_by(user_id: self.user_id,payment_made: self.payment_made)
+
+    if activity_find
+      self.errors[:base] << "You already made the reservation on this day"
+    else
+
+    end
+
   end
 
 end
