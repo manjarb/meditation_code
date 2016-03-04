@@ -6,11 +6,14 @@ class ReviewsController < ApplicationController
 
   def create
     user_id = current_user.id
+    user_name = current_user.username
     activity_id = params[:activity_id]
 
     @review = Review.new(activity_param)
     @review.user_id = user_id
+    @review.username = user_name
     @review.activity_id = activity_id
+
 
     if @review.save
       flash[:success] = "Finished submit your review"

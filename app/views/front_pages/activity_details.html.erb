@@ -198,11 +198,11 @@
                 <div class="review_strip_single">
                   <!--<img src="img/avatar1.jpg" alt="" class="img-circle">-->
                   <small> - <%= return_month_readble_format(review.created_at) %> -</small>
-                  <h4><%= return_username_by_id(review.user_id) %></h4>
+                  <h4><%= review.username %></h4>
                   <p>
                     <%= review.comment %>
                   </p>
-
+                  <br>
                   <% unless review.score.nil? %>
 
                       <% rating_rounds = returnRatingCounter(review.score) %>
@@ -318,7 +318,8 @@
           <br>
           <h4><span>Information</span> by phone</h4>
           <br>
-          <a href="tel://<%= @temple.country_code %><%= @temple.phone_number %>" class="phone"><%= @temple.country_code %> <%= @temple.phone_number %></a>
+          <a href="tel://<%= @temple.country_code %><%= @temple.phone_number %>"
+             class="phone"><%= @temple.country_code %> <%= @temple.phone_number %></a>
           <!--<small>Monday to Friday 9.00am - 7.30pm</small>-->
         </div>
       </aside>

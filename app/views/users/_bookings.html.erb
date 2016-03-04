@@ -1,75 +1,65 @@
-<div id="tools">
-  <div class="row">
-    <div class="col-md-3 col-sm-3 col-xs-6">
-      <div class="styled-select-filters">
-        <select name="sort_type" id="sort_type">
-          <option value="" selected>Sort by type</option>
-          <option value="tours">Tours</option>
-          <option value="hotels">Hotels</option>
-          <option value="transfers">Transfers</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-md-3 col-sm-3 col-xs-6">
-      <div class="styled-select-filters">
-        <select name="sort_date" id="sort_date">
-          <option value="" selected>Sort by date</option>
-          <option value="oldest">Oldest</option>
-          <option value="recent">Recent</option>
-        </select>
-      </div>
-    </div>
-  </div>
-</div><!--/tools -->
+<!--<div id="tools">-->
+  <!--<div class="row">-->
+    <!--<div class="col-md-3 col-sm-3 col-xs-6">-->
+      <!--<div class="styled-select-filters">-->
+        <!--<select name="sort_type" id="sort_type">-->
+          <!--<option value="" selected>Sort by type</option>-->
+          <!--<option value="tours">Tours</option>-->
+          <!--<option value="hotels">Hotels</option>-->
+          <!--<option value="transfers">Transfers</option>-->
+        <!--</select>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-3 col-sm-3 col-xs-6">-->
+      <!--<div class="styled-select-filters">-->
+        <!--<select name="sort_date" id="sort_date">-->
+          <!--<option value="" selected>Sort by date</option>-->
+          <!--<option value="oldest">Oldest</option>-->
+          <!--<option value="recent">Recent</option>-->
+        <!--</select>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>&lt;!&ndash;/tools &ndash;&gt;-->
 
-<div class="strip_booking">
-  <div class="row">
-    <div class="col-md-2 col-sm-2">
-      <div class="date">
-        <span class="month">Dec</span>
-        <span class="day"><strong>23</strong>Sat</span>
-      </div>
-    </div>
-    <div class="col-md-6 col-sm-5">
-      <h3 class="hotel_booking">Hotel Mariott Paris<span>2 Adults / 2 Nights</span></h3>
-    </div>
-    <div class="col-md-2 col-sm-3">
-      <ul class="info_booking">
-        <li><strong>Booking id</strong> 23442</li>
-        <li><strong>Booked on</strong> Sat. 23 Dec. 2015</li>
-      </ul>
-    </div>
-    <div class="col-md-2 col-sm-2">
-      <div class="booking_buttons">
-        <a href="#0" class="btn_2">Edit</a>
-        <a href="#0" class="btn_3">Cancel</a>
-      </div>
-    </div>
-  </div><!-- End row -->
-</div><!-- End strip booking -->
+<% if @reservations.count > 0 %>
+  <% @reservations.each do |reservation| %>
+    <div class="strip_booking">
+      <div class="row">
+        <div class="col-md-2 col-sm-2">
+          <% unless reservation.activity_start_date.nil? %>
+            <div class="date">
+              <span class="month"><%= Date::MONTHNAMES[(reservation.activity_start_date).month] %></span>
 
-<div class="strip_booking">
-  <div class="row">
-    <div class="col-md-2 col-sm-2">
-      <div class="date">
-        <span class="month">Dec</span>
-        <span class="day"><strong>27</strong>Fri</span>
-      </div>
-    </div>
-    <div class="col-md-6 col-sm-5">
-      <h3 class="tours_booking">Louvre Museum<span>2 Adults / 2 Childs</span></h3>
-    </div>
-    <div class="col-md-2 col-sm-3">
-      <ul class="info_booking">
-        <li><strong>Booking id</strong> 23442</li>
-        <li><strong>Booked on</strong> Sat. 20 Dec. 2015</li>
-      </ul>
-    </div>
-    <div class="col-md-2 col-sm-2">
-      <div class="booking_buttons">
-        <a href="#0" class="btn_2">Edit</a>
-        <a href="#0" class="btn_3">Cancel</a>
-      </div>
-    </div>
-  </div><!-- End row -->
-</div><!-- End strip booking -->
+              <span class="day">
+                <strong><%= reservation.activity_start_date.day %></strong>
+                <%= reservation.activity_start_date.strftime("%A") %>
+              </span>
+            </div>
+          <% else %>
+            <div class="date">
+              <span class="day">Date on the activity</span>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-md-6 col-sm-5">
+          <h3 class="tours_booking"><%= reservation.activity_name %><span><%= reservation.quantity %> Adults</span></h3>
+        </div>
+        <div class="col-md-2 col-sm-3">
+          <ul class="info_booking">
+            <li><strong>Booking id</strong> <%= reservation.booking_id %></li>
+            <li><strong>Booked on</strong> <%= return_month_readble_format(reservation.created_at) %></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <div class="booking_buttons">
+            <%= link_to "Activity Details", activity_show_path(reservation.activity_id), class: "btn_2" %>
+            <% #link_to "Delete Booking", admin_user , method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+        </div>
+      </div><!-- End row -->
+    </div><!-- End strip booking -->
+  <% end %>
+<% else %>
+  <h3>No booking here please make it first. <%= link_to "See Activities", activities_path %> </h3>
+<% end %>

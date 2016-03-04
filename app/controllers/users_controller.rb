@@ -1,3 +1,5 @@
+require 'date'
+
 class UsersController < ApplicationController
 
   before_action :redirect_login_page, only: [:new]
@@ -39,6 +41,7 @@ class UsersController < ApplicationController
     elsif request.path == user_settings_path
 
     elsif request.path == user_bookings_path
+      @reservations = current_user.reservations.all
 
     elsif request.path == user_wishlist_path
 

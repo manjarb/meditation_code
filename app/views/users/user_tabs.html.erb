@@ -34,9 +34,11 @@
           <li class="<% if current_page?("/user/bookings") %> tab-current <% end %>">
             <%= link_to 'Bookings', user_bookings_path , class: "icon-booking" %>
           </li>
-          <li class="<% if current_page?("/user/payments") %> tab-current <% end %>">
-            <%= link_to 'Payments', user_payments_path , class: "icon-booking" %>
-          </li>
+          <% if false %>
+            <li class="<% if current_page?("/user/payments") %> tab-current <% end %>">
+              <%= link_to 'Payments', user_payments_path , class: "icon-booking" %>
+            </li>
+          <% end %>
           <li class="<% if current_page?("/user/wishlist") %> tab-current <% end %>">
             <%= link_to 'Wishlist', user_wishlist_path , class: "icon-booking" %>
           </li>
