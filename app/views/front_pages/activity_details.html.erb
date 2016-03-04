@@ -61,6 +61,9 @@
 
 <div class="light-grey-bg">
   <div class="container margin_60">
+    <% flash.each do |message_type,message|%>
+        <div class="alert alert-<%= message_type %>"><strong><%= message %></strong></div>
+    <% end %>
   <div class="row">
     <div class="col-md-8">
       <p class="visible-sm visible-xs">
@@ -181,11 +184,11 @@
         <div class="col-md-3">
           <h3>Reviews</h3>
           <br>
-          <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a review</a>
+          <% if logged_in? %>
+            <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a review</a>
+          <% end %>
         </div>
         <div class="col-md-9">
-
-
           <% if @reviews_count > 0 %>
               <div id="score_detail">
                 <span><%= @reviews_level %></span><%= return_review_level_text(@reviews_level) %> <small>(Based on <%= @reviews_count %> reviews)</small>
@@ -336,9 +339,35 @@
       <div class="modal-body">
         <div id="message-review">
         </div>
-        <form action="">
-          <h1>Sumbit review form</h1>
-        </form>
+        <%= form_for(@review , url: reviews_path) do |f|%>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Rating</label>
+                <select class="form-control" name="review[score]">
+                  <option value="9">9</option>
+                  <option value="8">8</option>
+                  <option value="7">7</option>
+                  <option value="6">6</option>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <%= f.text_area :comment , class: 'form-control', :placeholder => "Write your review", :style => "height:100px;" %>
+          </div>
+          <div class="form-group">
+            <input type="text" id="verify_review" class=" form-control" placeholder="Are you human? 7 + 14 =" name="review[robot_cut]">
+          </div>
+          <%= hidden_field_tag :activity_id ,@activity.id  %>
+          <%= f.submit :"Add Review", class: 'btn_1' %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -394,25 +423,26 @@
 
         });
 
+        <% unless @activity.payment_price.nil? %>
+          var activity_price = <%= @activity.payment_price %>;
 
-        var activity_price = <%= @activity.payment_price %>;
-
-        var people_count = $("#capacity-booking").val();
-
-        $("#price_total_span_box").text(activity_price * people_count);
-
-        $(".button_inc").click(function() {
-
-          var person_quantity = $("#capacity-booking").val();
-
-          if(person_quantity < 1){
-            $("#capacity-booking").val(1);
-          }
-
-          people_count = $("#capacity-booking").val();
+          var people_count = $("#capacity-booking").val();
 
           $("#price_total_span_box").text(activity_price * people_count);
-        });
+
+          $(".button_inc").click(function() {
+
+            var person_quantity = $("#capacity-booking").val();
+
+            if(person_quantity < 1){
+              $("#capacity-booking").val(1);
+            }
+
+            people_count = $("#capacity-booking").val();
+
+            $("#price_total_span_box").text(activity_price * people_count);
+          });
+        <% end %>
 
         $("#capacity-booking").keydown(function (e) {
           // Allow: backspace, delete, tab, escape, enter and .
