@@ -14,7 +14,13 @@
     <div class="searchbar">
       <form action="/activities_city">
         <div class="search-label-box">
-          <input type="text" class="search-place-box-input" placeholder="City Name?" name="cityname">
+          <!--<input type="text" class="search-place-box-input" placeholder="City Name?" name="cityname">-->
+
+          <select name="cityname" class="search-place-box-input">
+            <% thai_city_list.each do |city| %>
+                <option value="<%= city[1] %>"><%= city[0] %></option>
+            <% end %>
+          </select>
         </div>
         <div class="search-submit-box">
           <input type="submit" class="btn btn-success" value="search">
@@ -85,7 +91,7 @@
               </div>
             <% end %>
             <div class="tour_title">
-              <h3><strong>Arc Triomphe</strong> tour</h3>
+              <h3><strong><%= activity.name %></strong></h3>
               <div class="rating">
                 <% if activity.rating.nil? %>
                   <p>No rating</p>
@@ -108,9 +114,9 @@
 
                 <% end %>
               </div><!-- end rating -->
-              <div class="wishlist">
-                <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-              </div><!-- End wish list-->
+              <!--<div class="wishlist">-->
+                <!--<a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>-->
+              <!--</div>&lt;!&ndash; End wish list&ndash;&gt;-->
             </div>
           </div><!-- End box tour -->
         </div><!-- End col-md-4 -->
@@ -145,7 +151,7 @@
             <% if activities_counter % @activities_per_row != 0 %>
 
                   <li>
-                    <%= link_to activities_like_search_path(return_city_by_key(key)) do %>
+                    <%= link_to activities_like_search_path(key) do %>
                       <!--<i class="icon_set_1_icon-3"></i>-->
                       <%= return_city_by_key(key) %>
                       <span class="other_tours_price"><%= value %> Activities</span>

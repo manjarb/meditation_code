@@ -47,7 +47,8 @@
 }
 .searchbar {
   display: inline-block;
-  input {
+  input,
+  select {
     display: block;
     height: 44px;
     padding: 8px 10px;

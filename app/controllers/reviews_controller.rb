@@ -14,13 +14,28 @@ class ReviewsController < ApplicationController
     @review.username = user_name
     @review.activity_id = activity_id
 
+    activity = Activity.find_by(id: activity_id)
 
     if @review.save
       flash[:success] = "Finished submit your review"
-      redirect_to activity_show_path(user_id)
+
+      activity = Activity.find_by(id: activity_id)
+
+      reviews = Review.where(activity_id: activity.id)
+      reviews_score = 0
+
+      reviews.each do |review|
+        reviews_score = reviews_score + review.score
+      end
+
+      rating = reviews_score / reviews.count
+
+      activity.update_attributes(rating: rating)
+
+      redirect_to activity_show_path(activity_id)
     else
       flash[:danger] = "Error submit your review please try again"
-      redirect_to activity_show_path(user_id)
+      redirect_to activity_show_path(activity_id)
     end
 
   end

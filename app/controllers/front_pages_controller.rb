@@ -102,15 +102,28 @@ class FrontPagesController < ApplicationController
 
     rank_search = ""
 
+    # if params.has_key?(:front_pages)
+    #   @city_name = params[:front_pages][:cityname]
+    # elsif params.has_key?(:cityname)
+    #   @city_name = params[:cityname]
+    # else
+    #   @city_name = ""
+    # end
+
     if params.has_key?(:front_pages)
       @city_name = params[:front_pages][:cityname]
+      @city_key = return_city_key_by_name(@city_name)
     elsif params.has_key?(:cityname)
-      @city_name = params[:cityname]
+
+      @city_key = params[:cityname]
+      @city_name = return_city_by_key(@city_key)
+
     else
       @city_name = ""
+      @city_key = return_city_key_by_name(@city_name)
     end
 
-    @city_key = return_city_key_by_name(@city_name)
+    #@city_key = return_city_key_by_name(@city_name)
 
     @superb_count = 0
     @very_good_count = 0
@@ -120,21 +133,33 @@ class FrontPagesController < ApplicationController
 
     @activities_all = return_all_activities_by_order
 
-    if @city_key.nil?
+    if @city_key.nil? || Temple.find_by(city: @city_key).nil?
       @temples = Temple
       #@activities_for_count = Activity.all
       actvities_where = @activities_all
       @activities = @activities_all.paginate(:page => params[:page], :per_page => 10)
 
+      puts "@city_nameheree"
+      puts @city_key
+      puts "@citykey_here"
+      puts @city_name
+
       if @city_name != ""
         flash.now[:info] = "No Search result for " + @city_name
+      else
+        flash.now[:info] = "No Search result"
       end
 
     else
 
-      @temples_search = Temple.find_by(city: @city_key)
+      @temples_search_all = Temple.where(city: @city_key)
+      @temples_search = []
 
-      actvities_where = Activity.where(temple_id: @temples_search.id)
+      @temples_search_all.each do |temple_search|
+        @temples_search << temple_search.id
+      end
+
+      actvities_where = Activity.where(temple_id: @temples_search)
 
       if params.has_key?(:rank)
         rank_search = params[:rank]

@@ -87,11 +87,11 @@
                 <!--<li><label><input type="checkbox">La Defance</label></li>-->
                 <!--<li><label><input type="checkbox">La Marais</label></li>-->
                 <!--<li><label><input type="checkbox">Latin Quarter</label></li>-->
-
+                <li><label><input type="checkbox" class="city-list-input-checkbox" value=""> All Activities</label></li>
                 <% @temple_counter_hash.each do |key,value| %>
                     <li>
                       <label>
-                        <input type="checkbox" id="<%= return_city_by_key(key).gsub(" ","") %>" class="city-list-input-checkbox" value="<%= return_city_by_key(key) %>">
+                        <input type="checkbox" id="<%= return_city_by_key(key).gsub(" ","") %>" class="city-list-input-checkbox" value="<%= key %>">
                         <%= return_city_by_key(key) %>
                       </label>
                     </li>
@@ -138,14 +138,14 @@
           <div class="strip_all_tour_list">
             <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-4">
-                <div class="wishlist">
-                  <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">
-                    +
-                    <span class="tooltip-content-flip">
-                    <span class="tooltip-back">Add to wishlist</span>
-                    </span>
-                  </a>
-                </div>
+                <!--<div class="wishlist">-->
+                  <!--<a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">-->
+                    <!--+-->
+                    <!--<span class="tooltip-content-flip">-->
+                    <!--<span class="tooltip-back">Add to wishlist</span>-->
+                    <!--</span>-->
+                  <!--</a>-->
+                <!--</div>-->
                 <div class="img_list">
                   <%= link_to activity_show_path(activity.id) do %>
                     <% unless activity.rating.nil? %>
@@ -201,7 +201,8 @@
                   </p>
                   <br>
                   <strong>City:</strong>
-                  <%= return_city_by_key(@city_key) %>
+                  <% temple_activity = Temple.find_by(id: activity.temple_id) %>
+                  <% #return_city_by_key(temple_activity.city) %>
 
                   <!--<ul class="add_info">-->
                     <!--<li>-->
@@ -299,7 +300,7 @@
       if (window.location.href.indexOf("rank=") > -1) {
         //window.location = url + "&orderby=" + rank_var + "&" + cityname;
         if (window.location.href.indexOf("page=") > -1) {
-          window.location = url + "?orderby=" + rank_var + "page="+ page_num_var + "&cityname=" + cityname + "&rank=" + getUrlParameter("rank");
+          window.location = url + "?orderby=" + rank_var + "&page="+ page_num_var + "&cityname=" + cityname + "&rank=" + getUrlParameter("rank");
         } else {
           window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname + "&rank=" + getUrlParameter("rank");
         }
@@ -307,7 +308,7 @@
         //window.location = url + "?orderby=" + rank_var + "&" + cityname;
 
         if (window.location.href.indexOf("page=") > -1) {
-          window.location = url + "?orderby=" + rank_var + "page="+ page_num_var + "&cityname=" + cityname
+          window.location = url + "?orderby=" + rank_var + "&page="+ page_num_var + "&cityname=" + cityname
         } else {
           window.location = url + "?orderby=" + rank_var + "&cityname=" + cityname
         }
@@ -331,7 +332,14 @@
     });
 
     $('.city-list-input-checkbox').on('ifChecked', function(event){
-      window.location = location.protocol + '//' + location.host  + "/activities_city?cityname=" + $(this).val();
+
+      if($(this).val() === ""){
+        window.location = location.protocol + '//' + location.host  + "/activities"
+      } else {
+        window.location = location.protocol + '//' + location.host  + "/activities_city?cityname=" + $(this).val();
+
+      }
+
     });
 
     $('.rank-list-checkbox').on('ifUnchecked', function(event){

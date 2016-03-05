@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  has_and_belongs_to_many :wishlists
+  has_many :wishlists , dependent: :destroy
 
   class << self
     #Return hash digest of the given string

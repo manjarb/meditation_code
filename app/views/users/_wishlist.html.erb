@@ -1,55 +1,82 @@
 <div class="row">
-  <div class="col-md-4 col-sm-6">
-    <div class="hotel_container">
-      <div class="img_container">
-        <a href="single_hotel.html">
-          <img src="img/hotel_1.jpg" width="800" height="533" class="img-responsive" alt="">
-          <div class="ribbon top_rated">
-          </div>
-          <div class="score">
-            <span>7.5</span>Good
-          </div>
-          <div class="short_info hotel">
-            From/Per night<span class="price"><sup>$</sup>59</span>
-          </div>
-        </a>
-      </div>
-      <div class="hotel_title">
-        <h3><strong>Park Hyatt</strong> Hotel</h3>
-        <div class="rating">
-          <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-        </div><!-- end rating -->
-        <div class="wishlist_close_admin">
-          -
-        </div>
-      </div>
-    </div><!-- End box tour -->
-  </div><!-- End col-md-6 -->
+  <% if @activities.count > 0 %>
+    <% @activities.each do |activity| %>
+      <div class="col-md-4 col-sm-6">
+        <div class="hotel_container">
+          <div class="img_container">
 
-  <div class="col-md-4 col-sm-6 ">
-    <div class="hotel_container">
-      <div class="img_container">
-        <a href="single_hotel.html">
-          <img src="img/hotel_2.jpg" width="800" height="533" class="img-responsive" alt="">
-          <div class="ribbon top_rated">
+            <%= link_to activity_show_path(activity.id) do %>
+
+              <%= image_tag(activity.activity_image01_url, alt: activity.name,class: "img-responsive") %>
+
+              <div class="short_info">
+                <!--<i class="icon_set_1_icon-44"></i>-->
+                <!--Historic Buildings-->
+                  <span class="price">
+                    <!--<sup>$</sup>-->
+                    <%= price_show_func(activity) %>
+                  </span>
+              </div>
+
+              <% unless activity.rating.nil? %>
+                <div class="score">
+                  <span> <%= activity.rating %> </span>
+                  <% if activity.rating >= 9 %>
+                      Superb
+                  <% elsif activity.rating >= 8 %>
+                      Very Good
+                  <% elsif activity.rating >= 7 %>
+                      Good
+                  <% elsif activity.rating >= 6 %>
+                      Pleasant
+                  <% elsif activity.rating >= 5 %>
+                      Normal
+                  <% else %>
+                      Poor
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+
           </div>
-          <div class="score">
-            <span>9.0</span>Superb
+          <div class="hotel_title">
+            <h3><strong><%= activity.name %></strong></h3>
+            <div class="rating">
+              <% if activity.rating.nil? %>
+                  <p>No rating</p>
+              <% else %>
+                  <!--<i class="icon-smile voted"></i>-->
+                  <!--<i class="icon-smile voted"></i>-->
+                  <!--<i class="icon-smile voted"></i>-->
+                  <!--<i class="icon-smile voted"></i>-->
+                  <!--<i class="icon-smile"></i>-->
+                  <!--<small>(75)</small>-->
+                  <% rating_rounds = returnRatingCounter(activity.rating) %>
+                  <div class="rating">
+                    <% rating_rounds.times do |n| %>
+                        <i class="icon-star voted"></i>
+                    <% end %>
+                    <% (5 - rating_rounds).times do |n| %>
+                        <i class="icon-star-empty"></i>
+                    <% end %>
+                  </div>
+
+              <% end %>
+            </div><!-- end rating -->
+            <%= link_to user_wishlist_delete_wishlist_path(current_user.id,activity.id), method: :delete,
+                        data: { confirm: "Are you sure to delete this wishlist?" } do %>
+              <div class="wishlist_close_admin">
+                -
+              </div>
+            <% end %>
           </div>
-          <div class="short_info hotel">
-            From/Per night<span class="price"><sup>$</sup>45</span>
-          </div>
-        </a>
-      </div>
-      <div class="hotel_title">
-        <h3><strong>Mariott</strong> Hotel</h3>
-        <div class="rating">
-          <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-        </div><!-- end rating -->
-        <div class="wishlist_close_admin">
-          -
-        </div>
-      </div>
-    </div><!-- End box -->
-  </div><!-- End col-md-6 -->
+        </div><!-- End box tour -->
+      </div><!-- End col-md-6 -->
+    <% end %>
+  <% else %>
+    <h3>No wishlist</h3>
+
+  <% end %>
+
+
 </div>

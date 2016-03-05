@@ -72,8 +72,9 @@ Rails.application.routes.draw do
   resources :reviews , :only => [:create]
 
   resources :users,only: [:create,:edit,:new,:update] do
-    resources :wishlists  do
+    resources :wishlists , only:[]  do
       get '/create' => 'wishlists#create'
+      delete '/delete' =>'wishlists#destroy' , :as => 'delete_wishlist'
     end
   end
 

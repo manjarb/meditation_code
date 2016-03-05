@@ -45,6 +45,14 @@ class UsersController < ApplicationController
 
     elsif request.path == user_wishlist_path
 
+      @activities = []
+
+      wishlists = Wishlist.where(user_id: current_user.id)
+
+      wishlists.each do |wishlist|
+        @activities << Activity.find_by(id: wishlist.activity_id)
+      end
+
     end
   end
 

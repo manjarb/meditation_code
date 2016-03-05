@@ -1,7 +1,7 @@
 class WishlistsController < ApplicationController
 
-  before_action :logged_in_user , only: [:create]
-  before_action :correct_user_for_wist_list , only: [:create]
+  before_action :logged_in_user , only: [:create,:destroy]
+  before_action :correct_user_for_wist_list , only: [:create,:destroy]
 
   def create
     activity_id = params[:wishlist_id]
@@ -23,6 +23,19 @@ class WishlistsController < ApplicationController
       redirect_to activity_show_url(activity.id)
     end
 
+  end
+
+  def destroy
+
+    @wishlist = Wishlist.find_by(user_id: current_user.id,activity_id: params[:wishlist_id])
+
+    if @wishlist.destroy
+      flash[:success] = "Wishlist Deleted"
+      redirect_to user_wishlist_url
+    else
+      flash[:danger] = "Error delete a Wishlist"
+      redirect_to user_wishlist_url
+    end
   end
 
   private
