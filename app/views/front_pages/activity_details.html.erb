@@ -309,7 +309,17 @@
             <!--<a class="btn_full" href="cart_hotel.html">Book now</a>-->
               <%= f.submit :"Book now", class: 'btn_full' %>
           <% end %>
-          <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a>
+          <!--<a class="btn_full_outline" href="#">-->
+            <!---->
+          <!--</a>-->
+          <% if logged_in? %>
+            <% unless @wishlist %>
+              <%= link_to user_wishlist_create_path(current_user.id,@activity.id), :class => 'btn_full_outline' do %>
+                  <i class=" icon-heart"></i> Add to wishlist
+              <% end %>
+            <% end %>
+          <% end %>
+
         </div>
   
         <div class="box_style_4">

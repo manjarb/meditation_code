@@ -29,7 +29,7 @@ class ReservationsController < ApplicationController
     @reservation.activity_start_date = @activity.start_at
     @reservation.activity_end_date = @activity.end_at
     @reservation.activity_name = @activity.name
-    @reservation.booking_id = @user.id.to_s + @activity.id.to_s + DateTime.now.day.to_s + DateTime.now.month.to_s + DateTime.now.year.to_s
+    @reservation.booking_id = @user.id.to_s + @activity.id.to_s + DateTime.now.day.to_s + DateTime.now.month.to_s + DateTime.now.year.to_s + DateTime.now.strftime('%H') + DateTime.now.strftime('%M')
 
     if @reservation.save
       redirect_to activity_reservation_complete_path(@activity.id,@reservation.id)

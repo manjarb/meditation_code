@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  has_and_belongs_to_many :wishlists
+
   class << self
     #Return hash digest of the given string
     def digest(string)

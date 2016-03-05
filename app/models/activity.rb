@@ -4,6 +4,7 @@ class Activity < ActiveRecord::Base
 
   has_many :reviews, dependent: :destroy
   has_many :reservations, dependent: :destroy
+  has_many :wishlists, dependent: :destroy
 
   #default_scope -> { order(created_at: :desc) }
 

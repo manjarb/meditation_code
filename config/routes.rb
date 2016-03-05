@@ -54,7 +54,6 @@ Rails.application.routes.draw do
   resources :temples, only: [:new, :create, :edit, :update,:list,:destroy]
 
   resources :bank_accounts, only: [:edit,:new,:create,:update,:destroy]
-  resources :users,only: [:create,:edit,:new,:update]
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
@@ -71,6 +70,12 @@ Rails.application.routes.draw do
   end
 
   resources :reviews , :only => [:create]
+
+  resources :users,only: [:create,:edit,:new,:update] do
+    resources :wishlists  do
+      get '/create' => 'wishlists#create'
+    end
+  end
 
 
 

@@ -93,6 +93,8 @@ class FrontPagesController < ApplicationController
 
     end
 
+    @wishlist = Wishlist.find_by(user_id: current_user.id,activity_id: @activity.id)
+
     render :template => 'front_pages/activity_details'
   end
 
