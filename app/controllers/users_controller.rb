@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       # redirect_to referrer || activities_url
       redirect_to login_url
     else
-      flash.now[:danger] = "Your username or password is wrong."
+      #flash.now[:danger] = "Your username or password is wrong."
       render 'new'
     end
   end
