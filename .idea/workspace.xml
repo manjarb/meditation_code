@@ -2,8 +2,321 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea2534fd-49fd-40e5-bf19-e5800036616a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/application_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/.sprockets-manifest-06c74e57506d5a1fee17146975944afa.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/admin.min-011977180e070eb89c5d19008e69433b7d8e867fc66e8945b4677021eb4289c4.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/admin.min-011977180e070eb89c5d19008e69433b7d8e867fc66e8945b4677021eb4289c4.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-49bd18d200323b6b6defbe77a8aa4188d90a477bc054206d5b702aa5878eb10d.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-49bd18d200323b6b6defbe77a8aa4188d90a477bc054206d5b702aa5878eb10d.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-65da4a84c8f2989990b338ee8fc7cc3cc8dee2e7488de21926aff92bf51054a0.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-65da4a84c8f2989990b338ee8fc7cc3cc8dee2e7488de21926aff92bf51054a0.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-a33d66a9ca5371808e502381e06a7f124bab2581b8d328fc7fe9a34f41f79a29.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-a33d66a9ca5371808e502381e06a7f124bab2581b8d328fc7fe9a34f41f79a29.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-f9184b3e81744a4fc163fb11bad9356e855369a320721d83617b5e0d0438a378.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-f9184b3e81744a4fc163fb11bad9356e855369a320721d83617b5e0d0438a378.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/banner01-390295ff870530f6fdce8d3016f9452469ae813d4d275a92d370af52b907ffee.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/banner01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/blank-c6ea15daa580e414038d8cf7c50b1a47cadf63ad33f46cba58058650ef80b9ed.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/blank.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap/glyphicons-halflings-regular-bd18efd3efd70fec8ad09611a20cdbf99440b2c1d40085c29be036f891d65358.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap/glyphicons-halflings-regular-d168d50a88c730b4e6830dc0da2a2b51dae4658a77d9619943c27b8ecfc19d1a.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap/glyphicons-halflings-regular-d168d50a88c730b4e6830dc0da2a2b51dae4658a77d9619943c27b8ecfc19d1a.svg.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap/glyphicons-halflings-regular-f495f34e4f177cf0115af995bbbfeb3fcabc88502876e76fc51a4ab439bc8431.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap/glyphicons-halflings-regular-fc969dc1c6ff531abcf368089dcbaf5775133b0626ff56b52301a059fc0f9e1e.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/cards-a4378f8d6faa5e999d889eafd5cc9629baf351c252910c28d667fc942e86c907.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/cards.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/closedhand-d367ee0a4c16c7cebfdbf92c97a72ff63878e7f8be176ac8c5ede75a2265ec52.cur" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/closedhand.cur" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/common_scripts_min-6517e2d4fa14eff34979bd403e218e5d6f965d3cfbacc72c47b90da47d4ebbea.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/common_scripts_min-6517e2d4fa14eff34979bd403e218e5d6f965d3cfbacc72c47b90da47d4ebbea.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/details_howto_image-1edb8961520855ccbfcdb0c6e61e1497a5cf4fc71064403602b67b1618422bc7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/details_howto_image.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/flat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/flat@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/LICENSE-40aba8e8b199fff50c947f0d8fca5dd9d27e24498047598ce0bb328d803b58e6.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/LICENSE-40aba8e8b199fff50c947f0d8fca5dd9d27e24498047598ce0bb328d803b58e6.txt.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/README-c22f6c36920fa3d1b1a5359b08b40b5e34ada9b78aaef681230c8695190f5608.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/README-c22f6c36920fa3d1b1a5359b08b40b5e34ada9b78aaef681230c8695190f5608.txt.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/css/fontello-codes.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/css/fontello.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/css/icon_set_1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/css/icon_set_2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/demo-8e50e678244aaef8eecb40cd0153ff30788e57e9712cad225761293e623aa242.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/demo-8e50e678244aaef8eecb40cd0153ff30788e57e9712cad225761293e623aa242.html.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/demo_icon_set_1-2870f0367695a763e3fc2b8519ddf64489bc11f5e93eb45addfffd722f20c367.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/demo_icon_set_1-2870f0367695a763e3fc2b8519ddf64489bc11f5e93eb45addfffd722f20c367.html.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/demo_icon_set_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/demo_icon_set_2-d1090bd2d8118735a1cbd46e5b8db229eb6b834c18b2dcdba7e71e1f1e168768.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/demo_icon_set_2-d1090bd2d8118735a1cbd46e5b8db229eb6b834c18b2dcdba7e71e1f1e168768.html.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/demo_icon_set_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/fontello-2c62a118e82484e6ddbd0c5abe9e870278335d9efa2d309d884cfb0122efe7ed.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/fontello-8e1c6ebb39178ccbe398801b0fc25ce232aa115526cc8a2b87e27aeccc65106d.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/fontello-a79f3a37f29ffa3b2862142b3f5af39c5e5a2a47d71bbc75dcef2af436377175.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/fontello-b26d0be5d8a73c21e212188d3e1bcecd4814f13f324161396bf7726ef7eff55c.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/fontello-b26d0be5d8a73c21e212188d3e1bcecd4814f13f324161396bf7726ef7eff55c.svg.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/fontello.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/fontello.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/fontello.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/fontello.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_1-115961cc4e26b55529d8dd9278e94493837a0f3fefa56fa433d2e56888d90899.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_1-115961cc4e26b55529d8dd9278e94493837a0f3fefa56fa433d2e56888d90899.svg.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_1-81795297c0f04ef1c1762c6b367ea29fd20dda0b711f33308563e5fb0ed3c3af.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_1-b1cc9d1455ec34c273e1ff4d10b8009049bb2dde9f4b33adf9f6784b7b016ef5.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_1-f7306a5ec125698cb6e3f6b6ca3a53b24941748bdb6ce4abb45e9cf826843ee8.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_1.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_1.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_1.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_1.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_2-329f8f8b398208ae5a3c15b13bd99c19a6c16cdc83ecceab6fa8f53f40bbb7e2.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_2-60ef960dae91353c4f2a87314dbe0693f09261cea2eee7776f13f412032178cc.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_2-d7e81f5b1c8ea301ddf0e6d5aefda084fc111e83eaa4d71816c63c7c22bd7922.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_2-d7e81f5b1c8ea301ddf0e6d5aefda084fc111e83eaa4d71816c63c7c22bd7922.svg.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_2-f5de07a51211bc0cb57584f1053bed5a42fcc18d8d0f3f142552d007d254cc51.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_2.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_2.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_2.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontello/font/icon_set_2.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/functions-c13bbe36fc9c5ba81d4715372aa7c7b4221c143baababfc7ea1ecb349b8201df.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/functions-c13bbe36fc9c5ba81d4715372aa7c7b4221c143baababfc7ea1ecb349b8201df.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/html5shiv.min-d3d35aa8c5c7074d41080b04f1324ad142a05add2f6e1e2ac7028b1eb3bece66.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/html5shiv.min-d3d35aa8c5c7074d41080b04f1324ad142a05add2f6e1e2ac7028b1eb3bece66.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_ccv-0eb038ae698f862ff26e17142733eef3e4860644cddd3a56dfa0fe4058d41759.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_ccv.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/css/icon_restaurants.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/fonts/Glyphter-0f77decc2ee90c60d4c5cae2b1cce567deefdbf912a021c721b172d1bbe745f0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/fonts/Glyphter-1164b1e7b35ad43332645e234cf28e0e37176b047c286009e5249ac2bc198f74.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/fonts/Glyphter-1164b1e7b35ad43332645e234cf28e0e37176b047c286009e5249ac2bc198f74.svg.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/fonts/Glyphter-30601eff49bcaf9a63c6c27aee658baf9ffdc215270f8d1dbfdaf03932db9daf.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/fonts/Glyphter-d59495b28390832d831528b58d3272fd72d258af5f37fd88df0c4584d3614335.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/fonts/Glyphter.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/fonts/Glyphter.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/fonts/Glyphter.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icon_restaurant/fonts/Glyphter.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/blank.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/closedhand.cur" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/images/openhand.cur" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/index-d12933b14f6aa1ed0b4bfffacb4af0af9797f68166ed29d9b4575d7e7b3eeb9d.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/index-d12933b14f6aa1ed0b4bfffacb4af0af9797f68166ed29d9b4575d7e7b3eeb9d.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/index-d49b9a8fdf629361abc58849f2af6678149d79415170f4646c6fe6f2f5f03052.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/index-d49b9a8fdf629361abc58849f2af6678149d79415170f4646c6fe6f2f5f03052.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/infobox-29d66294a8912be128947e671b072f5d40ba0320c7f5aa367e3e0e9b260fdb89.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/infobox-29d66294a8912be128947e671b072f5d40ba0320c7f5aa367e3e0e9b260fdb89.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery.sliderPro.min-524284563f2c0b8dfc601661314f7e824ab1fc3012f3c37bbe66530cc3d9fd56.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery.sliderPro.min-524284563f2c0b8dfc601661314f7e824ab1fc3012f3c37bbe66530cc3d9fd56.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/list_banner-0698e27405ee40ac7214895a4b2117e9545135d950bce195e6a5981604296948.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/list_banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/logo-ea53bf825c630dfc9450e4486c88c6ba1ef2edf63484d5cb4b16d7f7d90dabf8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/logo_2x-fb7255144fa29c1b8db6a36ef203ebf349e7f33034bc180de4483d12aba53618.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/logo_2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/map-d3ffb07438665f9e4617a3f81205da28f714eff582a424a9f701dcc70878c4a5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/map-d3ffb07438665f9e4617a3f81205da28f714eff582a424a9f701dcc70878c4a5.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/openhand-080627fa359156339e79f118fa66a6937f09ff679fe87e8afa473b95c8168d35.cur" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/openhand.cur" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/respond.min-d962b8b29b90aa9b82852b39314e03a85234b3ac80170982a45d18da478900da.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/respond.min-d962b8b29b90aa9b82852b39314e03a85234b3ac80170982a45d18da478900da.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ribbon-c071124169fd60d6b69797edd20a99d053bde02f3ad5191375394b4c371be3ca.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ribbon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ribbon_popular-38edebab3530d3ea86823d287833c478719fbfdc5b86b6f577dc210300fb2f42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ribbon_popular.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ribbon_top_rated-fc7c078b4545ca8ce6b4f96e64bf3b6088bb480d2ae0c3651ceadb3a20ddbb80.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ribbon_top_rated.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/shadow_tour-8bf8e2f892b7bd2ed134d9dafd82813fe367d8eab48b219ff68f2d9755426792.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/shadow_tour.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/shutterstock_96393731-9099deebfa7e5bce11c40457cf418137fa628d0120d05819ed4432712654cc97.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/shutterstock_96393731.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/sign_up_banner-d0dde29e99ae2fe55c1efde72a40203585e15c0c7263b07fe893d62fd4d5e54b.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/sign_up_banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/aero-870db4ecdf5732a8fe5fb55e50d552f59fb8170fce3c321f3e1ef7f0605d1028.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/aero@2x-3ba32ee9bd791144850020cf9ce51409a2b95faf35bf7f40e9777dba2ba59de1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/blue-f8cd711862ded984c4d8dfb70d8f0f890a1cc8037e883288a0a459d7524b3d42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/blue@2x-f576f01791c658bb2e8cf4402b76c571fce5041753a8a7a2291548402c2fb94c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/flat-649617bbce32ff4e0a8343c6f011a17116e86b13c50c1d9bfa92c0ee20605bec.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/flat.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/flat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/flat@2x-761a11a1d4b30c951218c185ce70e208db481dd4d2516a73dfa53f7c3d0a62da.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/flat@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/green-34858518bad21f9134e78e32fcfbc38ff468553c43944721cbdb5d80ca5472d4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/green@2x-af0c9f69994fbb887a9f2d21aac89de946a6994a7f5a89e6f767b4f6473982ac.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/grey-7e7ca23be1d7b29a14f919d31f9b45ab425da93be4c2171552fda986d003fa6d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/grey@2x-cfbadf65db8b639977c46c6935593f72d13e6bb1a08dee64691804248a40c4ac.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/orange-e7c0220f2a222f0b1b4ed4ecfada3f67347cbd3a2c83fd75a1515378336421b0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/orange@2x-a6d0bce44faca0c35a1e385aca6f924c4442245fdbb83ecb596f509cf2dc4b38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/pink-a6dc520b10c2ccdde3aefcc9f27f7c6a632b4b57a72b335473941ea4b9890c5b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/pink@2x-c396b51e6f1cebe562fccf2fa266851f6e020f1efae533fabcb89e60efae8412.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/purple-3266d60416a9231400d85042fa3e6678451c541113ec6a7b0cb6b1876909cfbe.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/purple@2x-811fd98232d50f6ae7802ef2525f8b0cebf4c2df4749e4789a70e17bbccc5f84.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/red-a959cd63012facd6b23b212e6ee8438248478759da0e00d88accaba3e2bf24ab.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/red@2x-da0cfba6ac94c007a870c150693c51c0365b584bb7e879eebaedc28f5d773111.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/yellow-d50fb48ffdd5d676cf1cbc220719daa1f00937292d7a3673b63d316a9e58393a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/yellow@2x-831e2f52cf2e796154cc228383632e659cc72dc60e3c57e0c5390d1bf88ef3b9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/flat/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/futurico/futurico-eddc1d52ee8d16a2261ca4b8d2df4f8a1d43a945a4766f8707cb71c2541021b9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/futurico/futurico.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/futurico/futurico.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/futurico/futurico@2x-b6ff49882ef46edb2d129f92cbc2f191292f87a587ce65ba695782fb4100c6c1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/futurico/futurico@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/line-53f72f0f63f7b9d795feff387f3f76e9634f147604a43dcc9d67091b62f1cf43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/line.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/line.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/line@2x-c6de05f1759797a43cde5ba31a74f3b23eb175b70ac13812b12ab443475ece85.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/line@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/line/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/aero-dd315622eec3d7116566abc8400b484f08c2a4d18f06f1ba308886ba50e856e2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/aero@2x-57b9c071468da201173814c27496bb0e8f318c2945fb08e1f3c75531ae184e99.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/blue-554d1c81ca2ad1da94f15b8d6446069244cbcb4d3d11028cd30940eb2d437b13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/blue@2x-703ab1d8cf4148e179021fdfdbb045297f0d383c872b8a433794b5ffe8480424.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/green-696e11dbe54fd4909439870ddb7c827c0799b2d565cffaf2804087ff58600e23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/green@2x-aad28af306b2aa916f459f466de51c7ce86fa5a60dc924a0572a64db102427f4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/grey-654da0ad45d54a5ec79ee661aba96b7113bccb52caedbcfd6629b044a0d80000.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/grey@2x-94d3d7416dd0ecfb88bd0456d8ac4a0c87e3cc9bf0728f86e4bae0b38b6e4f70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/minimal-2ec52d6497f27f697e161200fcc0dae3c20ba11c3322d2e2e9d0ad19355ea298.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/minimal.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/minimal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/minimal@2x-c4e6567d9f75e60bcc26c0cc71ddd3268d02eff92e2907920ef2904028955b78.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/minimal@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/orange-488e581ddb601d3a12e355d96582a51df60d7701e447dc9b49fd59b335b710bf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/orange@2x-dd10fd94fa6aa469afe8d066985e1dbc79c64df38d83ce58201d97681cd52e25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/pink-7d0125de70c23a23bd517fdf88029ec95cc3db850790cc561d1e6489685629da.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/pink@2x-40e1f51b7fe16e7db4841b3229256bb24e33ea0d28138b1ea73cda2a9c65b0fd.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/purple-0d2562d66fc7b4323c406179bdca227125a15fd053392e3aa5eaf496795a8ee4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/purple@2x-df0f7e1b34738daa5c2d879823ee17986bed8a0457c4c90d489be645d01fdae2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/red-9c2ab7cc55dfafd7343804da7fa39111e1b225fdba40a532a7425ceb2171e4a9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/red@2x-bd22b4d271868f16cc2161ac0fae8ec07e3dd5aa1057b0e2712e3fa1c1e9d842.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/yellow-25996589dadb7140266f41d84843850db880fb6accc5a7f783fe57347ef8b7e4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/yellow@2x-090154cf3bb9a087b881de2697f02f3b25d960d4a3472c550de4dace1b6d2f55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/minimal/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/polaris/polaris-5ba0e5aa645d88a194c248aaae7019af06d9628e8f9b12e4a6f5846bffb46ef1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/polaris/polaris.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/polaris/polaris.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/polaris/polaris@2x-91a870867e05e8a423f07e087036f6df33c8c0fc1a85ea03091268f901e8a6eb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/polaris/polaris@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/aero-0256fcd9601e1bad8dc98bad53f2de7c8e78d9416e92c1b5c4db3cccf0931768.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/aero@2x-978e637c09ea1fa3cfbdb340142ad86a351c1fb863851a8fb86dba05f20e139f.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/blue-abff66ea99f7e2b2a51d02feb00d0385f2ac35100fdc65b5d4e4395228fd020b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/blue@2x-c0ce7ecfbd5605a7a0d0239d83b736eda75dbc71ff183472e02c6d6cdfbcc888.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/green-4828efe2a264a35e799fbd342fcf005ba57d8335750879bcf66279e573dcfa23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/green@2x-7b89106773bb4fc754f47e0f1cc0633d64b2ef8a4fb6ba3cbf2b4ede2de903ba.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/grey-80ed11e21b6c2f1217c83fd9150f90d73587ae049681750d5b75bba2a6aac87b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/grey@2x-40bb731297212c86a4c0141ca76dc6d4ed4a753a681336a8b92d75ab30cb7495.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/orange-2bdda400b27bc002d0573094587f9a198e7b8e1e5fcf82f2e2932796f6a32c34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/orange@2x-52de7be969ad86e226bb1f93773a1933b44617069dae00a1f02f32fd2ad07c20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/pink-bb85090ae0fedbd3fd0cadc1a74b0c9ceac38f09eb947c7d229a1b0b342a8d82.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/pink@2x-775bb94369b6742d9cde67d8e65ce7b24c495866420ade49ae2291afc8d9a777.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/purple-1fe326c961b2a8320dca1b0041ca34df702c23bbe5d2a3fd2064539ebbbf06ce.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/purple@2x-1fa92204f94dabdba60b69a0f4fed54ca83f4367a97f384ae8f4bb01e0b6eea7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/red-07396c4458cd328a3ad8c3de309f5cbc948babb2d022f212e8bdbb7cb571ddb5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/red@2x-44008e3df669f173ad9e67364f419caed9bbf243d7bdc57e46c38bdd2e9d8657.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/square-8a7989b98489642a7862a32e1f66748a3671d6677941af3129d5504e31cfbccd.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/square.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/square.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/square@2x-8ed64c959db4f6f50081d5de7430983af90c88ef10abd334b2b53f9a61424b9d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/square@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/yellow-5c2016d71a7eb13a848f0c1441486d2d01f8de05a0e4f10e1c8a6c7e1ccf30bf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/yellow@2x-7cba0273efb682c044ff6b908a81a013fd7a58d8e8ca23ec282b62f58e6595f6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/skins/square/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/slider-pro.min-e42d8a9257343b572bd748fa43c452c412c425c9a9700dc17a63011e2131110f.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/slider-pro.min-e42d8a9257343b572bd748fa43c452c412c425c9a9700dc17a63011e2131110f.css.gz" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
     </list>
     <ignored path="meditation_code.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,20 +357,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <file leaf-file-name="development.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="82" column="57" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="57" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application_mailer.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application_mailer.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mailers/application_mailer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25848565">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
@@ -120,9 +443,9 @@
         <option value="$PROJECT_DIR$/app/views/front_pages/list.html.erb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-        <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/controllers/account_activations_controller.rb" />
         <option value="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
       </list>
     </option>
   </component>
@@ -958,14 +1281,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160303085406_reservation_details.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="66" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/reservation.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1311,14 +1626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/account_activations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1331,14 +1638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.677419">
           <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="57" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -1367,10 +1666,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/mailers/application_mailer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25848565">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
