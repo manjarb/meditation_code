@@ -82,9 +82,9 @@ Rails.application.configure do
   host = 'thaimeditationcenter.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-      :address              => "smtp.gmail.com",
+      :address              => "smtp.mailgun.org",
       :port                 => 587,
-      :domain               => "mysite.com",
+      :domain               => "thaimeditationcenter.com",
       :user_name            => ENV['USERNAME_EMAIL'],
       :password             => ENV['USERNAME_PASSWORD'],
       :authentication       => :plain,
