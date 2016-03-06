@@ -2,7 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea2534fd-49fd-40e5-bf19-e5800036616a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/non_digest_assets.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/.sprockets-manifest-4ed266d25f1ac8357b72856a9315cb15.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/css/fontello-codes.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/css/fontello.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/css/icon_set_1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/css/icon_set_2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/demo_icon_set_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/demo_icon_set_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/fontello.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/fontello.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/fontello.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/fontello.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/icon_set_1.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/icon_set_1.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/icon_set_1.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/icon_set_1.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/icon_set_2.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/icon_set_2.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/icon_set_2.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fontello/font/icon_set_2.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/icon_restaurant/css/icon_restaurants.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/icon_restaurant/fonts/Glyphter.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/icon_restaurant/fonts/Glyphter.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/icon_restaurant/fonts/Glyphter.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/icon_restaurant/fonts/Glyphter.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/shutterstock_96393731.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455126104-94968-1192/1333310386.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455167133-95510-2400/1333310386.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455167133-95510-8747/image1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455167133-95510-8760/IMG_1923.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455167134-95510-4186/Screen_Shot_2559-02-09_at_1.20.24_AM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455167134-95510-7613/Screen_Shot_2559-01-20_at_2.31.31_PM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455167134-95510-8619/Screen_Shot_2559-02-02_at_10.58.58_PM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455167134-95510-9652/IMG_1924.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455167134-95510-9677/Screen_Shot_2559-01-05_at_2.58.19_AM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455265353-11358-2874/1333310386.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455265353-11358-5323/maxresdefault.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455265353-11358-5726/letsgo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455265409-11358-2294/letsgo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455265409-11358-4999/maxresdefault.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455265409-11358-8800/1333310386.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455276492-12897-0049/letsgo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455276492-12897-2268/Screen_Shot_2559-01-25_at_5.45.24_PM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455276492-12897-7309/Screen_Shot_2559-02-09_at_1.20.15_AM__2_.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455276713-12897-3464/image1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455276713-12897-9290/1333310386.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455276713-12897-9676/12644818_1159365397408894_5661976978442350658_n.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455276753-12897-1224/Screen_Shot_2559-01-25_at_5.45.24_PM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455276753-12897-6793/Screen_Shot_2559-02-09_at_1.20.15_AM__2_.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455276753-12897-9754/letsgo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905695-43829-4547/12644818_1159365397408894_5661976978442350658_n.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905695-43829-9437/1333310386.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905776-43829-0111/maxresdefault.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905776-43829-2246/1333310386.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905776-43829-2501/o0zw1ddwf8Uzz5QvP4M-o.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905776-43829-2799/IMG_1931.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905776-43829-4711/maxresdefault__1_.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905928-43829-2491/maxresdefault.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905928-43829-4663/Screen_Shot_2559-01-25_at_5.45.17_PM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/tmp/1455905928-43829-6128/Screen_Shot_2559-01-25_at_5.45.24_PM.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="meditation_code.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,38 +95,7 @@
     <favorites_list name="meditation_code" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31070495">
-              <caret line="31" column="23" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -119,9 +151,9 @@
         <option value="$PROJECT_DIR$/app/controllers/account_activations_controller.rb" />
         <option value="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
         <option value="$PROJECT_DIR$/app/views/front_pages/list.html.erb" />
-        <option value="$PROJECT_DIR$/config/initializers/non_digest_assets.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/config/initializers/non_digest_assets.rb" />
       </list>
     </option>
   </component>
@@ -924,9 +956,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="837" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19236112" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19236112" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6687657" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1305,9 +1337,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/config/initializers/non_digest_assets.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2637075">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08093995">
           <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
           <folding />
         </state>
@@ -1315,16 +1363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.66057444">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31070495">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="23" />
           <folding />
         </state>
       </provider>
