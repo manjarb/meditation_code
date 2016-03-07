@@ -27,4 +27,8 @@ class UserMailer < ApplicationMailer
 
     mail to: admin_user.email, subject: "Admin Password reset"
   end
+
+  def reservation_details_mailer(reservation,user)
+
+  end
 end
