@@ -71,6 +71,8 @@ namespace :deploy do
     on roles(:app) , in: :sequence, wait: 1 do
       execute "rsync -a #{release_path}/vendor/assets/stylesheets/fontello/ #{release_path}/public/assets/fontello"
       execute "rsync -a #{release_path}/vendor/assets/stylesheets/icon_restaurant/ #{release_path}/public/assets/icon_restaurant"
+      execute "cp -a #{release_path}/vendor/assets/stylesheets/skins/square/. #{release_path}/public/assets/"
+
     end
   end
 
