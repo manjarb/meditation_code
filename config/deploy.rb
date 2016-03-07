@@ -66,6 +66,13 @@ namespace :deploy do
     end
   end
 
+  desc 'copy missing css'
+  task :copy_missing_css do
+    on roles(:app) , in: :sequence, wait: 1 do
+      set :copy_files, ["vendor"]
+    end
+  end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -76,6 +83,7 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
+  after  :finishing,    :copy_missing_css
   after  :finishing,    :restart
 end
 

@@ -72,10 +72,12 @@ group :development do
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
+
 end
 
 group :production do
   gem 'rails_12factor',	'0.0.2'
   #gem 'unicorn'
+  gem 'capistrano-copy-files'
 end
 
