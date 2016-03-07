@@ -69,7 +69,7 @@ namespace :deploy do
   desc 'copy missing css'
   task :copy_missing_css do
     on roles(:app) , in: :sequence, wait: 1 do
-      set :copy_files, ["vendor"]
+      execute "rsync -a #{shared_path}/vendor/assets/stylesheets/fontello/ #{shared_path}/public/assets/fontello"
     end
   end
 
@@ -86,6 +86,8 @@ namespace :deploy do
   after  :finishing,    :copy_missing_css
   after  :finishing,    :restart
 end
+
+
 
 # ps aux | grep puma    # Get puma pid
 # kill -s SIGUSR2 pid   # Restart puma
