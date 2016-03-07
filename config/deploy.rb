@@ -70,6 +70,7 @@ namespace :deploy do
   task :copy_missing_css do
     on roles(:app) , in: :sequence, wait: 1 do
       execute "rsync -a #{release_path}/vendor/assets/stylesheets/fontello/ #{release_path}/public/assets/fontello"
+      execute "rsync -a #{release_path}/vendor/assets/stylesheets/icon_restaurant/ #{release_path}/public/assets/icon_restaurant"
     end
   end
 
