@@ -29,26 +29,6 @@ Rails.application.routes.draw do
 
   get 'admin/temples' => 'temples#list'
 
-  ##### Front Pages Route
-  get '/activities/:cityname' => 'front_pages#cities_search', :as => 'activities_like_search'
-  get '/activities' => 'front_pages#activities_list'
-  get '/activity/:id' => 'front_pages#activities_details', :as => 'activity_show'
-
-  get '/signup' => 'users#new'
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
-  get '/user/profile' => 'users#user_tabs'
-  get '/user/settings' => 'users#user_tabs'
-  get '/user/bookings' => 'users#user_tabs'
-  get '/user/wishlist' => 'users#user_tabs'
-  get '/user/payments' => 'users#user_tabs'
-  patch '/user/:id/update_password' => 'users#update_password' , :as => 'update_password'
-  get '/activities_city' => 'front_pages#cities_search', :as => 'activities_search'
-
-  ##### Front Pages Route
-
-
   resources :admin_users, :only => [:edit,:update,:new,:create,:list,:destroy]
   resources :admin_password_resets, only: [:new, :create, :edit, :update]
   resources :temples, only: [:new, :create, :edit, :update,:list,:destroy]
@@ -78,6 +58,24 @@ Rails.application.routes.draw do
     end
   end
 
+  ##### Front Pages Route
+  get '/activities/:cityname' => 'front_pages#cities_search', :as => 'activities_like_search'
+  get '/activities' => 'front_pages#activities_list'
+  get '/activity/:id' => 'front_pages#activities_details', :as => 'activity_show'
+
+  get '/signup' => 'users#new'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+  get '/user/profile' => 'users#user_tabs'
+  get '/user/settings' => 'users#user_tabs'
+  get '/user/bookings' => 'users#user_tabs'
+  get '/user/wishlist' => 'users#user_tabs'
+  get '/user/payments' => 'users#user_tabs'
+  patch '/user/:id/update_password' => 'users#update_password' , :as => 'update_password'
+  get '/activities_city' => 'front_pages#cities_search', :as => 'activities_search'
+
+  ##### Front Pages Route
 
 
 end
