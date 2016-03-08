@@ -22,7 +22,13 @@ class ReservationsController < ApplicationController
 
     @reservation = Reservation.new(reservation_params)
     @reservation.payment_made = DateTime.now.to_date
-    @reservation.payment_amount = @activity.payment_price * @quantity.to_i
+
+    if @activity.payment_price.nil?
+      @reservation.payment_amount = 0
+    else
+      @reservation.payment_amount = @activity.payment_price * @quantity.to_i
+    end
+
     @reservation.activity_id = @activity.id
     @reservation.user_id = @user.id
     @reservation.confirm_email = params[:reservation][:confirm_email]

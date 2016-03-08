@@ -455,6 +455,10 @@ module ApplicationHelper
     return temple.city
   end
 
+  def return_html_paragraph(html)
+    CGI.unescapeHTML(html)
+  end
+
 
 
 end

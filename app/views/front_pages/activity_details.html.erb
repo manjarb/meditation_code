@@ -20,7 +20,7 @@
           <% end %>
 
           <h1><%= @activity.name %></h1>
-          <span><%= @temple.address %>, <%= return_city_by_key(@temple.city) %>, <%= @temple.country %></span>
+          <span><%= return_city_by_key(@temple.city) %>, <%= @temple.country %></span>
         </div>
         <div class="col-md-4 col-sm-4">
           <div id="price_single_main" class="hotel">
@@ -113,11 +113,24 @@
           <h3>Details</h3>
         </div>
         <div class="col-md-9">
-          <p>
-            <%= @activity.details %>
-            <br>
-            <strong>Belong to Temple: </strong> <%= @temple.name %>
-          </p>
+            <div>
+              <%= raw(@activity.details) %>
+            </div>
+
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-md-3">
+          <h3>Details</h3>
+        </div>
+        <div class="col-md-9">
+          <div>
+            <%= raw(@temple.address) %>
+          </div>
+          <strong>Belong to Temple: </strong> <%= @temple.name %>
         </div>
       </div>
 
@@ -173,13 +186,42 @@
             </div>
             <div class="col-md-9">
               <p>
-                <%= @activity.apply_details  %>
+                <%= raw(@activity.apply_details)  %>
+              </p>
+            </div>
+          </div>
+      <% end %>
+
+      <% if @temple.website != "" && !@temple.website.nil? %>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <h3>Website</h3>
+            </div>
+            <div class="col-md-9">
+              <p>
+                <%= raw(@temple.website)  %>
+              </p>
+            </div>
+          </div>
+      <% end %>
+
+      <% if @temple.facebook_url != "" && !@temple.facebook_url.nil? %>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <h3>Website</h3>
+            </div>
+            <div class="col-md-9">
+              <p>
+                <%= raw(@temple.website)  %>
               </p>
             </div>
           </div>
       <% end %>
 
       <hr>
+
       <div class="row">
         <div class="col-md-3">
           <h3>Reviews</h3>
@@ -261,21 +303,23 @@
               </div>
             <% end %>
           </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-6">
-              <div class="form-group">
-                <label>Adults</label>
-                <div class="numbers-row">
-                  <!--<input type="text" value="1" id="capacity-booking"-->
-                         <!--class="qty2 form-control" name="quantity">-->
-                  <%= f.text_field :quantity , class: 'qty2 form-control',
-                                   id: 'capacity-booking',
-                                   value: 1 %>
-                  </div>
+          <% if @activity.booking_status == true %>
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label>Adults</label>
+                  <div class="numbers-row">
+                    <!--<input type="text" value="1" id="capacity-booking"-->
+                           <!--class="qty2 form-control" name="quantity">-->
+                    <%= f.text_field :quantity , class: 'qty2 form-control',
+                                     id: 'capacity-booking',
+                                     value: 1 %>
+                    </div>
+                </div>
               </div>
+
             </div>
-  
-          </div>
+          <% end %>
   
           <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -395,7 +439,7 @@
           var myLatLng = {lat: <%= @temple.latitude.to_f %>, lng: <%= @temple.longitude.to_f %>};
 
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
+            zoom: 18,
             center: myLatLng
           });
 
