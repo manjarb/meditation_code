@@ -7,7 +7,7 @@ class Temple < ActiveRecord::Base
 
   validates :admin_user_id, presence: true
   validates :name, presence: true ,uniqueness: true ,length: {maximum: 255}
-  validates :address, presence: true ,length: {maximum: 255}
+  validates :address, presence: true ,length: {maximum: 3000}
   validates :phone_number, presence: true ,length: {maximum: 20},
             numericality: { only_integer: true }
   validates :email, presence: true, uniqueness: true ,length: {maximum: 255},
