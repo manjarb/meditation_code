@@ -83,13 +83,11 @@ class User < ActiveRecord::Base
       user.activated_at = Time.zone.now
 
       if auth.info.email.nil?
-        user.email = "dummyemail#{auth.uid}@gmail.com"
-        puts "auth.providerauth.providerauth.providerauth.provider"
-        puts user.email
+        user.email = "admin@thaimeditation.com"
+
       else
         user.email = auth.info.email
-        puts "auth.providerauth.providerauth.providerauth.provider"
-        puts user.email
+
       end
 
       user.password = digest(new_token)

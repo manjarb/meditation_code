@@ -30,14 +30,14 @@ class UserMailer < ApplicationMailer
 
   def reservation_details_mailer(user)
 
-    if user.login_type != "facebook"
+    if user.login_type == "facebook"
 
     else
 
       @user = user
 
       mail to: user.email, subject: "Reservation Confirmed!"
-      
+
     end
 
 

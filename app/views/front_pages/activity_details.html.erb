@@ -172,7 +172,7 @@
           </div>
           <div class="col-md-9">
             <p>
-              <%= @activity.rules  %>
+              <%= raw(@activity.rules)  %>
             </p>
           </div>
         </div>
@@ -439,7 +439,7 @@
           var myLatLng = {lat: <%= @temple.latitude.to_f %>, lng: <%= @temple.longitude.to_f %>};
 
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 18,
+            zoom: 16,
             center: myLatLng
           });
 
