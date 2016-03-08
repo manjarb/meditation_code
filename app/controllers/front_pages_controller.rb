@@ -7,6 +7,11 @@ class FrontPagesController < ApplicationController
     @temple_counter_hash = {}
     @activities_count = @activities.count
     @activities_per_row = (@activities_count / 3).ceil
+
+    if @activities_per_row < 1
+      @activities_per_row = 1
+    end
+
     @all_activities_index.each { |activity|
 
       temple = Temple.find_by(id: activity.temple_id)
