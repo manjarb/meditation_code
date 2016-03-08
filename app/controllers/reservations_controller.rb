@@ -32,6 +32,7 @@ class ReservationsController < ApplicationController
     @reservation.booking_id = @user.id.to_s + @activity.id.to_s + DateTime.now.day.to_s + DateTime.now.month.to_s + DateTime.now.year.to_s + DateTime.now.strftime('%H') + DateTime.now.strftime('%M')
 
     if @reservation.save
+      UserMailer.reservation_details_mailer(@user).deliver_now
       redirect_to activity_reservation_complete_path(@activity.id,@reservation.id)
     else
       #@reservation.errors[:base] << "Your email confirmation didn't match"
