@@ -450,6 +450,11 @@ module ApplicationHelper
     end
   end
 
+  def return_city_by_activity(temple_id)
+    temple = Temple.find_by(id: temple_id)
+    return temple.city
+  end
+
 
 
 end
