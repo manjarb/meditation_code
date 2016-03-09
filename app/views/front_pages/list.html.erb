@@ -164,45 +164,52 @@
                 <div class="tour_list_desc">
 
                   <% unless activity.rating.nil? %>
-                    <div class="score">
-                      <% if activity.rating >= 9 %>
-                        Superb
-                      <% elsif activity.rating >= 8 %>
-                        Very Good
-                      <% elsif activity.rating >= 7 %>
-                        Good
-                      <% elsif activity.rating >= 6 %>
-                        Pleasant
-                      <% elsif activity.rating >= 5 %>
-                        Normal
-                      <% else %>
-                        Poor
-                      <% end %>
+                    <% if activity.rating <= 0 %>
+                    <% else %>
+                      <div class="score">
+                        <% if activity.rating >= 9 %>
+                          Superb
+                        <% elsif activity.rating >= 8 %>
+                          Very Good
+                        <% elsif activity.rating >= 7 %>
+                          Good
+                        <% elsif activity.rating >= 6 %>
+                          Pleasant
+                        <% elsif activity.rating >= 5 %>
+                          Normal
+                        <% else %>
+                          Poor
+                        <% end %>
 
-                      <span> <%= activity.rating %> </span>
-                    </div>
+                        <span> <%= activity.rating %> </span>
+                      </div>
+                    <% end %>
 
                     <% rating_rounds = returnRatingCounter(activity.rating) %>
-                    <div class="rating">
-                      <% rating_rounds.times do |n| %>
-                        <i class="icon-star voted"></i>
-                      <% end %>
-                      <% (5 - rating_rounds).times do |n| %>
-                          <i class="icon-star-empty"></i>
-                      <% end %>
-                    </div>
+                    <% if rating_rounds <= 0 %>
+                      No rating
+                    <% else %>
+                      <div class="rating">
+                        <% rating_rounds.times do |n| %>
+                          <i class="icon-star voted"></i>
+                        <% end %>
+                        <% (5 - rating_rounds).times do |n| %>
+                            <i class="icon-star-empty"></i>
+                        <% end %>
+                      </div>
+                    <% end %>
                   <% end %>
 
                   <h3>
                     <strong><%= activity.name %></strong>
                   </h3>
-                  <p class="activities-list-indent-para">
-                    <%= activity.details %>
-                  </p>
+                  <div class="activities-list-indent-para">
+                    <%= raw(activity.details) %>
+                  </div>
                   <br>
                   <strong>City:</strong>
                   <% temple_activity = Temple.find_by(id: activity.temple_id) %>
-                  <% return_city_by_key(temple_activity.city) %>
+                  <%= return_city_by_key(temple_activity.city) %>
 
                   <!--<ul class="add_info">-->
                     <!--<li>-->
