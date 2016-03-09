@@ -163,16 +163,17 @@
                   </li>
             <% else %>
                     <li>
-                      <a href="#">
+                      <%= link_to activities_like_search_path(key) do %>
                         <!--<i class="icon_set_1_icon-3"></i>-->
                         <%= return_city_by_key(key) %>
-                        <span class="other_tours_price"><%= value %> Activities</span></a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-4 other_tours">
-                    <ul>
-                      <% activities_counter += 1 %>
+                        <span class="other_tours_price"><%= value %> Activities</span>
+                      <% end %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-4 other_tours">
+                  <ul>
+                    <% activities_counter += 1 %>
             <% end %>
           <% end %>
         </ul>
