@@ -20,19 +20,23 @@
 
               <% unless activity.rating.nil? %>
                 <div class="score">
-                  <span> <%= activity.rating %> </span>
-                  <% if activity.rating >= 9 %>
-                      Superb
-                  <% elsif activity.rating >= 8 %>
-                      Very Good
-                  <% elsif activity.rating >= 7 %>
-                      Good
-                  <% elsif activity.rating >= 6 %>
-                      Pleasant
-                  <% elsif activity.rating >= 5 %>
-                      Normal
+                  <% if activity.rating <= 0 %>
+
                   <% else %>
-                      Poor
+                    <span> <%= activity.rating %> </span>
+                    <% if activity.rating >= 9 %>
+                        Superb
+                    <% elsif activity.rating >= 8 %>
+                        Very Good
+                    <% elsif activity.rating >= 7 %>
+                        Good
+                    <% elsif activity.rating >= 6 %>
+                        Pleasant
+                    <% elsif activity.rating >= 5 %>
+                        Normal
+                    <% else %>
+                        Poor
+                    <% end %>
                   <% end %>
                 </div>
               <% end %>
@@ -52,14 +56,18 @@
                   <!--<i class="icon-smile"></i>-->
                   <!--<small>(75)</small>-->
                   <% rating_rounds = returnRatingCounter(activity.rating) %>
-                  <div class="rating">
-                    <% rating_rounds.times do |n| %>
-                        <i class="icon-star voted"></i>
-                    <% end %>
-                    <% (5 - rating_rounds).times do |n| %>
-                        <i class="icon-star-empty"></i>
-                    <% end %>
-                  </div>
+                  <% if rating_rounds <= 0 %>
+                      No rating
+                  <% else %>
+                    <div class="rating">
+                      <% rating_rounds.times do |n| %>
+                          <i class="icon-star voted"></i>
+                      <% end %>
+                      <% (5 - rating_rounds).times do |n| %>
+                          <i class="icon-star-empty"></i>
+                      <% end %>
+                    </div>
+                  <% end %>
 
               <% end %>
             </div><!-- end rating -->

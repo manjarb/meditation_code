@@ -98,7 +98,9 @@ class FrontPagesController < ApplicationController
 
     end
 
-    @wishlist = Wishlist.find_by(user_id: current_user.id,activity_id: @activity.id)
+    if logged_in?
+      @wishlist = Wishlist.find_by(user_id: current_user.id,activity_id: @activity.id)
+    end
 
     render :template => 'front_pages/activity_details'
   end
