@@ -72,6 +72,7 @@ namespace :deploy do
       execute "rsync -a #{release_path}/vendor/assets/stylesheets/fontello/ #{release_path}/public/assets/fontello"
       execute "rsync -a #{release_path}/vendor/assets/stylesheets/icon_restaurant/ #{release_path}/public/assets/icon_restaurant"
       execute "cp -a #{release_path}/vendor/assets/stylesheets/skins/square/. #{release_path}/public/assets/"
+      execute "cp -a #{release_path}/vendor/assets/images/. #{release_path}/public/assets/images/"
 
     end
   end
