@@ -10,7 +10,7 @@ class Temple < ActiveRecord::Base
   validates :address, presence: true ,length: {maximum: 3000}
   validates :phone_number, presence: true ,length: {maximum: 20},
             numericality: { only_integer: true }
-  validates :email, presence: true, uniqueness: true ,length: {maximum: 255},
+  validates :email, length: {maximum: 255},
             format: { with: VALID_EMAIL_REGEX },
             case_sensitive: false
   validates :facebook_url, uniqueness: true
