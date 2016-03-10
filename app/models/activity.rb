@@ -17,8 +17,8 @@ class Activity < ActiveRecord::Base
   validates :activity_image01_url, presence: true
   validates :activity_image02_url, presence: true
   validates :activity_image03_url, presence: true
-  validates :rules, length: {maximum: 1000}
-  validates :apply_details, length: {maximum: 1000}
+  validates :rules, length: {maximum: 20000}
+  validates :apply_details, length: {maximum: 20000}
   validate :youtube_url_format
   validate :permanent_event_check
 
