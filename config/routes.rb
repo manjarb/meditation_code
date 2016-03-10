@@ -77,5 +77,7 @@ Rails.application.routes.draw do
 
   ##### Front Pages Route
 
+  match '/google25bcf05f4f8ab6d5.html',
+        :to => proc { |env| [200, {}, ["google-site-verification: google25bcf05f4f8ab6d5.html"]] }
 
 end
