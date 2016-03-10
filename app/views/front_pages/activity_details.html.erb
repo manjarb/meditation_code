@@ -228,7 +228,7 @@
       <% if @activity.youtube_url != "" && !@activity.youtube_url.nil? %>
           <hr>
           <div style="position: relative; height: 315px; width: 100%;">
-            <%= @activity.youtube_url %>
+            <%= raw(@activity.youtube_url) %>
           </div>
       <% end %>
 
