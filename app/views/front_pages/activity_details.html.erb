@@ -205,7 +205,7 @@
             </div>
             <div class="col-md-9">
               <p>
-                <%= raw(@temple.website)  %>
+                <%= @temple.website  %>
               </p>
             </div>
           </div>
@@ -219,10 +219,15 @@
             </div>
             <div class="col-md-9">
               <p>
-                <%= raw(@temple.facebook_url)  %>
+                <%= @temple.facebook_url  %>
               </p>
             </div>
           </div>
+      <% end %>
+
+      <% if @temple.youtube_url != "" && !@temple.youtube_url.nil? %>
+          <hr>
+          <iframe width="100%" height="315" src="<%= @temple.facebook_url %>" frameborder="0" allowfullscreen></iframe>
       <% end %>
 
       <hr>
