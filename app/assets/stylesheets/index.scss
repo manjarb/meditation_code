@@ -137,3 +137,14 @@
     color: #000;
   }
 }
+
+@media (max-width: 767px) {
+  .search-label-box {
+    width: 100%;
+    padding: 0 15px;
+    margin: 15px 0;
+  }
+  .search-submit-box .btn {
+    width: 100%;
+  }
+}
