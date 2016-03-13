@@ -17,7 +17,7 @@
         </a>
         <div class="main-menu">
           <div id="header_menu">
-            <img src="/assets/logo.png" width="160" height="34" alt="City tours" data-retina="true">
+            <%= image_tag("logo.png", width: "80", alt: "Thai meditation", class: "logo_sticky break-max-width", "data-retina": "true") %>
           </div>
           <a href="#" class="open_close" id="close_in">
             <i class="icon_set_1_icon-77"></i>
@@ -28,7 +28,7 @@
             </li>
             <li class="submenu">
               <% if current_page?("/") %>
-                <%= link_to "What we do?", "#aboutus",class: "show-submenu slide-menu"  %>
+                <%= link_to "What we do?", "#aboutus",class: "show-submenu slide-menu hidden-xs"  %>
               <% else %>
                 <%= link_to "What we do?", "/#aboutus",class: "show-submenu"  %>
               <% end %>

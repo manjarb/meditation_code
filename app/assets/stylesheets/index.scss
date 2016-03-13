@@ -150,9 +150,23 @@
   .searchbar .search-place-box-input {
     width: 100%;
   }
+
+
+}
+
+@media (max-width: 991px) {
   .searchbar>form>div {
     display: block;
     clear: both;
     float: none;
   }
+  .main-menu > ul {
+    float: none;
+    clear: both;
+    text-align: center;
+  }
+  .tour_list_desc, .price_list, .img_list {
+    height: auto;
+  }
 }
+  
