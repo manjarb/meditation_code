@@ -147,4 +147,12 @@
   .search-submit-box .btn {
     width: 100%;
   }
+  .searchbar .search-place-box-input {
+    width: 100%;
+  }
+  .searchbar>form>div {
+    display: block;
+    clear: both;
+    float: none;
+  }
 }
