@@ -77,6 +77,22 @@ namespace :deploy do
     end
   end
 
+  desc 'clear temp cache'
+  task :clear_cache do
+    on roles(:app) , in: :sequence, wait: 1 do
+      execute "rm -rf #{shared_path}/tmp/cache/[^.]*"
+
+    end
+  end
+
+  # desc 'Clear memcache'
+  # task :clear_memcache do
+  #   on roles(:app) , in: :sequence, wait: 2 do
+  #     Rails.cache.clear
+  #     CACHE.flush
+  #   end
+  # end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -88,6 +104,8 @@ namespace :deploy do
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :copy_missing_css
+  after  :finishing,    :clear_cache
+  #after  :finishing,    :clear_memcache
   after  :finishing,    :restart
 end
 
