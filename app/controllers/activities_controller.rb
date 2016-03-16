@@ -8,7 +8,7 @@ class ActivitiesController < ApplicationController
   before_action :permanent_event_convert, only:[:create,:update]
 
   def list
-    @activities = admin_current_user.activities.paginate(page: params[:page])
+    @activities = admin_current_user.activities.paginate(page: params[:page]).order(created_at: :desc)
   end
 
   def edit
