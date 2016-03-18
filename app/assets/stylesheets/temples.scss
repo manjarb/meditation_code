@@ -21,8 +21,9 @@ $border-grey: #A9A9A9;
   height: 300px;
 }
 .admin-text-truncate {
-  max-width: 250px;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
 }

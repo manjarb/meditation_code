@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea2534fd-49fd-40e5-bf19-e5800036616a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/temples.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/temples.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/temples/list.html.erb" afterPath="$PROJECT_DIR$/app/views/temples/list.html.erb" />
     </list>
     <ignored path="meditation_code.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,8 +78,8 @@
       <file leaf-file-name="temples.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/temples.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67597765">
-              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.8296089">
+              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -144,8 +142,8 @@
         <option value="$PROJECT_DIR$/app/views/front_pages/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/front_pages/list.html.erb" />
         <option value="$PROJECT_DIR$/app/views/front_pages/activity_details.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/temples.scss" />
         <option value="$PROJECT_DIR$/app/views/temples/list.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/temples.scss" />
       </list>
     </option>
   </component>
@@ -1091,8 +1089,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/temples.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67597765">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.8296089">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
           <folding />
         </state>
       </provider>
