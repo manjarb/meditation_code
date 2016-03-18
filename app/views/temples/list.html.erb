@@ -25,7 +25,7 @@
             <%= temple.email %>
             <br>
             <strong>Websites: </strong>
-            <%= temple.website %>
+            <span class="admin-text-truncate"><%= temple.website %></span>
             <br>
             <strong>City: </strong>
             <%= return_city_by_key(temple.city).pluralize %>
