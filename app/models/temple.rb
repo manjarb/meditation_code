@@ -13,7 +13,7 @@ class Temple < ActiveRecord::Base
   validates :email, length: {maximum: 255},
             format: { with: VALID_EMAIL_REGEX },
             case_sensitive: false
-  validates :facebook_url, uniqueness: true
+
   validates :website , uniqueness: true
   validates :country, presence: true
   validates :city, presence: true
