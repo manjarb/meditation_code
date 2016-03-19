@@ -5,8 +5,10 @@ class FrontPagesController < ApplicationController
     @activities = @all_activities_index.limit(6)
     @temple_array = []
     @temple_counter_hash = {}
-    @activities_count = @activities.count
-    @activities_per_row = (@activities_count / 3).ceil
+    #@activities_count = @activities.count
+    #@activities_per_row = (@activities_count / 3).ceil
+    @activities_count_temple_list = 0
+    @activities_per_row = 0
 
     if @activities_per_row < 1
       @activities_per_row = 1
@@ -20,11 +22,15 @@ class FrontPagesController < ApplicationController
       if temple
         if @temple_counter_hash.has_key?(temple.city)
           @temple_counter_hash[temple.city] += 1
+
         else
           @temple_counter_hash[temple.city] = 1
+          @activities_count_temple_list += 1
         end
       end
     }
+
+    @activities_per_row = (@activities_count_temple_list / 3).ceil
 
 
   end
