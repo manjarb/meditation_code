@@ -214,9 +214,11 @@
                     <% end %>
                   <% end %>
 
-                  <h3>
-                    <strong><%= activity.name %></strong>
-                  </h3>
+                  <div class="para-truncate">
+                    <h3>
+                      <strong><%= activity.name %></strong>
+                    </h3>
+                  </div>
                   <div class="activities-list-indent-para">
                     <%= raw(activity.details) %>
                   </div>

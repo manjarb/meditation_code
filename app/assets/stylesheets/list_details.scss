@@ -25,3 +25,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.para-truncate {
+  max-width: 280px;
+  overflow: hidden;
+  //display: -webkit-box;
+  //-webkit-line-clamp: 3;
+  //-webkit-box-orient: vertical;
+  h3 {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}

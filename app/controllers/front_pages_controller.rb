@@ -8,11 +8,7 @@ class FrontPagesController < ApplicationController
     #@activities_count = @activities.count
     #@activities_per_row = (@activities_count / 3).ceil
     @activities_count_temple_list = 0
-    @activities_per_row = 0
-
-    if @activities_per_row < 1
-      @activities_per_row = 1
-    end
+    @activities_per_row = 1
 
     @all_activities_index.each { |activity|
 
@@ -31,6 +27,9 @@ class FrontPagesController < ApplicationController
     }
 
     @activities_per_row = (@activities_count_temple_list / 3).ceil
+    if @activities_per_row < 1
+      @activities_per_row = 1
+    end
 
 
   end
