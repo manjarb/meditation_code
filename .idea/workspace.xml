@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea2534fd-49fd-40e5-bf19-e5800036616a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/front_pages_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/front_pages_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front_pages/index.html.erb" afterPath="$PROJECT_DIR$/app/views/front_pages/index.html.erb" />
     </list>
     <ignored path="meditation_code.iws" />
@@ -39,8 +38,8 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front_pages/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.90782124">
-              <caret line="193" column="57" selection-start-line="193" selection-start-column="57" selection-end-line="193" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.38547486">
+              <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1104,8 +1103,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front_pages/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90782124">
-          <caret line="193" column="57" selection-start-line="193" selection-start-column="57" selection-end-line="193" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.38547486">
+          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
           <folding />
         </state>
       </provider>
