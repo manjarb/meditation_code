@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea2534fd-49fd-40e5-bf19-e5800036616a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front_pages/activity_details.html.erb" afterPath="$PROJECT_DIR$/app/views/front_pages/activity_details.html.erb" />
     </list>
     <ignored path="meditation_code.iws" />
@@ -39,8 +38,8 @@
       <file leaf-file-name="activity_details.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front_pages/activity_details.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3962264">
-              <caret line="281" column="14" selection-start-line="281" selection-start-column="10" selection-end-line="281" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.36429608">
+              <caret line="385" column="10" selection-start-line="385" selection-start-column="10" selection-end-line="385" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -1124,8 +1123,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front_pages/activity_details.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3962264">
-          <caret line="281" column="14" selection-start-line="281" selection-start-column="10" selection-end-line="281" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.36429608">
+          <caret line="385" column="10" selection-start-line="385" selection-start-column="10" selection-end-line="385" selection-end-column="10" />
           <folding />
         </state>
       </provider>
