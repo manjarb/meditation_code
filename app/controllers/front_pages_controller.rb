@@ -10,6 +10,8 @@ class FrontPagesController < ApplicationController
     @activities_count_temple_list = 0
     @activities_per_row = 1
 
+    @title_city = "Thailand"
+
     @all_activities_index.each { |activity|
 
       temple = Temple.find_by(id: activity.temple_id)
@@ -72,6 +74,8 @@ class FrontPagesController < ApplicationController
 
     }
 
+    @title_city = "Thailand"
+
     render 'list'
   end
 
@@ -81,6 +85,8 @@ class FrontPagesController < ApplicationController
     @activity = Activity.find_by(id: id)
 
     @temple = Temple.find_by(id: @activity.temple_id)
+
+    @title_city =  return_city_by_key(@temple.city) || "Thailand"
 
 
     @reviews_data = Review.where(activity_id: id)
@@ -219,6 +225,8 @@ class FrontPagesController < ApplicationController
     }
 
     #puts @temples
+
+    @title_city =  @city_name || "Thailand"
 
     render 'list'
   end
