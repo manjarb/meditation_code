@@ -99,13 +99,13 @@ class UsersController < ApplicationController
 
   def redirect_login_page
     if logged_in?
-      redirect_to activities_path
+      redirect_to activities_list_path
     end
   end
 
   def correct_user
     @user = User.find_by(id: params[:id])
-    redirect_to(activities_path) unless current_user?(@user)
+    redirect_to(activities_list_path) unless current_user?(@user)
   end
 
 end

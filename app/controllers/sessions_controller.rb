@@ -56,7 +56,7 @@ class SessionsController < ApplicationController
 
   def redirect_login_page
     if logged_in?
-      redirect_to activities_path
+      redirect_to activities_list_path
     end
   end
 

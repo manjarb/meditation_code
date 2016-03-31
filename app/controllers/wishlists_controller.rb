@@ -42,7 +42,7 @@ class WishlistsController < ApplicationController
 
   def correct_user_for_wist_list
     @user = User.find_by(id: params[:user_id])
-    redirect_to(activities_path) unless current_user?(@user)
+    redirect_to(activities_list_path) unless current_user?(@user)
   end
 
 end

@@ -6,7 +6,7 @@
       <p>Finding Buddhist meditation classes in Thailand to join from local Temple</p>
       <br>
       <p>
-        <%= link_to "More Classes", activities_path ,class: "btn btn-outline-inverse btn-lg"%>
+        <%= link_to "More Classes", activities_list_path ,class: "btn btn-outline-inverse btn-lg"%>
       </p>
     </div>
   </div>
@@ -14,7 +14,7 @@
 <div class="search-box-container">
   <div id="searchbar-container">
     <div class="searchbar">
-      <form action="/activities_city">
+      <form action="/meditation/cities">
         <div class="search-label-box">
           <!--<input type="text" class="search-place-box-input" placeholder="City Name?" name="cityname">-->
 
@@ -57,7 +57,7 @@
             <li><span>2</span>Look at the list of <strong>meditation classes</strong>  in that city.</li>
             <li><span>3</span>Apply and GO!</li>
           </ul>
-          <%= link_to "See Classes", activities_path ,class: "btn_1"%>
+          <%= link_to "See Classes", activities_list_path ,class: "btn_1"%>
         </div>
       </div><!-- End row -->
     </div>
@@ -138,7 +138,7 @@
       <!--<a href="all_tours_list.html" class="btn_1 medium">-->
         <!--<i class="icon-eye-7"></i>View all Activities-->
       <!--</a>-->
-      <%= link_to activities_path ,class: "btn_1 medium" do %>
+      <%= link_to activities_list_path ,class: "btn_1 medium" do %>
           <i class="icon-eye-7"></i>View all Classes
       <% end %>
     </p>

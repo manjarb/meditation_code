@@ -10,7 +10,7 @@
   <div class="container">
     <ul>
       <li>
-        <%= link_to "Classes", activities_path %>
+        <%= link_to "Classes", activities_list_path %>
       </li>
       <% unless @city_name.nil? %>
         <li><%= @city_name %></li>
@@ -351,9 +351,9 @@
     $('.city-list-input-checkbox').on('ifChecked', function(event){
 
       if($(this).val() === ""){
-        window.location = location.protocol + '//' + location.host  + "/activities"
+        window.location = location.protocol + '//' + location.host  + "/meditation/classes"
       } else {
-        window.location = location.protocol + '//' + location.host  + "/activities_city?cityname=" + $(this).val();
+        window.location = location.protocol + '//' + location.host  + "/meditation/cities?cityname=" + $(this).val();
 
       }
 
