@@ -114,6 +114,7 @@ namespace :deploy do
   after  :finishing,    :cleanup
   after  :finishing,    :copy_missing_css
   after  :finishing,    :clear_cache
+  after  :finishing,    :generate_sitemap
   #after  :finishing,    :clear_memcache
   after  :finishing,    :restart
 end
