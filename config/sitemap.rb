@@ -6,9 +6,9 @@ SitemapGenerator::Sitemap.create do
   # add '/home', :changefreq => 'daily', :priority => 0.9
   # add '/contact_us', :changefreq => 'weekly'
 
-  add '/'
-  add '/signup'
-  add '/login'
+  #add '/' , :priority => 0.9
+  add '/signup' , :priority => 0.9
+  add '/login' , :priority => 0.9
   add activities_list_path
 
   @temple_array = []

@@ -79,6 +79,8 @@ Rails.application.routes.draw do
   patch '/user/:id/update_password' => 'users#update_password' , :as => 'update_password'
   get '/meditation/cities' => 'front_pages#cities_search', :as => 'activities_search'
 
+  get '/sitemap' => 'sitemaps#index'
+
   ##### Front Pages Route
 
   get '/google25bcf05f4f8ab6d5.html',
