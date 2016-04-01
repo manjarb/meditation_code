@@ -88,7 +88,11 @@ namespace :deploy do
   desc 'generate_sitemap'
   task :generate_sitemap do
     on roles(:app) , in: :sequence, wait: 1 do
-      execute "rake","sitemap:refresh:no_ping"
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute "rake","sitemap:refresh:no_ping"
+        end
+      end
     end
   end
 
