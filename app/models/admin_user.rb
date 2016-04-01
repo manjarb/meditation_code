@@ -2,6 +2,9 @@ class AdminUser < ActiveRecord::Base
   has_many :temples, dependent: :destroy
   has_many :activities, dependent: :destroy
   has_many :bank_accounts, dependent: :destroy
+
+  has_many :blogs, dependent: :destroy
+
   attr_accessor :remember_token, :reset_token
   before_save { self.email = self.email.downcase }
 

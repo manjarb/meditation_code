@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305163303) do
+ActiveRecord::Schema.define(version: 20160401104103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,26 @@ ActiveRecord::Schema.define(version: 20160305163303) do
   add_index "bank_accounts", ["admin_user_id"], name: "index_bank_accounts_on_admin_user_id", using: :btree
   add_index "bank_accounts", ["id"], name: "index_bank_accounts_on_id", unique: true, using: :btree
 
+  create_table "blogs", force: :cascade do |t|
+    t.string   "title",         null: false
+    t.text     "content",       null: false
+    t.integer  "admin_user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "blogs", ["admin_user_id"], name: "index_blogs_on_admin_user_id", using: :btree
+  add_index "blogs", ["id"], name: "index_blogs_on_id", unique: true, using: :btree
+
+  create_table "blogs_tags", id: false, force: :cascade do |t|
+    t.integer "blog_id", null: false
+    t.integer "tag_id",  null: false
+  end
+
+  add_index "blogs_tags", ["blog_id", "tag_id"], name: "index_blogs_tags_on_blog_id_and_tag_id", using: :btree
+  add_index "blogs_tags", ["blog_id"], name: "index_blogs_tags_on_blog_id", using: :btree
+  add_index "blogs_tags", ["tag_id"], name: "index_blogs_tags_on_tag_id", using: :btree
+
   create_table "reservations", force: :cascade do |t|
     t.datetime "payment_made",                    null: false
     t.float    "payment_amount",                  null: false
@@ -115,6 +135,14 @@ ActiveRecord::Schema.define(version: 20160305163303) do
   add_index "reviews", ["activity_id"], name: "index_reviews_on_activity_id", using: :btree
   add_index "reviews", ["id"], name: "index_reviews_on_id", unique: true, using: :btree
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "temples", force: :cascade do |t|
     t.string   "name",           null: false

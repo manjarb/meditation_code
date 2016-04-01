@@ -86,4 +86,6 @@ Rails.application.routes.draw do
   get '/google25bcf05f4f8ab6d5.html',
         :to => proc { |env| [200, {}, ["google-site-verification: google25bcf05f4f8ab6d5.html"]] }
 
+  resources :blogs
+
 end
