@@ -88,9 +88,7 @@ namespace :deploy do
   desc 'generate_sitemap'
   task :generate_sitemap do
     on roles(:app) , in: :sequence, wait: 1 do
-      #SitemapGenerator::Sitemap.create   #Create sitemaps without pinging search engines
-      ::SitemapGenerator::Sitemap.clean
-      ::SitemapGenerator::Sitemap.refresh  #Create sitemaps and ping search engines
+      execute "rake","sitemap:refresh:no_ping"
     end
   end
 
