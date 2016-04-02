@@ -231,6 +231,18 @@ class FrontPagesController < ApplicationController
     render 'list'
   end
 
+  def blog_list
+
+    @blogs = Blog.all.paginate(:page => params[:page], :per_page => 10)
+    @tags = Tag.all
+    @recent_posts = Blog.all.limit(5)
+
+  end
+
+  def blog
+    @blog = Blog.find_by(id: params[:id])
+  end
+
   private
 
   def activities_rating_return(activities)

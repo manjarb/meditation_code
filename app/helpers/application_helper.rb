@@ -459,6 +459,10 @@ module ApplicationHelper
     CGI.unescapeHTML(html)
   end
 
+  def return_tags_list(blog)
 
+    tags = blog.tags
+
+  end
 
 end

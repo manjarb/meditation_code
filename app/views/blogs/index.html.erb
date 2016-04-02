@@ -5,6 +5,8 @@
 </div>
 
 <br>
+<%= will_paginate @blogs %>
+<br>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -37,10 +39,19 @@
           <%= return_month_readble_format(blog.created_at) %>
         </td>
         <td>
-          <%= link_to "Edit post" , edit_blog_path(blog.id) , class: "btn btn-primary" %>
-          <%= link_to "delete post" , new_blog_path , class: "btn btn-danger" %>
+
+          <% if admin_current_user_check?(blog.admin_user) %>
+              <%= link_to "Edit post" , edit_blog_path(blog.id) , class: "btn btn-primary" %>
+          <% end %>
+          <% if admin_current_user_check?(blog.admin_user) %>
+              <%= link_to "Delete post", blog, method: :delete,
+                          data: { confirm: "Are you sure?" },
+                          class: "btn btn-danger" %>
+          <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br>
+<br>

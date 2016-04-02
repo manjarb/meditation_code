@@ -39,6 +39,9 @@
             <!--<li class="submenu">-->
               <!--<a href="#" class="show-submenu">Sign Up</a>-->
             <!--</li>-->
+            <li class="submenu">
+              <%= link_to "Blog", articles_path  %>
+            </li>
             <% if logged_in? %>
                 <li class="submenu">
                   <%= link_to "Profile", user_profile_path %>

@@ -45,6 +45,8 @@ class BlogsController < ApplicationController
       @tag << tag.name
     end
 
+    @tag = @tag.join(",")
+
   end
 
   def update
@@ -52,12 +54,18 @@ class BlogsController < ApplicationController
     tag_array = tags_params[:name].split(/\s*,\s*/)
 
     if @blog.update_attributes(blog_params)
-      flash[:success] = "Temple updated"
-      tag_update_func(tag_array)
-      redirect_to edit_temple_path
+      flash[:success] = "Post updated"
+      tag_update_func_for_update_post_content(tag_array)
+      redirect_to blogs_path
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @blog.destroy
+    flash[:success] = "Temple Deleted"
+    redirect_to blogs_path
   end
 
   private
@@ -80,6 +88,37 @@ class BlogsController < ApplicationController
         tag_save = Tag.new(name: tag)
         tag_save.blogs << @blog
         tag_save.save
+      else
+
+        tag_find.blogs << @blog
+        tag_find.save
+
+      end
+
+    end
+  end
+
+  def tag_update_func_for_update_post_content(tag_array)
+    tag_array.each do |tag|
+
+      tag_relation = @blog.tags.find_by(name: tag)
+
+      unless tag_relation
+
+        tag_find = Tag.find_by(name: tag)
+
+        unless tag_find
+          tag_save = Tag.new(name: tag)
+          tag_save.blogs << @blog
+          tag_save.save
+
+        else
+          tag_find.blogs
+          tag_find.save
+
+        end
+
+      else
 
       end
 

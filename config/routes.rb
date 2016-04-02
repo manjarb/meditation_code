@@ -87,5 +87,7 @@ Rails.application.routes.draw do
         :to => proc { |env| [200, {}, ["google-site-verification: google25bcf05f4f8ab6d5.html"]] }
 
   resources :blogs
+  get '/articles' => 'front_pages#blog_list'
+  get '/article/:id' => 'front_pages#blog' , :as => 'blog_details'
 
 end

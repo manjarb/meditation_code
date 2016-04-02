@@ -1,0 +1,104 @@
+<% content_for :header_import do %>
+    <%= stylesheet_link_tag 'blog.min', media: 'all', 'data-turbolinks-track' => true %>
+<% end %>
+
+<div class="activities-list-banner-container">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Buddhist Meditation Blog</h1>
+      <!--<p>...</p>-->
+    </div>
+  </div>
+</div>
+<div id="position">
+  <div class="container">
+    <ul>
+      <li>
+        Blog
+      </li>
+    </ul>
+  </div>
+</div><!-- Position -->
+
+<section class="meditaion-list-container light-grey-bg">
+  <div class="container margin_60">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="box_style_1">
+          <% @blogs.each do |blog| %>
+            <div class="post">
+              <h2><%= blog.title %></h2>
+              <br>
+              <div class="blog-content-box fade_para">
+                <%= raw blog.content %>
+              </div>
+              <br>
+              <div class="post_info clearfix">
+                <div class="post-left">
+                  <ul>
+                    <li>
+                      <i class="icon-calendar-empty"></i>
+                      On
+                      <span><%= return_month_readble_format(blog.updated_at) %></span>
+                    </li>
+                    <li>
+                      <i class="icon-tags"></i> Tags
+
+                        <!--<a href="#">Works</a>,-->
+                        <!--<a href="#">Personal</a>-->
+                      <% tags = return_tags_list(blog) %>
+
+                      <% tags.each do |tag| %>
+
+                        <span><%= tag.name  %></span>
+
+                        <% unless tag == tags.last %>
+                          ,
+                        <% end %>
+
+                      <% end %>
+
+                    </li>
+                  </ul>
+                </div>
+                <!--<div class="post-right"><i class="icon-comment"></i><a href="#">25 </a></div>-->
+              </div>
+              <br>
+              <%= link_to "READ MORE", blog_details_path(blog.id), class: "btn_1" %>
+            </div><!-- end post -->
+          <% end %>
+        </div>
+        <hr>
+        <%= will_paginate @blogs %>
+      </div>
+
+      <aside class="col-md-3">
+        <div class="widget">
+          <h4>Recent post</h4>
+          <br>
+          <ul class="recent_post">
+            <% @recent_posts.each do |recent_post| %>
+              <li>
+                <i class="icon-calendar-empty"></i> <%= return_month_readble_format(recent_post.updated_at) %>
+                <div>
+                  <%= link_to blog_details_path(recent_post.id) do %>
+                    <%= recent_post.title %>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div><!-- End widget -->
+        <hr>
+        <div class="widget tags">
+          <h4>Tags</h4>
+
+          <% @tags.each do |tag| %>
+            <%= link_to tag.name, "#" %>
+          <% end %>
+
+        </div><!-- End widget -->
+      </aside>
+    </div>
+  </div>
+</section>

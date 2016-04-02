@@ -61,3 +61,14 @@ img {
 .margin-bottom-10 {
   margin-bottom: 10px;
 }
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.fade_para {
+  height: 3.6em; /* exactly three lines */
+}
+.blog-content-box {
+  overflow: hidden;
+}
