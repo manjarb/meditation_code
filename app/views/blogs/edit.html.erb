@@ -1,0 +1,24 @@
+<h1>Update post</h1>
+<br>
+<br>
+<%= form_for(@blog, html: { multipart: true }) do |f|%>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group">
+      <%= f.label :"Title" %>
+      <%= f.text_field :title , class: 'form-control', :placeholder => "Post title" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :"Content" %>
+      <%= f.text_area :content , class: 'form-control', :placeholder => "Post content",rows: 5 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :"Tags" %>
+      <%= text_field :tag, :name , class: 'form-control',value: @tag, :placeholder => "Post content",rows: 5 %>
+    </div>
+
+    <%= f.submit :"Update Post", class: 'btn btn-primary' %>
+<% end %>
+
+<br>
+<br>

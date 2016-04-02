@@ -6,20 +6,41 @@
 
 <br>
 <table class="table table-striped">
-  <tr>
-    <th>
-      id
-    </th>
-    <th>
-      Title
-    </th>
-    <th>
-      Manage
-    </th>
-  </tr>
-  <tr>
-    <td>
+  <thead>
+    <tr>
+      <th>
+        id
+      </th>
+      <th>
+        Title
+      </th>
+      <th>
+        Create at
+      </th>
+      <th>
+        Manage
+      </th>
 
-    </td>
-  </tr>
+    </tr>
+  </thead>
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td>
+          <%= blog.id %>
+        </td>
+        <td>
+          <%= blog.title %>
+        </td>
+
+        <td>
+          <%= return_month_readble_format(blog.created_at) %>
+        </td>
+        <td>
+          <%= link_to "Edit post" , edit_blog_path(blog.id) , class: "btn btn-primary" %>
+          <%= link_to "delete post" , new_blog_path , class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

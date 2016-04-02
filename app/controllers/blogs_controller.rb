@@ -3,9 +3,10 @@ class BlogsController < ApplicationController
   layout "admin"
 
   before_action :admin_logged_in_user
+  before_action :admin_correct_user, only:[:destroy,:update,:edit]
 
   def index
-
+    @blogs = Blog.all.paginate(page: params[:page])
   end
 
   def new
@@ -23,19 +24,7 @@ class BlogsController < ApplicationController
     if @blog.save
       flash[:success] = "Post Created!"
 
-      tag_array.each do |tag|
-
-        tag_find = Tag.find_by(name: tag)
-
-        unless tag_find
-          #Tag.create!(name: tag)
-          tag_save = Tag.new(name: tag)
-          tag_save.blogs << @blog
-          tag_save.save
-
-        end
-
-      end
+      tag_update_func(tag_array)
 
       #byebug
 
@@ -46,6 +35,31 @@ class BlogsController < ApplicationController
 
   end
 
+  def edit
+
+    @tag = []
+
+    tag_array_element = @blog.tags
+
+    tag_array_element.each do |tag|
+      @tag << tag.name
+    end
+
+  end
+
+  def update
+
+    tag_array = tags_params[:name].split(/\s*,\s*/)
+
+    if @blog.update_attributes(blog_params)
+      flash[:success] = "Temple updated"
+      tag_update_func(tag_array)
+      redirect_to edit_temple_path
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def blog_params
@@ -54,6 +68,27 @@ class BlogsController < ApplicationController
 
   def tags_params
     params.require(:tag).permit(:name)
+  end
+
+  def tag_update_func(tag_array)
+    tag_array.each do |tag|
+
+      tag_find = Tag.find_by(name: tag)
+
+      unless tag_find
+        #Tag.create!(name: tag)
+        tag_save = Tag.new(name: tag)
+        tag_save.blogs << @blog
+        tag_save.save
+
+      end
+
+    end
+  end
+
+  def admin_correct_user
+    @blog = admin_current_user.blogs.find_by(id: params[:id])
+    redirect_to admin_temples_url if @blog.nil?
   end
 
 end
