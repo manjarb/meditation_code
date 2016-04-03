@@ -247,6 +247,7 @@ class FrontPagesController < ApplicationController
 
   def blog
     @blog = Blog.find_by(id: params[:id])
+    @title_city =  @blog.title
     @tags = @blog.tags
     @recent_posts = Blog.all.limit(5)
   end

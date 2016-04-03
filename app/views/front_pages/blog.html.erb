@@ -5,7 +5,11 @@
 <div class="activities-list-banner-container">
   <div class="jumbotron">
     <div class="container">
-      <h1>Buddhist Meditation Blog</h1>
+      <h2 style="color: #fff;
+          background-color: rgba(0, 0, 0, 0.6);
+          padding: 10px;
+          display: inline-block;
+          font-size: 42px;">Buddhist Meditation Post</h2>
       <!--<p>...</p>-->
     </div>
   </div>
@@ -26,7 +30,7 @@
       <div class="col-md-9">
         <div class="box_style_1">
             <div class="post nopadding">
-              <h2><%= @blog.title %></h2>
+              <h1><%= @blog.title %></h1>
               <br>
               <div class="blog-content-box fade_para">
                 <%= raw @blog.content %>
