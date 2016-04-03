@@ -9,6 +9,7 @@ SitemapGenerator::Sitemap.create do
   #add '/' , :priority => 0.9
   add '/signup' , :priority => 0.9
   add '/login' , :priority => 0.9
+  add '/articles' , :priority => 0.9
   add activities_list_path
 
   @temple_array = []
@@ -27,6 +28,12 @@ SitemapGenerator::Sitemap.create do
         @temple_counter_hash[temple.city] = 1
       end
     end
+
+  end
+
+  Blog.find_each do |blog|
+
+    add blog_details_path(blog.id), :lastmod => blog.updated_at
 
   end
 

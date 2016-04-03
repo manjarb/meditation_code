@@ -233,7 +233,13 @@ class FrontPagesController < ApplicationController
 
   def blog_list
 
-    @blogs = Blog.all.paginate(:page => params[:page], :per_page => 10)
+    if params.has_key?(:tag)
+
+      @blogs = Tag.find_by(name: params[:tag]).blogs.paginate(:page => params[:page], :per_page => 10)
+    else
+      @blogs = Blog.all.paginate(:page => params[:page], :per_page => 10)
+    end
+
     @tags = Tag.all
     @recent_posts = Blog.all.limit(5)
 
@@ -241,6 +247,8 @@ class FrontPagesController < ApplicationController
 
   def blog
     @blog = Blog.find_by(id: params[:id])
+    @tags = @blog.tags
+    @recent_posts = Blog.all.limit(5)
   end
 
   private

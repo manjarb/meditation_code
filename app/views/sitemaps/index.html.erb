@@ -48,6 +48,14 @@
                 <li><%= link_to activity.name , activity_show_path(activity.id) %></li>
               <% end %>
             </ul>
+            <hr>
+            <h2>Blog</h2>
+            <hr>
+            <ul>
+              <% @blogs.each do |blog| %>
+                  <li><%= link_to blog.title , blog_details_path(blog.id) %></li>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>

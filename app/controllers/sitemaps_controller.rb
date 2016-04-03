@@ -2,6 +2,7 @@ class SitemapsController < ApplicationController
 
   def index
     @activities = Activity.all
+    @blogs = Blog.all
     @temple_array = []
     @temple_counter_hash = {}
 
