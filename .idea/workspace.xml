@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea2534fd-49fd-40e5-bf19-e5800036616a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front_pages/blog.html.erb" afterPath="$PROJECT_DIR$/app/views/front_pages/blog.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_footer.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_footer.html.erb" />
     </list>
     <ignored path="meditation_code.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,14 +47,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/front_pages/blog.html.erb">
+      <file leaf-file-name="_footer.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/shared/_footer.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25306123">
-              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.5387755">
+              <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,7 +100,6 @@
         <option value="$PROJECT_DIR$/app/models/tag.rb" />
         <option value="$PROJECT_DIR$/app/models/blog.rb" />
         <option value="$PROJECT_DIR$/app/controllers/blogs_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/shared/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_header.html.erb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/activities_list.scss" />
@@ -121,6 +118,7 @@
         <option value="$PROJECT_DIR$/app/controllers/front_pages_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/front_pages/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/front_pages/blog.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_footer.html.erb" />
       </list>
     </option>
   </component>
@@ -1128,14 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.354838">
-          <caret line="37" column="49" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/list_details.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82040817">
@@ -1272,6 +1262,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front_pages/blog.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25306123">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front_pages/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.0344827">
@@ -1282,13 +1282,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front_pages/blog.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_footer.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25306123">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.5387755">
+          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
