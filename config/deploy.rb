@@ -118,7 +118,7 @@ namespace :deploy do
   after  :finishing,    :clear_cache
   after  :finishing,    :generate_sitemap
   #after  :finishing,    :clear_memcache
-  after  :finishing,    :restart
+  #after  :finishing,    :restart
 end
 
 
